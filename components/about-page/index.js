@@ -1,6 +1,6 @@
 'use client';
 
-import Pagination from '@/components/about-page/pagination';
+import Pagination from '@/components/shared/pagination';
 import { InlineImageComponent, YTComponent } from '@/lib/portable-text/portable-text-types';
 
 import Header from '../headers';
@@ -39,7 +39,9 @@ export default function AboutPageComponent({ data }) {
   return (
     <div>
       <Header title={data?.pageTitle} imageURL='/big-decoration.png' bgColor='bg-green-500' />
-      <Pagination pages={data.pages} position='top' />
+      <div className='global-margin'>
+        <Pagination pages={data.pages} position='top' />
+      </div>
       <div className='global-margin mt-[60px] flex flex-col gap-x-8 text-cl-black sm:mt-[120px]'>
         {data.content.map((item, index) => {
           const Component = componentMap[item._type];

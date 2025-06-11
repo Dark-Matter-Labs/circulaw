@@ -51,6 +51,20 @@ export default async function GovernmentLevelPage({ params }) {
     qParams: params,
     tags: ['instrument'],
   });
+
+  const { productChain, thema } = params;
+
+  const pageOptions = [
+    { name: 'Categorie', end: 'categorie' },
+    { name: 'Instrumenten', end: 'instrumenten' },
+    { name: 'Overheidsbevoegdheid', end: 'overheidsbevoegdheid' },
+  ];
+
+  const pages = pageOptions.map((opt) => ({
+    name: opt.name,
+    href: `/${productChain}/${thema}/${opt.end}`,
+  }));
+
   if (params.thema === 'matrasketen') {
     return (
       <GovLevelLayout
@@ -66,6 +80,7 @@ export default async function GovernmentLevelPage({ params }) {
         provLaws={govLevelContent?.provincial}
         gemLaws={govLevelContent?.local}
         imageMob={placeholderImage}
+        pages={pages}
       />
     );
   } else if (params.thema === 'houtbouw') {
@@ -83,6 +98,7 @@ export default async function GovernmentLevelPage({ params }) {
         provLaws={govLevelContent?.provincial}
         gemLaws={govLevelContent?.local}
         imageMob={placeholderImage}
+        pages={pages}
       />
     );
   } else if (params.thema === 'voedselverspilling') {
@@ -96,6 +112,7 @@ export default async function GovernmentLevelPage({ params }) {
         provLaws={govLevelContent?.provincial}
         gemLaws={govLevelContent?.local}
         imageMob={placeholderImage}
+        pages={pages}
       />
     );
   } else if (params.thema === 'windturbines') {
@@ -113,6 +130,7 @@ export default async function GovernmentLevelPage({ params }) {
         provLaws={govLevelContent?.provincial}
         gemLaws={govLevelContent?.local}
         imageMob={placeholderImage}
+        pages={pages}
       />
     );
   } else if (params.thema === 'infra') {
@@ -126,6 +144,7 @@ export default async function GovernmentLevelPage({ params }) {
         provLaws={govLevelContent?.provincial}
         gemLaws={govLevelContent?.local}
         imageMob={placeholderImage}
+        pages={pages}
       />
     );
   } else if (params.thema === 'bedrijventerreinen') {
@@ -139,6 +158,7 @@ export default async function GovernmentLevelPage({ params }) {
         provLaws={govLevelContent?.provincial}
         gemLaws={govLevelContent?.local}
         imageMob={placeholderImage}
+        pages={pages}
       />
     );
   } else if (params.thema === 'bedrijfskleding') {
@@ -152,6 +172,7 @@ export default async function GovernmentLevelPage({ params }) {
         provLaws={govLevelContent?.provincial}
         gemLaws={govLevelContent?.local}
         imageMob={placeholderImage}
+        pages={pages}
       />
     );
   } else if (params.thema === 'consumententextiel') {
@@ -165,6 +186,7 @@ export default async function GovernmentLevelPage({ params }) {
         provLaws={govLevelContent?.provincial}
         gemLaws={govLevelContent?.local}
         imageMob={placeholderImage}
+        pages={pages}
       />
     );
   } else if (params.thema === 'zonnepanelen') {
@@ -178,6 +200,7 @@ export default async function GovernmentLevelPage({ params }) {
         provLaws={govLevelContent?.provincial}
         gemLaws={govLevelContent?.local}
         imageMob={placeholderImage}
+        pages={pages}
       />
     );
   } else if (params.thema === 'organische-reststromen') {
@@ -191,6 +214,7 @@ export default async function GovernmentLevelPage({ params }) {
         provLaws={govLevelContent?.provincial}
         gemLaws={govLevelContent?.local}
         imageMob={placeholderImage}
+        pages={pages}
       />
     );
   } else if (params.thema === 'biobased-isoleren') {
@@ -204,6 +228,7 @@ export default async function GovernmentLevelPage({ params }) {
         provLaws={govLevelContent?.provincial}
         gemLaws={govLevelContent?.local}
         imageMob={placeholderImage}
+        pages={pages}
       />
     );
   } else {

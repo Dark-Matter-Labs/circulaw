@@ -20,6 +20,7 @@ import ModalContent from '../modal/modal-content';
 import NoResultsBoundary from '../search/no-results-boundary';
 import NoResultsInstruments from '../search/no-results-instrument';
 import CustomStats from '../search/stats';
+import PagePagination from '../shared/pagination';
 
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
@@ -41,7 +42,6 @@ export default function ThemeLevelSearch(props) {
       label: rLadderLabes[item.label],
     }));
   };
-
   return (
     <InstantSearchNext
       searchClient={algoliaClient}
@@ -63,7 +63,9 @@ export default function ThemeLevelSearch(props) {
         bgColor='bg-green-500'
         imageURL='/big-decoration.png'
       />
-
+      <div className='global-margin'>
+        <PagePagination pages={props.pages} position='top' />
+      </div>
       <div className='mt-4 flex items-center justify-center'>
         <div className='mb-10 mt-10 hidden items-center justify-start sm:flex'>
           <SearchBox

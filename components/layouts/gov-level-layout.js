@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Header from '../headers';
+import Pagination from '../shared/pagination';
 
 // TODO: refactor this to work on mobile and implement new design once it is ready
 export default function GovLevelLayout({ ...props }) {
@@ -62,8 +63,10 @@ export default function GovLevelLayout({ ...props }) {
           imageURL='/big-decoration.png'
           pageType='instrumentOverview'
         />
-
-        {/* DYNAMIC IMAGE */}
+        <div className='global-margin'>
+          <Pagination pages={props.pages} position='top' />
+        </div>
+        s{/* DYNAMIC IMAGE */}
         <div className='global-margin mb-20 mt-5 hidden sm:mt-20 sm:block'>
           <div className='flex grid-cols-3 items-start 2xl:justify-center'>
             {/* LEFT HAND SIDE */}

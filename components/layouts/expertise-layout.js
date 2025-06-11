@@ -13,6 +13,7 @@ import ExplinationText from '../expertise-page/explination-text';
 import TabButton from '../expertise-page/tab-button';
 import TabLayout from '../expertise-page/tab-layout';
 import Header from '../headers';
+import Pagination from '../shared/pagination';
 
 export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [beleid, setBeleid] = useState([]);
@@ -327,7 +328,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
         {/* DESKTOP */}
         <div className='global-margin'>
           <div className='flex w-full flex-col justify-start'>
-            <div className='z-5 relative h-12'>
+            <div className='z-5 relative'>
               <div className='no-scrollbar z-50 -mt-[76px] flex h-[76px] flex-row justify-start gap-x-3 overflow-x-scroll rounded-b-cl px-6 sm:px-16'>
                 <TabButton
                   selected={selectedTab}
@@ -385,6 +386,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 />
               </div>
             </div>
+            <Pagination pages={props.pages} position='top' />
 
             <ExplinationText selected={selectedTab} />
             {/* desktop filters */}
