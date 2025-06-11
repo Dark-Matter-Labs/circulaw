@@ -55,7 +55,7 @@ export default function AboutPageComponent({ data }) {
           return null;
         })}
       </div>
-      <div className='mb-10'>
+      <div className='mb-10 global-margin'>
         <Pagination pages={data.pages} />
       </div>
     </div>
