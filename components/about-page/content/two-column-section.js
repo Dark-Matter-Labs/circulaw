@@ -6,9 +6,9 @@ import { aboutPageReducedPortableTextComponents } from '../../../lib/portable-te
 
 export default function TwoColumnSection({ data }) {
   return (
-    <div className='mb-[60px] grid grid-cols-1 gap-x-8 gap-y-8 sm:mb-[120px] sm:grid-cols-2'>
-      <div className='flex max-w-[500px] flex-col'>
-        <div className='mb-2'>
+    <div className='mb-[60px] grid grid-cols-1 items-start gap-x-8 gap-y-8 sm:mb-[120px] sm:grid-cols-2'>
+      <div className='flex h-full max-w-[500px] flex-col'>
+        <div className='mb-2 flex flex-col justify-between sm:min-h-[120px]'>
           <h3 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-500'>
             {data?.leftColumnTitle}
           </h3>
@@ -19,8 +19,8 @@ export default function TwoColumnSection({ data }) {
           components={aboutPageReducedPortableTextComponents}
         />
       </div>
-      <div className='flex max-w-[500px] flex-col'>
-        <div className='mb-2'>
+      <div className='flex h-full max-w-[500px] flex-col'>
+        <div className='mb-2 flex flex-col justify-between sm:min-h-[120px]'>
           <h3 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-500'>
             {data?.rightColumnTitle}
           </h3>
