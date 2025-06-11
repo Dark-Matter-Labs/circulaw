@@ -30,7 +30,7 @@ export default function FAQPageComponent({ data }) {
                 >
                   <Accordion.Trigger className='heading-xl-semibold sm:heading-3xl-semibold group mr-4 flex w-full justify-between text-green-500'>
                     <span className='text-left'>{item.question}</span>{' '}
-                    <IconChevronDown className='h-8 w-8 transition-transform duration-300 ease-in-out group-data-[state=open]:rotate-180' />
+                    <IconChevronDown className='!h-8 !w-8 flex-shrink-0 transition-transform duration-300 ease-in-out group-data-[state=open]:rotate-180' />
                   </Accordion.Trigger>
                   <Accordion.Content className='AccordionContent overflow-hidden'>
                     <PortableText value={item.response} components={portableTextComponents} />
