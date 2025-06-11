@@ -94,7 +94,9 @@ export default function Team({ data }) {
           </div>
         )}
       </div>
-      <div className='heading-2xl sm:heading-4xl absolute left-6 top-44 max-w-[120px] text-green-500 sm:left-40 sm:top-56 sm:max-w-none'>
+      <div
+        className={`${showTeamMembers === 'legal' ? 'heading-2xl-semibold sm:heading-4xl-semibold' : 'heading-2xl sm:heading-4xl'} absolute left-6 top-44 max-w-[120px] text-green-500 sm:left-40 sm:top-56 sm:max-w-none`}
+      >
         Onze juristen
         <button
           onClick={() => handleClick('legal')}
@@ -107,7 +109,9 @@ export default function Team({ data }) {
           )}
         </button>
       </div>
-      <div className='heading-2xl sm:heading-4xl absolute right-10 top-40 max-w-[120px] text-green-500 sm:right-28 sm:top-52 sm:max-w-none'>
+      <div
+        className={`${showTeamMembers === 'developers' ? 'heading-2xl-semibold sm:heading-4xl-semibold' : 'heading-2xl sm:heading-4xl'} absolute right-10 top-40 max-w-[120px] text-green-500 sm:right-28 sm:top-52 sm:max-w-none`}
+      >
         Onze ontwikkelaars
         <button
           onClick={() => handleClick('developers')}
@@ -120,7 +124,9 @@ export default function Team({ data }) {
           )}
         </button>
       </div>
-      <div className='heading-2xl sm:heading-4xl absolute bottom-10 left-10 max-w-[190px] text-green-500 sm:bottom-20 sm:left-32 sm:max-w-none'>
+      <div
+        className={`${showTeamMembers === 'strategy' ? 'heading-2xl-semibold sm:heading-4xl-semibold' : 'heading-2xl sm:heading-4xl'} absolute bottom-10 left-10 max-w-[190px] text-green-500 sm:bottom-20 sm:left-32 sm:max-w-none`}
+      >
         <button
           onClick={() => handleClick('strategy')}
           className='mr-20 mt-3 flex size-10 items-center justify-center place-self-end rounded-full bg-orange-100'
