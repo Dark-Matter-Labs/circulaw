@@ -51,6 +51,18 @@ export default async function GovernmentLevelPage({ params }) {
     tags: ['instrument'],
   });
 
+  const { productChain, thema } = params;
+
+  const pageOptions = [
+    { name: 'Categorie', end: 'categorie' },
+    { name: 'Instrumenten', end: 'instrumenten' },
+    { name: 'Overheidsbevoegdheid', end: 'overheidsbevoegdheid' },
+  ];
+
+  const pages = pageOptions.map((opt) => ({
+    name: opt.name,
+    href: `/${productChain}/${thema}/${opt.end}`,
+  }));
   return (
     <GovLevelLayout
       thema={params.thema}
@@ -61,6 +73,7 @@ export default async function GovernmentLevelPage({ params }) {
       provLaws={govLevelContent?.provincial}
       gemLaws={govLevelContent?.local}
       imageMob={placeholderImage}
+      pages={pages}
     />
   );
 }

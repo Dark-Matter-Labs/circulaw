@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { IconArrowRight, IconInfoSquareRoundedFilled } from '@tabler/icons-react';
 
 import Header from '../headers';
+import Pagination from '../shared/pagination';
 
 function getGovLevelBgColor(length, allLengths) {
   if (length === 0) return '#000000'; // black
@@ -98,10 +99,10 @@ export default function GovLevelLayout({ ...props }) {
       let y2 = y1;
 
       const lineOffsets = {
-        nationaal: { x1: -40, y1: 0, x2: 180, y2: 0 },
-        provinciaal: { x1: -40, y1: 0, x2: 140, y2: 0 },
-        gemeentelijk: { x1: -40, y1: 0, x2: 40, y2: 0 },
-        alle: { x1: -40, y1: 0, x2: 0, y2: 0 },
+        nationaal: { x1: -20, y1: 0, x2: 180, y2: 0 },
+        provinciaal: { x1: -20, y1: 0, x2: 140, y2: 0 },
+        gemeentelijk: { x1: -20, y1: 0, x2: 40, y2: 0 },
+        alle: { x1: -20, y1: 0, x2: 0, y2: 0 },
       };
       const offset = lineOffsets[level] || {};
       x1 += offset.x1 || 0;
@@ -133,36 +134,12 @@ export default function GovLevelLayout({ ...props }) {
           imageURL='/big-decoration.png'
           pageType='instrumentOverview'
         />
+        <div className='global-margin'>
+          <Pagination pages={props.pages} position='top' />
+        </div>
 
-        <div className='global-margin relative mb-20 mt-5 hidden sm:mt-20 sm:block'>
-          <div
-            className='flex flex-row items-center justify-between gap-x-10 rounded-cl px-12 py-6 shadow-cl1'
-            ref={containerRef}
-          >
-            {/* SVG overlay here, positioned absolutely */}
-            <svg
-              style={{
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                width: '100%',
-                height: '100%',
-                pointerEvents: 'none',
-                zIndex: 50,
-              }}
-            >
-              {lines.map((line, idx) => (
-                <line
-                  key={idx}
-                  x1={line.x1}
-                  y1={line.y1}
-                  x2={line.x2}
-                  y2={line.y2}
-                  stroke={line.stroke}
-                  strokeWidth='2'
-                />
-              ))}
-            </svg>
+        <div className='global-margin relative mb-20 mt-5 hidden sm:mt-10 sm:block'>
+          <div className='hidden flex-row items-center justify-center gap-x-10 rounded-cl px-12 py-6 shadow-cl1 lgNav:flex'>
             <div className='flex max-w-[140px] flex-col gap-y-1'>
               <h4 className='p-xs-semibold'>Hoogste aantal instrumenten</h4>
               <div className='h-9 w-9 rounded-clSm bg-green-500' />
@@ -170,86 +147,116 @@ export default function GovLevelLayout({ ...props }) {
               <div className='h-9 w-9 rounded-clSm bg-green-300' />
               <h4 className='p-xs-semibold'>Laagste aantal instrumenten</h4>
             </div>
-            <div className='relative flex h-[550px] flex-col gap-y-10 overflow-visible'>
-              <div className='relative h-[450px] w-[450px]'>
-                <button
-                  onClick={() => handleSelected('nationaal')}
-                  ref={circleRefs.nationaal}
-                  style={selected === 'nationaal' ? {} : { backgroundColor: natBg }}
-                  className={`${selected === 'nationaal' ? 'bg-orange-100' : natBg} absolute bottom-0 left-1/2 z-10 h-[450px] w-[450px] -translate-x-1/2 rounded-full`}
-                ></button>
-                <button
-                  onClick={() => handleSelected('provinciaal')}
-                  ref={circleRefs.provinciaal}
-                  style={selected === 'provinciaal' ? {} : { backgroundColor: provBg }}
-                  className={`${selected === 'provinciaal' ? 'bg-orange-100' : provBg} absolute bottom-0 left-1/2 z-20 h-[350px] w-[350px] -translate-x-1/2 rounded-full`}
-                ></button>
-                <button
-                  onClick={() => handleSelected('gemeentelijk')}
-                  ref={circleRefs.gemeentelijk}
-                  style={selected === 'gemeentelijk' ? {} : { backgroundColor: gemBg }}
-                  className={`${selected === 'gemeentelijk' ? 'bg-orange-100' : gemBg} absolute bottom-0 left-1/2 z-30 h-[250px] w-[250px] -translate-x-1/2 rounded-full`}
-                ></button>
-                <button
-                  onClick={() => handleSelected('alle')}
-                  ref={circleRefs.alle}
-                  style={selected === 'alle' ? {} : { backgroundColor: '#FFFFFF99' }}
-                  className={`${selected === 'alle' ? 'bg-orange-100' : 'bg-white/60'} absolute bottom-0 left-1/2 z-40 h-[450px] w-[94px] -translate-x-1/2 rounded-[50%]`}
-                ></button>
-              </div>
-              <div className='flex flex-row items-start'>
-                <IconInfoSquareRoundedFilled className='mr-3 size-8 text-green-500' />
-                <p className='p-base-semibold text-green-500'>
-                  Klik op de cirkels of de titels hieronder om te filteren
-                </p>
-              </div>
-            </div>
-            <ul className='mt-4 flex h-[534px] flex-col items-start'>
-              <GovLevelButton
-                label='Alle overheidslagen'
-                value='alle'
-                count={allRegionLaws.length}
-                selected={selected}
-                onClick={handleSelected}
-                laws={allRegionLaws}
-                buttonRef={buttonRefs.alle}
-              />
-              <GovLevelButton
-                label='Nationaal'
-                value='nationaal'
-                count={natLaws.length}
-                selected={selected}
-                onClick={handleSelected}
-                laws={natLaws}
-                buttonRef={buttonRefs.nationaal}
-              />
-              <GovLevelButton
-                label='Provinciaal'
-                value='provinciaal'
-                count={provLaws.length}
-                selected={selected}
-                onClick={handleSelected}
-                laws={provLaws}
-                buttonRef={buttonRefs.provinciaal}
-              />
-              <GovLevelButton
-                label='Gemeentelijk'
-                value='gemeentelijk'
-                count={gemLaws.length}
-                selected={selected}
-                onClick={handleSelected}
-                laws={gemLaws}
-                buttonRef={buttonRefs.gemeentelijk}
-              />
-              <li
-                className={`${
-                  selected === 'none' ? 'text-orange-300' : 'text-green-500'
-                } p-base-semibold my-2 w-min text-nowrap rounded-cl`}
+            {/* SVG overlay here, positioned absolutely */}
+            <div
+              className='relative flex flex-row items-center justify-between gap-x-20'
+              ref={containerRef}
+            >
+              <svg
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: 0,
+                  width: '100%',
+                  height: '100%',
+                  pointerEvents: 'none',
+                  zIndex: 50,
+                }}
               >
-                <button onClick={() => handleSelected('none')}>Toon alle instrumenten</button>
-              </li>
-            </ul>
+                {lines.map((line, idx) => (
+                  <line
+                    key={idx}
+                    x1={line.x1}
+                    y1={line.y1}
+                    x2={line.x2}
+                    y2={line.y2}
+                    stroke={line.stroke}
+                    strokeWidth='2'
+                  />
+                ))}
+              </svg>
+              <div className='relative flex h-[550px] flex-col gap-y-10 overflow-visible'>
+                <div className='relative h-[450px] w-[450px]'>
+                  <button
+                    onClick={() => handleSelected('nationaal')}
+                    ref={circleRefs.nationaal}
+                    style={selected === 'nationaal' ? {} : { backgroundColor: natBg }}
+                    className={`${selected === 'nationaal' ? 'bg-orange-100' : natBg} absolute bottom-0 left-1/2 z-10 h-[450px] w-[450px] -translate-x-1/2 rounded-full`}
+                  ></button>
+                  <button
+                    onClick={() => handleSelected('provinciaal')}
+                    ref={circleRefs.provinciaal}
+                    style={selected === 'provinciaal' ? {} : { backgroundColor: provBg }}
+                    className={`${selected === 'provinciaal' ? 'bg-orange-100' : provBg} absolute bottom-0 left-1/2 z-20 h-[350px] w-[350px] -translate-x-1/2 rounded-full`}
+                  ></button>
+                  <button
+                    onClick={() => handleSelected('gemeentelijk')}
+                    ref={circleRefs.gemeentelijk}
+                    style={selected === 'gemeentelijk' ? {} : { backgroundColor: gemBg }}
+                    className={`${selected === 'gemeentelijk' ? 'bg-orange-100' : gemBg} absolute bottom-0 left-1/2 z-30 h-[250px] w-[250px] -translate-x-1/2 rounded-full`}
+                  ></button>
+                  <button
+                    onClick={() => handleSelected('alle')}
+                    ref={circleRefs.alle}
+                    style={selected === 'alle' ? {} : { backgroundColor: '#FFFFFF99' }}
+                    className={`${selected === 'alle' ? 'bg-orange-100' : 'bg-white/60'} absolute bottom-0 left-1/2 z-40 h-[450px] w-[94px] -translate-x-1/2 rounded-[50%]`}
+                  ></button>
+                </div>
+                <div className='flex flex-row items-start'>
+                  <IconInfoSquareRoundedFilled className='mr-3 size-8 text-green-500' />
+                  <p className='p-base-semibold text-green-500'>
+                    Klik op de cirkels of de titels hieronder om te filteren
+                  </p>
+                </div>
+              </div>
+              <ul className='mt-4 flex h-[534px] flex-col items-start'>
+                <GovLevelButton
+                  label='Alle overheidslagen'
+                  value='alle'
+                  count={allRegionLaws.length}
+                  selected={selected}
+                  onClick={handleSelected}
+                  laws={allRegionLaws}
+                  buttonRef={buttonRefs.alle}
+                />
+                <GovLevelButton
+                  label='Nationaal'
+                  value='nationaal'
+                  count={natLaws.length}
+                  selected={selected}
+                  onClick={handleSelected}
+                  laws={natLaws}
+                  buttonRef={buttonRefs.nationaal}
+                />
+                <GovLevelButton
+                  label='Provinciaal'
+                  value='provinciaal'
+                  count={provLaws.length}
+                  selected={selected}
+                  onClick={handleSelected}
+                  laws={provLaws}
+                  buttonRef={buttonRefs.provinciaal}
+                />
+                <GovLevelButton
+                  label='Gemeentelijk'
+                  value='gemeentelijk'
+                  count={gemLaws.length}
+                  selected={selected}
+                  onClick={handleSelected}
+                  laws={gemLaws}
+                  buttonRef={buttonRefs.gemeentelijk}
+                />
+                <li
+                  className={`${
+                    selected === 'none' ? 'text-orange-300' : 'text-green-500'
+                  } p-base-semibold my-2 w-min text-nowrap rounded-cl`}
+                >
+                  <button onClick={() => handleSelected('none')}>Toon alle instrumenten</button>
+                </li>
+              </ul>
+            </div>
           </div>
+
           <div className='flex h-64 sm:hidden'>Mobile version:</div>
         </div>
         <div className='global-margin my-16 flex'>
