@@ -110,8 +110,12 @@ export default function GovLevelLayout({ ...props }) {
       y2 += offset.y2 || 0;
 
       // If selected, always use #f7e3c3
-      const stroke = selected === level ? '#f7e3c3' : bgColors[level];
-
+        let stroke = 'none';
+        if (selected === 'none') {
+          stroke = bgColors[level];
+        } else if (selected === level) {
+          stroke = '#f7e3c3';
+        }
       return { x1, y1, x2, y2, stroke };
     });
     setLines(newLines.filter(Boolean));
