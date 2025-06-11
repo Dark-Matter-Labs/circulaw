@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { PortableText } from 'next-sanity';
 
@@ -24,6 +24,47 @@ const dutchMonths = [
 
 export default function Timeline({ data }) {
   const tabListRef = useRef(null);
+
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  // ...existing code...
+
+  // Drag-to-scroll handlers
+  useEffect(() => {
+    const tabList = tabListRef.current;
+    if (!tabList) return;
+
+    const handleMouseDown = (e) => {
+      setIsDragging(true);
+      setStartX(e.pageX - tabList.offsetLeft);
+      setScrollLeft(tabList.scrollLeft);
+    };
+
+    const handleMouseLeave = () => setIsDragging(false);
+    const handleMouseUp = () => setIsDragging(false);
+
+    const handleMouseMove = (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - tabList.offsetLeft;
+      const walk = (x - startX) * 1; // scroll-fastness
+      tabList.scrollLeft = scrollLeft - walk;
+    };
+
+    tabList.addEventListener('mousedown', handleMouseDown);
+    tabList.addEventListener('mouseleave', handleMouseLeave);
+    tabList.addEventListener('mouseup', handleMouseUp);
+    tabList.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      tabList.removeEventListener('mousedown', handleMouseDown);
+      tabList.removeEventListener('mouseleave', handleMouseLeave);
+      tabList.removeEventListener('mouseup', handleMouseUp);
+      tabList.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [isDragging, startX, scrollLeft]);
 
   const years = Array.from(new Set(data.timelineItems.map((item) => item.year))).sort(
     (a, b) => a - b,

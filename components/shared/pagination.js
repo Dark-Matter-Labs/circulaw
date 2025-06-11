@@ -20,7 +20,7 @@ export default function Pagination({ pages, position }) {
 
   return (
     <div
-      className={`${position === 'top' ? 'mt-4 sm:mt-10' : ''} global-margin flex flex-row items-center justify-between gap-x-8 sm:px-8`}
+      className={`${position === 'top' ? 'mt-4 sm:mt-10' : ''} flex flex-row items-center justify-between gap-x-8 sm:px-8`}
     >
       {/* Render the previous link */}
       <Link
