@@ -6,7 +6,6 @@ import NewButton from '@/components/shared/new-button';
 import { aboutPageReducedPortableTextComponents } from '../../../lib/portable-text/pt-components';
 
 export default function Urgency({ data }) {
-  console.log('Urgency data:', data);
   return (
     <div className='mb-[60px] flex flex-col sm:mb-[120px]'>
       <div className='mb-10 ml-auto flex basis-2/3'>
