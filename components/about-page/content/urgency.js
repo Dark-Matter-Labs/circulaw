@@ -6,7 +6,6 @@ import NewButton from '@/components/shared/new-button';
 import { aboutPageReducedPortableTextComponents } from '../../../lib/portable-text/pt-components';
 
 export default function Urgency({ data }) {
-  console.log('Urgency data:', data);
   return (
     <div className='mb-[60px] flex flex-col sm:mb-[120px]'>
       <div className='mb-10 ml-auto flex basis-2/3'>
@@ -16,7 +15,7 @@ export default function Urgency({ data }) {
           loop
           muted
           playsInline
-          src='/urgnecyImage.mp4'
+          src='/urgencyImage.mp4'
         />
       </div>
       <div className='mb-10 flex flex-col gap-x-10 gap-y-6 sm:flex-row'>
@@ -43,7 +42,7 @@ export default function Urgency({ data }) {
         <div className='flex max-w-[500px] flex-col'>
           <p className='heading-xl sm:heading-2xl mb-6 sm:mb-10'>{data?.ctaContent}</p>
           <NewButton
-            href='/European_green_deal.pdf'
+            href='/CircuLaw_Impact_Report_2024_NLversie.pdf'
             newTab={true}
             variant='primaryDark'
             icon='download'
