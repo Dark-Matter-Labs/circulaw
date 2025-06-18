@@ -16,7 +16,7 @@ export default function Urgency({ data }) {
           loop
           muted
           playsInline
-          src='/urgnecyImage.mp4'
+          src='/urgencyImage.mp4'
         />
       </div>
       <div className='mb-10 flex flex-col gap-x-10 gap-y-6 sm:flex-row'>
@@ -26,8 +26,8 @@ export default function Urgency({ data }) {
         </div>
         <div className='sm:min-h-none flex min-h-[90px] flex-row justify-between sm:min-w-[85px] sm:flex-col'>
           <Image src='/urgencyIcon1.svg' width={85} height={89} alt='Urgency Icon 1' />
-          <Image src='/urgencyIcon2.svg' width={85} height={89} alt='Urgency Icon 1' />{' '}
-          <Image src='/urgencyIcon3.svg' width={85} height={89} alt='Urgency Icon 1' />
+          <Image src='/urgencyIcon2.svg' width={85} height={89} alt='Urgency Icon 2' />{' '}
+          <Image src='/urgencyIcon3.svg' width={85} height={89} alt='Urgency Icon 3' />
         </div>
       </div>
       <div className='flex flex-col items-center gap-x-[160px] sm:flex-row'>
@@ -43,7 +43,7 @@ export default function Urgency({ data }) {
         <div className='flex max-w-[500px] flex-col'>
           <p className='heading-xl sm:heading-2xl mb-6 sm:mb-10'>{data?.ctaContent}</p>
           <NewButton
-            href='/European_green_deal.pdf'
+            href='/CircuLaw_Impact_Report_2024_NLversie.pdf'
             newTab={true}
             variant='primaryDark'
             icon='download'
