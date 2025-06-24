@@ -6,7 +6,6 @@ import { Index, InstantSearch, useHits, useInstantSearch } from 'react-instantse
 import { TabGroup, TabPanel, TabPanels } from '@headlessui/react';
 import algoliasearch from 'algoliasearch';
 
-import AboutSearch from './about-search';
 import EUSearch from './eu-search';
 import InstrumentSearch from './instrument-search';
 import NewsSearch from './news-search';
@@ -95,14 +94,6 @@ export default function AllSearch() {
                   EU wetgeving <VirtualHits />
                 </button>
               </Index>
-              <Index indexName='aboutPage'>
-                <button
-                  onClick={() => setSelectedIndex(3)}
-                  className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between border-b border-green-500 py-10 text-green-500 hover:text-green-400 sm:w-4/5'
-                >
-                  Over CircuLaw <VirtualHits />
-                </button>
-              </Index>
               <Index indexName='newsItems'>
                 <button
                   onClick={() => setSelectedIndex(4)}
@@ -120,11 +111,6 @@ export default function AllSearch() {
             <TabPanel>
               <Index indexName='euLaw'>
                 <EUSearch />
-              </Index>
-            </TabPanel>
-            <TabPanel>
-              <Index indexName='aboutPage'>
-                <AboutSearch />
               </Index>
             </TabPanel>
             <TabPanel>

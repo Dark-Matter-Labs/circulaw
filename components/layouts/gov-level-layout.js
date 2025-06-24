@@ -258,7 +258,7 @@ export default function GovLevelLayout({ ...props }) {
           <div className='flex flex-col lgNav:hidden'>
             <div className='my-4 flex flex-row items-start'>
               <IconInfoSquareRoundedFilled className='mr-2 size-6 text-green-500' />
-              <p className='p-2xs text-green-500 max-w-[160px]'>
+              <p className='p-2xs max-w-[160px] text-green-500'>
                 Klik op de cirkels of de titels hieronder om te filteren
               </p>
             </div>

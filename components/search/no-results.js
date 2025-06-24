@@ -11,7 +11,6 @@ export default function NoResults() {
             {uiState['root']?.query}
           </span>
           &apos; in
-          {uiState['aboutPage'] && <span> Over CircuLaw</span>}
           {uiState['instruments'] && <span> Instrumenten</span>}
           {uiState['euLaw'] && <span> EU wetgeving</span>}
           {uiState['newsItems'] && <span> Nieuws</span>}
