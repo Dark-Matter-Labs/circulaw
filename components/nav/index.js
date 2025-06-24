@@ -74,8 +74,6 @@ export default function Nav(props) {
     } else if (searchIndex === 2) {
       setPlaceholder('Zoek naar EU wetgeving');
     } else if (searchIndex === 3) {
-      setPlaceholder('Zoek naar over CircuLaw');
-    } else if (searchIndex === 4) {
       setPlaceholder('Zoek naar nieuws');
     }
   }, [searchIndex]);
@@ -973,16 +971,6 @@ export default function Nav(props) {
                                       <button
                                         onClick={() => setSearchIndex(3)}
                                         className={`${
-                                          searchIndex === 3
-                                            ? 'border-b-2 border-white'
-                                            : 'border-b-2 border-transparent'
-                                        } p-xs-semibold p-2 text-white`}
-                                      >
-                                        Over
-                                      </button>
-                                      <button
-                                        onClick={() => setSearchIndex(4)}
-                                        className={`${
                                           searchIndex === 4
                                             ? 'border-b-2 border-white'
                                             : 'border-b-2 border-transparent'
@@ -1025,16 +1013,6 @@ export default function Nav(props) {
                                       </button>
                                       <button
                                         onClick={() => setSearchIndex(3)}
-                                        className={`${
-                                          searchIndex === 3
-                                            ? 'border-b-2 border-green-500'
-                                            : 'border-b-2 border-transparent'
-                                        } p-xs-semibold p-2 text-green-500`}
-                                      >
-                                        Over
-                                      </button>
-                                      <button
-                                        onClick={() => setSearchIndex(4)}
                                         className={`${
                                           searchIndex === 4
                                             ? 'border-b-2 border-green-500'

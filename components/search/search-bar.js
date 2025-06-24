@@ -87,7 +87,7 @@ export default function NewSearchBar(props) {
                     className='p-base-semibold absolute right-3 top-3 ml-2 flex h-[42px] items-center justify-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300 sm:w-24'
                   >
                     <span className='hidden sm:inline'>Zoeken</span>
-                    <span>
+                    <span className='inline sm:hidden'>
                       <IconSearch className='h-6 w-6 text-green-500 sm:h-4 sm:w-4' />
                     </span>
                   </button>
