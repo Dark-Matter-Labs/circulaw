@@ -36,7 +36,6 @@ const QUERY = `
   } 
 `;
 
-
 const EU_LAW_QUERY = `
 *[_type in ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab', 'euLaw'] && !(_id in path('drafts.**'))] {
     "objectID": _id,

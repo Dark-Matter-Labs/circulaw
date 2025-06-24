@@ -34,7 +34,6 @@ const INSTRUMENT_PROJECTION = `{
           select(fiscaal == true => "fiscaal")],
         }`;
 
-
 const EU_LAW_SUMMARY_PROJECTION = `{
       "objectID": _id,
       "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,

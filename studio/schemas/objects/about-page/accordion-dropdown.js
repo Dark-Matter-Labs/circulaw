@@ -13,7 +13,7 @@ export default {
       title: 'Content',
       name: 'content',
       type: 'array',
-      of: [{ type: 'accordionDropdownContent' }],
+      of: [{ type: 'accordionDropdownContent' }, { type: 'imageBlock' }],
       validation: (Rule) => Rule.required(),
     },
     {
