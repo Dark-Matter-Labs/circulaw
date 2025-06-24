@@ -27,7 +27,6 @@ export default function GovLevelLayout({ ...props }) {
   const gemLaws = props.gemLaws;
   const natLaws = props.natLaws;
   const [selected, setSelected] = useState('none');
-
   const provBg = getGovLevelBgColor(provLaws.length, [
     provLaws.length,
     gemLaws.length,
@@ -138,7 +137,7 @@ export default function GovLevelLayout({ ...props }) {
           <Pagination pages={props.pages} position='top' />
         </div>
 
-        <div className='global-margin relative mb-20 mt-5 hidden sm:mt-10 sm:block'>
+        <div className='global-margin relative mb-20 mt-5 block sm:mt-10'>
           <div className='hidden flex-row items-center justify-center gap-x-10 rounded-cl px-12 py-6 shadow-cl1 lgNav:flex'>
             <div className='flex max-w-[140px] flex-col gap-y-1'>
               <h4 className='p-xs-semibold'>Hoogste aantal instrumenten</h4>
@@ -256,8 +255,69 @@ export default function GovLevelLayout({ ...props }) {
               </ul>
             </div>
           </div>
-
-          <div className='flex h-64 sm:hidden'>Mobile version:</div>
+          <div className='flex flex-col lgNav:hidden'>
+            <ul className='no-scrollbar flex min-h-[200px] flex-row gap-x-4 overflow-scroll'>
+              <GovLevelButton
+                label='Alle overheidslagen'
+                value='alle'
+                count={allRegionLaws.length}
+                selected={selected}
+                onClick={handleSelected}
+                laws={allRegionLaws}
+              />
+              <GovLevelButton
+                label='Nationaal'
+                value='nationaal'
+                count={natLaws.length}
+                selected={selected}
+                onClick={handleSelected}
+                laws={natLaws}
+              />
+              <GovLevelButton
+                label='Provinciaal'
+                value='provinciaal'
+                count={provLaws.length}
+                selected={selected}
+                onClick={handleSelected}
+                laws={provLaws}
+              />
+              <GovLevelButton
+                label='Gemeentelijk'
+                value='gemeentelijk'
+                count={gemLaws.length}
+                selected={selected}
+                onClick={handleSelected}
+                laws={gemLaws}
+              />
+            </ul>
+            <div className='relative mt-4 h-[300px] w-full'>
+              <div
+                style={selected === 'nationaal' ? {} : { backgroundColor: natBg }}
+                className={`${selected === 'nationaal' ? 'bg-orange-100' : natBg} absolute bottom-0 left-1/2 z-10 h-[300px] w-[300px] -translate-x-1/2 rounded-full`}
+              ></div>
+              <div
+                style={selected === 'provinciaal' ? {} : { backgroundColor: provBg }}
+                className={`${selected === 'provinciaal' ? 'bg-orange-100' : provBg} absolute bottom-0 left-1/2 z-20 h-[220px] w-[220px] -translate-x-1/2 rounded-full`}
+              ></div>
+              <div
+                style={selected === 'gemeentelijk' ? {} : { backgroundColor: gemBg }}
+                className={`${selected === 'gemeentelijk' ? 'bg-orange-100' : gemBg} absolute bottom-0 left-1/2 z-30 h-[140px] w-[140px] -translate-x-1/2 rounded-full`}
+              ></div>
+              <div
+                style={selected === 'alle' ? {} : { backgroundColor: '#FFFFFF99' }}
+                className={`${selected === 'alle' ? 'bg-orange-100' : 'bg-white/60'} absolute bottom-0 left-1/2 z-40 h-[300px] w-[60px] -translate-x-1/2 rounded-[50%]`}
+              ></div>
+            </div>
+            <div className='mt-8 flex w-full flex-row items-center justify-between'>
+              <h4 className='p-2xs-semibold'>Hoogste aantal instrumenten</h4>
+              <div className='flex flex-row gap-x-1'>
+                <div className='h-9 w-9 rounded-clSm bg-green-500' />
+                <div className='h-9 w-9 rounded-clSm bg-green-400' />
+                <div className='h-9 w-9 rounded-clSm bg-green-300' />
+              </div>
+              <h4 className='p-2xs-semibold flex-shrink text-right'>Laagste aantal instrumenten</h4>
+            </div>
+          </div>
         </div>
         <div className='global-margin my-16 flex'>
           <div className='hidden flex-col items-center sm:flex'>
