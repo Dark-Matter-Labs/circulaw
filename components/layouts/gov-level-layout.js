@@ -256,7 +256,15 @@ export default function GovLevelLayout({ ...props }) {
             </div>
           </div>
           <div className='flex flex-col lgNav:hidden'>
-            <ul className='no-scrollbar flex min-h-[200px] flex-row gap-x-4 overflow-scroll'>
+            <div className='my-4 flex flex-row items-start'>
+              <IconInfoSquareRoundedFilled className='mr-3 size-8 text-green-500' />
+              <p className='p-base-semibold text-green-500'>
+                Klik op de cirkels of de titels hieronder om te filteren
+              </p>
+            </div>
+            <ul
+              className={`${selected === 'none' ? '' : 'min-h-[200px]'} no-scrollbar flex flex-row gap-x-4 overflow-scroll`}
+            >
               <GovLevelButton
                 label='Alle overheidslagen'
                 value='alle'
