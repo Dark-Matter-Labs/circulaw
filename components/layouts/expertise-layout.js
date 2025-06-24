@@ -9,7 +9,6 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import { IconChevronUp } from '@tabler/icons-react';
 
-import ExplinationText from '../expertise-page/explination-text';
 import TabButton from '../expertise-page/tab-button';
 import TabLayout from '../expertise-page/tab-layout';
 import Header from '../headers';
@@ -388,7 +387,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             </div>
             <Pagination pages={props.pages} position='top' />
 
-            <ExplinationText selected={selectedTab} />
             {/* desktop filters */}
             <div className='hidden h-11 max-w-[880px] flex-row items-center sm:flex'>
               <div className='ml-3 flex basis-1/2 justify-end pr-3'>
@@ -722,114 +720,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             )}
           </div>
         </div>
-      </div>
-
-      {/* MOBILE */}
-      {/*  */}
-      <div className='sm:hidden'>
-        {/* 
-          <div className='no-scrollbar -mt-12 flex snap-x snap-mandatory overflow-x-scroll sm:hidden'>
-            <div className='flex h-12 gap-x-2'>
-              <TabButton
-                selected={selectedTab}
-                onClick={() => {
-                  handleTabButton('beleid');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={numBeleid}
-                numInstruments2={numBeleidNotBouw}
-                transitionAgenda={props.transitionAgenda}
-                name='beleid'
-              />
-              <TabButton
-                selected={selectedTab}
-                onClick={() => {
-                  handleTabButton('inkoop');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={numInkoop}
-                transitionAgenda={props.transitionAgenda}
-                name='inkoop'
-              />
-              {props.thema !== 'matrasketen' && (
-                <TabButton
-                  selected={selectedTab}
-                  onClick={() => {
-                    handleTabButton('grondpositie');
-                    handleRadioButton('alle');
-                  }}
-                  numInstrument={numGronposirie}
-                  numInstruments2={numGronposirieNotBouw}
-                  transitionAgenda={props.transitionAgenda}
-                  name='grondpositie'
-                />
-              )}
-              <TabButton
-                selected={selectedTab}
-                onClick={() => {
-                  handleTabButton('subsidie');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={subsidie.length}
-                transitionAgenda={props.transitionAgenda}
-                name='subsidie'
-              />
-              <TabButton
-                selected={selectedTab}
-                onClick={() => {
-                  handleTabButton('fiscaal');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={fiscaal.length}
-                transitionAgenda={props.transitionAgenda}
-                name='fiscaal'
-              />
-            </div>
-          </div> 
-          
-             <ExplinationText selected={selectedTab} />*/}
-
-        {/* DISPLAY INSTRUMENTS MOBILE 
-          {selectedTab === 'beleid' && (
-            <TabLayout
-              category={beleid}
-              selected={selectedTab}
-              transitionAgenda={props.transitionAgenda}
-              isPending={isPending}
-            />
-          )}
-          {selectedTab === 'inkoop' && (
-            <TabLayout
-              category={inkoop}
-              selected={selectedTab}
-              transitionAgenda={props.transitionAgenda}
-              isPending={isPending}
-            />
-          )}
-          {selectedTab === 'grondpositie' && (
-            <TabLayout
-              category={grondpositie}
-              selected={selectedTab}
-              transitionAgenda={props.transitionAgenda}
-              isPending={isPending}
-            />
-          )}
-          {selectedTab === 'subsidie' && (
-            <TabLayout
-              category={subsidie}
-              selected={selectedTab}
-              transitionAgenda={props.transitionAgenda}
-              isPending={isPending}
-            />
-          )}
-          {selectedTab === 'fiscaal' && (
-            <TabLayout
-              category={fiscaal}
-              selected={selectedTab}
-              transitionAgenda={props.transitionAgenda}
-              isPending={isPending}
-            />
-          )}*/}
       </div>
     </>
   );
