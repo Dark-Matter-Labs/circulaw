@@ -454,8 +454,8 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             </div>
 
             {/* Mobile filter */}
-            <div className='pb-4 sm:hidden'>
-              <div className='mx-4'>
+            <div className='py-4 sm:hidden'>
+              <div>
                 <p className='p-base'>Toon overheidslaag:</p>
                 <div className='w-full min-w-[260px] pt-3'>
                   {local?.value === 'alle' && (
