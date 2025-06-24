@@ -257,8 +257,8 @@ export default function GovLevelLayout({ ...props }) {
           </div>
           <div className='flex flex-col lgNav:hidden'>
             <div className='my-4 flex flex-row items-start'>
-              <IconInfoSquareRoundedFilled className='mr-3 size-8 text-green-500' />
-              <p className='p-base-semibold text-green-500'>
+              <IconInfoSquareRoundedFilled className='mr-2 size-6 text-green-500' />
+              <p className='p-2xs text-green-500 max-w-[160px]'>
                 Klik op de cirkels of de titels hieronder om te filteren
               </p>
             </div>
@@ -317,13 +317,13 @@ export default function GovLevelLayout({ ...props }) {
               ></div>
             </div>
             <div className='mt-8 flex w-full flex-row items-center justify-between'>
-              <h4 className='p-2xs-semibold'>Hoogste aantal instrumenten</h4>
+              <h4 className='p-2xs'>Hoogste aantal instrumenten</h4>
               <div className='flex flex-row gap-x-1'>
                 <div className='h-9 w-9 rounded-clSm bg-green-500' />
                 <div className='h-9 w-9 rounded-clSm bg-green-400' />
                 <div className='h-9 w-9 rounded-clSm bg-green-300' />
               </div>
-              <h4 className='p-2xs-semibold flex-shrink text-right'>Laagste aantal instrumenten</h4>
+              <h4 className='p-2xs flex-shrink text-right'>Laagste aantal instrumenten</h4>
             </div>
           </div>
         </div>
