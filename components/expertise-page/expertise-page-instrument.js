@@ -33,8 +33,8 @@ export default function ExpertisePageInstrument({ instrument }) {
         </li>
         {/* MOBILE */}
         <li className='border-b py-2 sm:hidden'>
-          <div className='p-base mx-4 pb-2'>{instrument.titel}</div>
-          <div className='mx-4 flex flex-row'>
+          <div className='p-base pb-2'>{instrument.titel}</div>
+          <div className='flex flex-row'>
             {instrument?.overheidslaag
               ?.filter((x) => x !== null)
               .map((lev) => (

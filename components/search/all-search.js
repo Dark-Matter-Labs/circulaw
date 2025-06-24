@@ -6,7 +6,6 @@ import { Index, InstantSearch, useHits, useInstantSearch } from 'react-instantse
 import { TabGroup, TabPanel, TabPanels } from '@headlessui/react';
 import algoliasearch from 'algoliasearch';
 
-import AboutSearch from './about-search';
 import EUSearch from './eu-search';
 import InstrumentSearch from './instrument-search';
 import NewsSearch from './news-search';
@@ -95,17 +94,9 @@ export default function AllSearch() {
                   EU wetgeving <VirtualHits />
                 </button>
               </Index>
-              <Index indexName='aboutPage'>
-                <button
-                  onClick={() => setSelectedIndex(3)}
-                  className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between border-b border-green-500 py-10 text-green-500 hover:text-green-400 sm:w-4/5'
-                >
-                  Over CircuLaw <VirtualHits />
-                </button>
-              </Index>
               <Index indexName='newsItems'>
                 <button
-                  onClick={() => setSelectedIndex(4)}
+                  onClick={() => setSelectedIndex(3)}
                   className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between py-10 text-green-500 hover:text-green-400 sm:w-4/5'
                 >
                   Nieuws <VirtualHits />
@@ -123,11 +114,6 @@ export default function AllSearch() {
               </Index>
             </TabPanel>
             <TabPanel>
-              <Index indexName='aboutPage'>
-                <AboutSearch />
-              </Index>
-            </TabPanel>
-            <TabPanel>
               <Index indexName='newsItems'>
                 <NewsSearch />
               </Index>
@@ -141,22 +127,20 @@ export default function AllSearch() {
 
 function VirtualHits(props) {
   const { results } = useHits(props);
-
+  console.log(results);
   return <div>{results.nbHits}</div>;
 }
 
 function ScopedResults(props) {
   const { scopedResults, uiState } = useInstantSearch(props);
   const instruments = scopedResults.filter((item) => item.indexId === 'instruments');
-  const aboutPages = scopedResults.filter((item) => item.indexId === 'aboutPage');
   const euLaws = scopedResults.filter((item) => item.indexId === 'euLaw');
   const newsItems = scopedResults.filter((item) => item.indexId === 'newsItems');
 
   const numInstruments = instruments[0]?.results?.nbHits;
-  const numAboutPages = aboutPages[0]?.results?.nbHits;
   const numEULaws = euLaws[0]?.results?.nbHits;
   const numNewsItems = newsItems[0]?.results?.nbHits;
-  const totalHits = numInstruments + numAboutPages + numEULaws + numNewsItems;
+  const totalHits = numInstruments + numEULaws + numNewsItems;
   return (
     <div className='mb-10 mt-14 flex w-full items-start sm:w-4/5'>
       <div className='heading-2xl sm:heading-3xl'>

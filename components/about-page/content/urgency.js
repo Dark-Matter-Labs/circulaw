@@ -25,8 +25,8 @@ export default function Urgency({ data }) {
         </div>
         <div className='sm:min-h-none flex min-h-[90px] flex-row justify-between sm:min-w-[85px] sm:flex-col'>
           <Image src='/urgencyIcon1.svg' width={85} height={89} alt='Urgency Icon 1' />
-          <Image src='/urgencyIcon2.svg' width={85} height={89} alt='Urgency Icon 1' />{' '}
-          <Image src='/urgencyIcon3.svg' width={85} height={89} alt='Urgency Icon 1' />
+          <Image src='/urgencyIcon2.svg' width={85} height={89} alt='Urgency Icon 2' />{' '}
+          <Image src='/urgencyIcon3.svg' width={85} height={89} alt='Urgency Icon 3' />
         </div>
       </div>
       <div className='flex flex-col items-center gap-x-[160px] sm:flex-row'>

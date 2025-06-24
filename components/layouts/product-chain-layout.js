@@ -19,7 +19,7 @@ const callToActions = [
   },
   {
     title: 'E-learning Circulaire houtbouw onder de Omgevingswet',
-    text: 'Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw teverankeren in beleid? Dat leer je in onze e-learning: "Circulaire houtbouw onder de Omgevingswet".',
+    text: 'Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te verankeren in beleid? Dat leer je in onze e-learning: "Circulaire houtbouw onder de Omgevingswet".',
     buttonText: 'Lees verder',
     link: '/training',
   },
