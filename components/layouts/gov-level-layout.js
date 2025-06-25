@@ -10,8 +10,6 @@ import Header from '../headers';
 import Pagination from '../shared/pagination';
 
 function getGovLevelBgColor(length, allLengths) {
-  if (length === 0) return '#000000'; // black
-
   const sorted = [...allLengths].sort((a, b) => a - b);
   const min = sorted[0];
   const max = sorted[2];
@@ -178,27 +176,31 @@ export default function GovLevelLayout({ ...props }) {
                 <div className='relative h-[450px] w-[450px]'>
                   <button
                     onClick={() => handleSelected('nationaal')}
+                    disabled={natLaws.length === 0}
                     ref={circleRefs.nationaal}
                     style={selected === 'nationaal' ? {} : { backgroundColor: natBg }}
-                    className={`${selected === 'nationaal' ? 'bg-orange-100' : natBg} absolute bottom-0 left-1/2 z-10 h-[450px] w-[450px] -translate-x-1/2 rounded-full`}
+                    className={`${selected === 'nationaal' ? 'bg-orange-100' : natBg} absolute bottom-0 left-1/2 z-10 h-[450px] w-[450px] -translate-x-1/2 rounded-full shadow-card`}
                   ></button>
                   <button
                     onClick={() => handleSelected('provinciaal')}
+                    disabled={provLaws.length === 0}
                     ref={circleRefs.provinciaal}
                     style={selected === 'provinciaal' ? {} : { backgroundColor: provBg }}
-                    className={`${selected === 'provinciaal' ? 'bg-orange-100' : provBg} absolute bottom-0 left-1/2 z-20 h-[350px] w-[350px] -translate-x-1/2 rounded-full`}
+                    className={`${selected === 'provinciaal' ? 'bg-orange-100' : provBg} absolute bottom-0 left-1/2 z-20 h-[350px] w-[350px] -translate-x-1/2 rounded-full shadow-card`}
                   ></button>
                   <button
                     onClick={() => handleSelected('gemeentelijk')}
+                    disabled={gemLaws.length === 0}
                     ref={circleRefs.gemeentelijk}
                     style={selected === 'gemeentelijk' ? {} : { backgroundColor: gemBg }}
-                    className={`${selected === 'gemeentelijk' ? 'bg-orange-100' : gemBg} absolute bottom-0 left-1/2 z-30 h-[250px] w-[250px] -translate-x-1/2 rounded-full`}
+                    className={`${selected === 'gemeentelijk' ? 'bg-orange-100' : gemBg} absolute bottom-0 left-1/2 z-30 h-[250px] w-[250px] -translate-x-1/2 rounded-full shadow-card`}
                   ></button>
                   <button
                     onClick={() => handleSelected('alle')}
+                    disabled={allRegionLaws.length === 0}
                     ref={circleRefs.alle}
                     style={selected === 'alle' ? {} : { backgroundColor: '#FFFFFF99' }}
-                    className={`${selected === 'alle' ? 'bg-orange-100' : 'bg-white/60'} absolute bottom-0 left-1/2 z-40 h-[450px] w-[94px] -translate-x-1/2 rounded-[50%]`}
+                    className={`${selected === 'alle' ? 'bg-orange-100' : 'bg-white/60'} absolute bottom-0 left-1/2 z-40 h-[450px] w-[94px] -translate-x-1/2 rounded-[50%] shadow-card`}
                   ></button>
                 </div>
                 <div className='flex flex-row items-start'>
@@ -444,10 +446,11 @@ function GovLevelButton({ label, value, count, selected, onClick, laws = [], but
     <li>
       <button
         onClick={() => onClick(value)}
+        disabled={count === 0}
         ref={buttonRef}
         className={`${
           selected === value ? 'bg-orange-100 text-orange-300' : 'bg-green-100 text-green-500'
-        } heading-2xl-semibold my-2 flex w-min flex-col items-start justify-start text-nowrap rounded-cl px-4 py-2 shadow-cl1`}
+        } heading-2xl-semibold my-2 flex w-min flex-col items-start justify-start text-nowrap rounded-cl px-4 py-2 shadow-cl1 ${count === 0 ? 'opacity-40' : ''}`}
       >
         <h3>{label}</h3>
         <p className='p-base'>{count} instrumenten</p>
