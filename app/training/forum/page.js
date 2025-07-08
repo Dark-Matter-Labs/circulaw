@@ -3,30 +3,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import Header from '@/components/headers';
 import commentIcon from '@/public/comment-icon.svg';
 import { DiscussionEmbed } from 'disqus-react';
 
 export default function ForumPage() {
   return (
     <div>
-      <div className='my-3 h-56 bg-green-600 sm:h-72'>
-        <div className='global-margin flex h-full flex-col items-start justify-between'>
-          <div className='mt-6 flex h-6 items-center rounded-clSm bg-gray-100'>
-            <Link
-              href='/'
-              className='p-2xs-bold flex flex-row items-center pl-2 text-green-600 hover:text-green-300 active:text-green-800'
-            >
-              Home
-            </Link>
-            <span className='p-2xs-bold px-2 text-green-600'>{'>'}</span>
-          </div>
-          <div className='mb-10'>
-            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold max-w-4xl text-gray-100'>
-              Verder praten over circulaire houtbouw? Dat kan!
-            </h1>
-          </div>
-        </div>
-      </div>
+      <Header
+        title='Verder praten over circulaire houtbouw? Dat kan!'
+        bgColor='bg-green-500'
+        imageURL='/big-decoration.png'
+      />
       <div className='global-margin my-16'>
         <div className='max-w-[700px]'>
           <p className='p-base mb-6'>

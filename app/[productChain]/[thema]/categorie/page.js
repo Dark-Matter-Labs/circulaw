@@ -45,12 +45,26 @@ export default async function CategoriePage({ params }) {
     qParams: params,
     tags: ['instrument', 'thema', 'simpleThema'],
   });
+
+  const { productChain, thema } = params;
+
+  const pageOptions = [
+    { name: 'Categorie', end: 'categorie' },
+    { name: 'Instrumenten', end: 'instrumenten' },
+    { name: 'Overheidsbevoegdheid', end: 'overheidsbevoegdheid' },
+  ];
+
+  const pages = pageOptions.map((opt) => ({
+    name: opt.name,
+    href: `/${productChain}/${thema}/${opt.end}`,
+  }));
   return (
     <ExpertiseLayout
       thema={params?.thema}
       transitionAgenda={params?.productChain}
       expertiseData={categorieContent}
       title={`${categorieContent[0].themaName} instrumenten per categorie`}
+      pages={pages}
     />
   );
 }

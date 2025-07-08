@@ -22,12 +22,12 @@ export default function ScrollPagesTabContent({ content, title }) {
   return (
     <>
       <div className='relative'>
-        <div className='grid [&>*:nth-child(even)]:bg-green-50'>
+        <div className='grid [&>*:nth-child(even)]:bg-green-100'>
           {content?.map((section, id) => (
             <Element key={id} className='w-[calc(100vw - 17px)]' id={`${section.title}`}>
               <div className='global-margin'>
                 <div className='relative z-10 my-12 lgNav:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl'>
-                  <h2 className='heading-xl-semibold mb-6 text-green-800'>{title}</h2>
+                  <h2 className='heading-xl-semibold mb-6 text-cl-black'>{title}</h2>
                   <h3 className='heading-3xl-semibold mb-6'>
                     {id + 1}. {section.title}
                   </h3>
@@ -38,10 +38,10 @@ export default function ScrollPagesTabContent({ content, title }) {
           ))}
         </div>
         <div className='absolute right-2 top-0 hidden h-full md:right-12 lgNav:block lg:right-20 xl:right-56'>
-          <ul className='sticky top-48 my-12 min-w-[390px]'>
+          <ul className='sticky top-[220px] my-12 min-w-[390px]'>
             <h4 className='heading-3xl-semibold mb-5 ml-3'>In deze pagina</h4>
             {content.map((section, id) => (
-              <li key={id} className='my-4 text-green-800'>
+              <li key={id} className='my-4 text-cl-black'>
                 <Link
                   to={`${section.title}`}
                   smooth={true}
@@ -60,7 +60,7 @@ export default function ScrollPagesTabContent({ content, title }) {
         <div className='absolute right-0 top-20 z-20 block h-full lgNav:hidden'>
           <button
             type='button'
-            className='p-base sticky top-44 my-12 rounded-l-cl bg-green-800 px-4 py-2 text-white'
+            className='p-base sticky top-44 my-12 rounded-l-cl bg-cl-black px-4 py-2 text-white'
             onClick={openModal}
           >
             Index
@@ -69,7 +69,7 @@ export default function ScrollPagesTabContent({ content, title }) {
             open={isOpen}
             onClose={closeModal}
             transition
-            className='fixed inset-0 z-120 flex w-screen items-center justify-end bg-gray-500/75 transition duration-500 ease-out data-[closed]:opacity-0'
+            className='fixed inset-0 z-120 flex w-screen items-center justify-end bg-cl-grey/75 transition duration-500 ease-out data-[closed]:opacity-0'
           >
             <DialogPanel
               transition
@@ -83,7 +83,7 @@ export default function ScrollPagesTabContent({ content, title }) {
               <div className='relative mt-6 flex-1'>
                 <ul className=''>
                   {content.map((section, id) => (
-                    <li key={id} className='my-4 text-green-800'>
+                    <li key={id} className='my-4 text-cl-black'>
                       <Link
                         to={`${section.title}`}
                         smooth={true}

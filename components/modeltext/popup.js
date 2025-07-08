@@ -83,7 +83,7 @@ export default function PopUp({ pillars, modelTexts }) {
       <div className='max-w-[1280px]'>
         <ul
           id='pillars'
-          className='no-scrollbar mt-14 flex snap-x snap-mandatory justify-between gap-x-2.5 overflow-x-scroll text-nowrap rounded-cl bg-green-50 p-4 sm:flex-row'
+          className='no-scrollbar mt-14 flex snap-x snap-mandatory justify-between gap-x-2.5 overflow-x-scroll text-nowrap rounded-cl bg-green-100 p-4 sm:flex-row'
         >
           {pillars?.map((p) => (
             <li key={p.title}>
@@ -95,9 +95,9 @@ export default function PopUp({ pillars, modelTexts }) {
                 }}
                 className={`${
                   selectedPillar === p.slug
-                    ? 'p-base-semibold border-b-2 border-b-green-600'
-                    : 'p-base hover:text-green-300'
-                } px-2 text-green-600`}
+                    ? 'p-base-semibold border-b-2 border-b-green-500'
+                    : 'p-base hover:text-green-400'
+                } px-2 text-green-500`}
               >
                 {p.title} {'('}
                 {modelTexts.filter((text) => text.pillar === p.slug).length}
@@ -145,13 +145,13 @@ export default function PopUp({ pillars, modelTexts }) {
         >
           <DialogBackdrop
             transition
-            className='fixed inset-0 bg-gray-500/75 transition duration-500 ease-out data-[closed]:opacity-0'
+            className='fixed inset-0 bg-cl-grey/75 transition duration-500 ease-out data-[closed]:opacity-0'
           />
           <div className='fixed inset-0 z-10 w-screen overflow-y-auto'>
             <div className='flex min-h-full items-center justify-center p-0 sm:px-4 sm:py-10'>
               <DialogPanel
                 transition
-                className='no-scrollbar data-[closed]:transform-[scale(95%)] min-h-screen w-screen border bg-gray-100 px-4 py-6 duration-300 ease-out data-[closed]:opacity-0 sm:h-auto sm:max-h-[800px] sm:min-h-0 sm:max-w-3xl sm:overflow-scroll sm:rounded-cl sm:px-10'
+                className='no-scrollbar data-[closed]:transform-[scale(95%)] min-h-screen w-screen border bg-green-100 px-4 py-6 duration-300 ease-out data-[closed]:opacity-0 sm:h-auto sm:max-h-[800px] sm:min-h-0 sm:max-w-3xl sm:overflow-scroll sm:rounded-cl sm:px-10'
               >
                 <div className='mb-4 flex w-full flex-row items-center justify-between'>
                   <div className='flex flex-row gap-x-2'>
@@ -160,16 +160,16 @@ export default function PopUp({ pillars, modelTexts }) {
                     </div>
                   </div>
                   <Button onClick={close}>
-                    <IconX className='h-6 w-6 text-green-800' />
+                    <IconX className='h-6 w-6 text-cl-black' />
                   </Button>
                 </div>
                 <DialogTitle as='h3' className='heading-2xl-semibold mb-8'>
                   {selectedModelText?.title}
                 </DialogTitle>
 
-                <div className='mb-10 flex w-full flex-col overflow-hidden rounded-cl border border-green-300'>
-                  <div className='flex flex-row justify-between border-b border-green-300 bg-green-300 px-6 py-3'>
-                    <div className='p-base-semibold text-green-800'>Modeltekst omgevingsplan</div>
+                <div className='mb-10 flex w-full flex-col overflow-hidden rounded-cl border border-green-400'>
+                  <div className='flex flex-row justify-between border-b border-green-400 bg-green-400 px-6 py-3'>
+                    <div className='p-base-semibold text-cl-black'>Modeltekst omgevingsplan</div>
                     <div className='relative self-end'>
                       <button
                         id='copy_modeltext'
@@ -190,7 +190,7 @@ export default function PopUp({ pillars, modelTexts }) {
                       </button>
                       {showLinkCopied && (
                         <p className='p-xs flex flex-row text-nowrap text-green-500'>
-                          <IconCheck className='ml-2.5 h-5 w-5 text-green-800' />
+                          <IconCheck className='ml-2.5 h-5 w-5 text-cl-black' />
                         </p>
                       )}
                     </div>
@@ -227,7 +227,7 @@ export default function PopUp({ pillars, modelTexts }) {
                       {selectedModelText?.linkedInstruments?.map((instrument) => (
                         <li className='p-base underline' key={instrument.slug}>
                           <Link
-                            className='link-interaction text-green-600'
+                            className='link-interaction text-green-500'
                             href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug}`}
                           >
                             {instrument.titel}
@@ -241,19 +241,19 @@ export default function PopUp({ pillars, modelTexts }) {
                   <div className='flex flex-wrap gap-4 sm:flex-row'>
                     <div className='flex flex-col'>
                       <div className='p-xs-semibold mb-2'>Schaalniveau</div>
-                      <div className='rounded-cl border border-gray-200 bg-white px-2 py-1 text-xs text-gray-600'>
+                      <div className='rounded-cl border border-green-100 bg-white px-2 py-1 text-xs text-cl-dark-grey'>
                         {selectedModelText.scale}
                       </div>
                     </div>
                     <div className='flex flex-col'>
                       <div className='p-xs-semibold mb-2'>Houdbaarheid</div>
-                      <div className='rounded-cl border border-gray-200 bg-white px-2 py-1 text-xs text-gray-600'>
+                      <div className='rounded-cl border border-green-100 bg-white px-2 py-1 text-xs text-cl-dark-grey'>
                         {selectedModelText.impactLevel}
                       </div>
                     </div>
                     <div className='flex flex-col'>
                       <div className='p-xs-semibold mb-2'>Type regel</div>
-                      <div className='rounded-cl border border-gray-200 bg-white px-2 py-1 text-xs text-gray-600'>
+                      <div className='rounded-cl border border-green-100 bg-white px-2 py-1 text-xs text-cl-dark-grey'>
                         {selectedModelText.type}
                       </div>
                     </div>

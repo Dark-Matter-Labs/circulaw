@@ -34,13 +34,6 @@ const INSTRUMENT_PROJECTION = `{
           select(fiscaal == true => "fiscaal")],
         }`;
 
-const ABOUT_PAGE_PROJECTION = `{
-      "objectID": _id,
-      pageTitle, 
-      "slug": slug.current,
-      "content": array::join(string::split((pt::text(aboutPageContent)), "")[0..9500], "")
-    }`;
-
 const EU_LAW_SUMMARY_PROJECTION = `{
       "objectID": _id,
       "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
@@ -132,10 +125,6 @@ export async function POST(req) {
           index: agoliaInstance.initIndex('instruments'),
           projection: INSTRUMENT_PROJECTION,
         },
-        aboutPage: {
-          index: agoliaInstance.initIndex('aboutPage'),
-          projection: ABOUT_PAGE_PROJECTION,
-        },
         euLaw: {
           index: agoliaInstance.initIndex('euLaw'),
           projection: EU_LAW_SUMMARY_PROJECTION,
@@ -179,14 +168,6 @@ export async function POST(req) {
               rechtsgebied: document.rechtsgebied,
               categorie: document.categorie,
             };
-          case 'aboutPage': {
-            return {
-              objectID: document.objectID,
-              pageTitle: document.pageTitle,
-              slug: document.slug,
-              content: document.content,
-            };
-          }
           case 'euLaw': {
             return {
               objectID: document.objectID,

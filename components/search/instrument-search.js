@@ -32,7 +32,6 @@ export default function InstrumentSearch() {
   };
 
   const transformThemas = (items) => {
-    console.log(items);
     return items.map((item) => ({
       ...item,
       label: item.label.replace('-', ' '),
@@ -57,7 +56,7 @@ export default function InstrumentSearch() {
                       item: 'pt-2',
                       list: 'empty:hidden',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -75,7 +74,7 @@ export default function InstrumentSearch() {
                       item: 'pt-2',
                       list: 'empty:hidden',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -94,7 +93,7 @@ export default function InstrumentSearch() {
                       item: 'pt-2',
                       list: 'empty:hidden',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -119,7 +118,7 @@ export default function InstrumentSearch() {
                       list: 'empty:hidden',
                       item: 'pt-2',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -151,7 +150,7 @@ export default function InstrumentSearch() {
                   item: 'pt-2',
                   list: 'empty:hidden',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:
@@ -169,7 +168,7 @@ export default function InstrumentSearch() {
                   item: 'pt-2',
                   list: 'empty:hidden',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:
@@ -188,7 +187,7 @@ export default function InstrumentSearch() {
                   item: 'pt-2',
                   list: 'empty:hidden',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:
@@ -213,7 +212,7 @@ export default function InstrumentSearch() {
                   list: 'empty:hidden',
                   item: 'pt-2',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useInstantSearch, useSearchBox } from 'react-instantsearch';
 
 import { Tab, TabList } from '@headlessui/react';
-import { IconX } from '@tabler/icons-react';
+import { IconSearch, IconX } from '@tabler/icons-react';
 
 export default function NewSearchBar(props) {
   const { query, refine } = useSearchBox(props);
@@ -21,8 +21,6 @@ export default function NewSearchBar(props) {
     } else if (props.selectedIndex === 2) {
       setPlaceholder('Zoek naar EU wetgeving');
     } else if (props.selectedIndex === 3) {
-      setPlaceholder('Zoek naar over CircuLaw');
-    } else if (props.selectedIndex === 4) {
       setPlaceholder('Zoek naar nieuws');
     } else if (props.selectedIndex === 0) {
       setPlaceholder('Zoek naar content binnen Circulaw...');
@@ -40,11 +38,11 @@ export default function NewSearchBar(props) {
   }
 
   return (
-    <div className='flex h-[260px] w-full items-end justify-center bg-green-50 sm:max-w-none'>
-      <div className='global-margin flex w-full items-center justify-center'>
-        <div className='flex flex-col items-center justify-center gap-y-6'>
+    <div className='global-margin mt-20 rounded-cl bg-green-500'>
+      <div className='relative h-full w-full object-cover px-2 py-10 sm:px-16'>
+        <div className='my-5 flex h-full flex-col items-center justify-center gap-y-6'>
           <div className='w-full'>
-            <div className='flex h-full w-full flex-col items-center justify-end pb-10'>
+            <div className='flex h-full w-full flex-col items-center justify-end'>
               <div className='w-full max-w-sm sm:max-w-[600px]'>
                 <form
                   className='relative flex h-[66px] max-w-sm flex-row items-center justify-between rounded-cl sm:w-[600px] sm:max-w-[600px]'
@@ -70,7 +68,7 @@ export default function NewSearchBar(props) {
                 >
                   <input
                     ref={inputRef}
-                    className='p-base sm:placeholder:p-base-semibold placeholder:p-2xs h-[66px] w-full rounded-cl border-none bg-white bg-left bg-no-repeat pl-12 text-green-600 caret-green-600 shadow-card [background-position-x:10px] placeholder:text-green-600 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] focus:ring-1 focus:ring-green-600 sm:w-[600px]'
+                    className='p-base sm:placeholder:p-base-semibold placeholder:p-2xs h-[66px] w-full rounded-cl border-none bg-green-100/50 bg-left bg-no-repeat pl-12 text-white caret-white shadow-card [background-position-x:10px] placeholder:text-white focus:bg-[url("/search-icon.png")] focus:bg-[length:24px_24px] focus:ring-1 focus:ring-white sm:w-[600px]'
                     autoComplete='off'
                     autoCorrect='off'
                     autoCapitalize='off'
@@ -86,49 +84,46 @@ export default function NewSearchBar(props) {
                   />
                   <button
                     type='submit'
-                    className='p-base-semibold absolute right-3 top-3 ml-2 flex h-[42px] w-24 items-center justify-center rounded-cl border border-white bg-white p-2 text-green-600 shadow-card hover:border-green-200 hover:bg-green-200'
+                    className='p-base-semibold absolute right-3 top-3 ml-2 flex h-[42px] items-center justify-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300 sm:w-24'
                   >
-                    Zoeken
+                    <span className='hidden sm:inline'>Zoeken</span>
+                    <span className='inline sm:hidden'>
+                      <IconSearch className='h-6 w-6 text-green-500 sm:h-4 sm:w-4' />
+                    </span>
                   </button>
                   <button
                     type='reset'
                     title='Clear the search query'
                     className={`${
                       inputValue === '' || isSearchStalled ? 'hidden' : ''
-                    } group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-200`}
+                    } group absolute right-16 top-3.5 rounded-full p-2 hover:bg-green-300 sm:right-28`}
                   >
-                    <IconX className='h-6 w-6 text-green-600' />
+                    <IconX className='h-6 w-6 text-white' />
                   </button>
                 </form>
               </div>
-              <TabList className='no-scrollbar mt-4 flex max-w-sm snap-x snap-mandatory flex-row overflow-x-scroll sm:max-w-none'>
+              <TabList className='no-scrollbar mt-4 flex max-w-xs snap-x snap-mandatory flex-row overflow-x-scroll sm:max-w-none'>
                 <Tab
                   onClick={() => props.setTabFunction(0)}
-                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-600 data-[selected]:border-b-2 data-[selected]:border-green-600'
+                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-white data-[selected]:border-b-2 data-[selected]:border-white'
                 >
                   Alle
                 </Tab>
                 <Tab
                   onClick={() => props.setTabFunction(1)}
-                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-600 data-[selected]:border-b-2 data-[selected]:border-green-600'
+                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-white data-[selected]:border-b-2 data-[selected]:border-white'
                 >
                   Instrumenten
                 </Tab>
                 <Tab
                   onClick={() => props.setTabFunction(2)}
-                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-600 data-[selected]:border-b-2 data-[selected]:border-green-600'
+                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-white data-[selected]:border-b-2 data-[selected]:border-white'
                 >
                   EU wetgeving
                 </Tab>
                 <Tab
                   onClick={() => props.setTabFunction(3)}
-                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-600 data-[selected]:border-b-2 data-[selected]:border-green-600'
-                >
-                  Over CircuLaw
-                </Tab>
-                <Tab
-                  onClick={() => props.setTabFunction(4)}
-                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-600 data-[selected]:border-b-2 data-[selected]:border-green-600'
+                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-white data-[selected]:border-b-2 data-[selected]:border-white'
                 >
                   Nieuws
                 </Tab>

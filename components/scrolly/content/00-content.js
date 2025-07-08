@@ -7,7 +7,7 @@ const PlayerWithNoSSR = dynamic(
 
 export default function ContentZero({ screenHeight }) {
   return (
-    <div className='flex max-w-[290px] flex-col gap-y-6 text-green-600'>
+    <div className='flex max-w-[290px] flex-col gap-y-6 text-green-500'>
       <h1 className='heading-3xl-semibold'>Modelteksten voor een omgevingsplan</h1>
 
       <div

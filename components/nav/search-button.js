@@ -41,7 +41,7 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery, closeS
         ref={linkRef}
         href={searchUrl}
         onClick={() => handleSubmit()}
-        className='p-base-semibold absolute right-3 top-3 ml-2 flex h-[42px] w-24 items-center justify-center rounded-cl border border-white bg-white p-2 text-green-600 shadow-card hover:border-green-200 hover:bg-green-200'
+        className='p-base-semibold absolute right-3 top-3 ml-2 flex h-[42px] w-24 items-center justify-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300'
       >
         Zoeken
       </Link>

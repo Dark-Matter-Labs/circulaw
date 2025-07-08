@@ -45,12 +45,25 @@ export const dynamicParams = false;
 export const dynamic = 'force-dynamic';
 
 export default async function InstrumentenPage({ params }) {
+  const { productChain, thema } = params;
+
+  const pageOptions = [
+    { name: 'Categorie', end: 'categorie' },
+    { name: 'Instrumenten', end: 'instrumenten' },
+    { name: 'Overheidsbevoegdheid', end: 'overheidsbevoegdheid' },
+  ];
+
+  const pages = pageOptions.map((opt) => ({
+    name: opt.name,
+    href: `/${productChain}/${thema}/${opt.end}`,
+  }));
   return (
     <ThemeLevelSearch
       title={`Lijst van alle ${params?.thema.replace('-', ' ')} instrumenten`}
       thema={params?.thema}
       productChain={params?.productChain}
       searchTitle={`Zoek in ${params?.thema}`}
+      pages={pages}
     />
   );
 }

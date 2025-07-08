@@ -22,4 +22,11 @@ export default {
       of: [{ type: 'partner' }],
     },
   ],
+  preview: {
+    prepare() {
+      return {
+        title: 'Partners List', // Or use a custom field if you have one
+      };
+    },
+  },
 };

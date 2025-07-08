@@ -50,7 +50,7 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang='nl' className={plus_Jakarta_Sans.variable}>
-      <body>
+      <body className='text-cl-black'>
         <Layout
           navData={navData}
           partnerLogos={partnerLogos}
