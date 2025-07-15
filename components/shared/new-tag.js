@@ -3,9 +3,10 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 const varientStyles = {
-  green: 'bg-green-500 text-white',
-  white: 'bg-white text-cl-black',
+  white: 'bg-white text-green-500',
   black: 'bg-cl-black text-white',
+  'white-hover': 'bg-white text-green-500 hover:bg-green-200',
+  'black-hover': 'bg-cl-black text-white hover:bg-cl-grey',
 };
 
 export default function Tag({ variant, href, children, category, themaType, ...props }) {
@@ -22,7 +23,7 @@ export default function Tag({ variant, href, children, category, themaType, ...p
     return (
       <div
         {...props}
-        className={`${varientStyles[variant]} p-2xs-semibold rounded-cl px-2 py-1 first-letter:uppercase`}
+        className={`${varientStyles[themaType === 'simpleThema' ? variant : `${variant}-hover`]} p-2xs-semibold rounded-cl px-2 py-1 first-letter:uppercase`}
       >
         {children}
       </div>
@@ -33,7 +34,7 @@ export default function Tag({ variant, href, children, category, themaType, ...p
         {...props}
         onClick={() => setCategorie(category)}
         href={href}
-        className={`${varientStyles[variant]} p-2xs-semibold rounded-cl px-2 py-1 first-letter:uppercase`}
+        className={`${varientStyles[themaType === 'simpleThema' ? variant : `${variant}-hover`]} p-2xs-semibold rounded-cl px-2 py-1 first-letter:uppercase`}
       >
         {children}
       </Link>
