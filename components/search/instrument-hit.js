@@ -2,6 +2,7 @@ import { Highlight } from 'react-instantsearch';
 
 import Link from 'next/link';
 
+import InstrumentMetadataTag from '../instrument/instrumt-metadata-tag';
 import Badge from '../shared/new-badge';
 
 export const InstrumentHit = ({ hit }) => {
@@ -56,47 +57,38 @@ export const InstrumentHit = ({ hit }) => {
                       Juridische houdbaarheid
                     </div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold rounded-cl bg-green-100 p-1 text-green-500'>
-                        {hit?.juridischeHaalbaarheid}
-                      </div>
+                      <InstrumentMetadataTag>{hit?.juridischeHaalbaarheid}</InstrumentMetadataTag>
                     </div>
                   </div>
                   <div className='flex basis-invloed flex-col'>
                     <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>Invloed</div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold rounded-cl bg-green-100 p-1 text-green-500'>
-                        {hit?.juridischInvloed}
-                      </div>
+                      <InstrumentMetadataTag>{hit?.juridischInvloed}</InstrumentMetadataTag>
                     </div>
                   </div>
                   <div className='flex basis-overheidslaag flex-col'>
                     <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>Overheidslaag</div>
-                    <div className='p-xs-semibold flex text-green-500'>
-                      <div className='shrink rounded-cl bg-green-100 p-1'>
-                        {hit?.overheidslaag
-                          ?.filter((x) => x !== null)
-                          .map((level) => (
-                            <span key={level} className=''>
-                              {level} {hit?.overheidslaag?.slice(-1)[0] !== level && <span>-</span>}
-                              &nbsp;
-                            </span>
-                          ))}
-                      </div>
-                    </div>
+                    <InstrumentMetadataTag>
+                      {hit?.overheidslaag
+                        ?.filter((x) => x !== null)
+                        .map((level) => (
+                          <span key={level} className=''>
+                            {level} {hit?.overheidslaag?.slice(-1)[0] !== level && <span>- </span>}
+                          </span>
+                        ))}
+                    </InstrumentMetadataTag>
                   </div>
                   <div className='flex basis-rladder flex-col'>
                     <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>R-ladder</div>
                     <div className='flex items-center'>
-                      <div className='flex flex-row items-center'>
-                        <div className='shrink rounded-cl bg-green-100 p-1'>
-                          {hit?.rLadder?.map((rValue) => (
-                            <span key={rValue} className='p-xs-semibold text-green-500'>
-                              {rValue} {hit?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
-                              &nbsp;
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+                      <InstrumentMetadataTag className='flex flex-row items-center'>
+                        {hit?.rLadder?.map((rValue) => (
+                          <span key={rValue} className='p-xs-semibold text-green-500'>
+                            {rValue} {hit?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
+                            &nbsp;
+                          </span>
+                        ))}
+                      </InstrumentMetadataTag>
                     </div>
                   </div>
                 </div>
@@ -109,24 +101,24 @@ export const InstrumentHit = ({ hit }) => {
                       Juridische houdbaarheid
                     </div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold pr-2 text-green-500'>
+                      <InstrumentMetadataTag className='p-xs-semibold pr-2 text-green-500'>
                         {hit?.juridischeHaalbaarheid}
-                      </div>
+                      </InstrumentMetadataTag>
                     </div>
                   </div>
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-cl-dark-grey'>Invloed</div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold pr-2 text-green-500'>
+                      <InstrumentMetadataTag className='p-xs-semibold pr-2 text-green-500'>
                         {hit?.juridischInvloed}
-                      </div>
+                      </InstrumentMetadataTag>
                     </div>
                   </div>
                 </div>
                 <div className='flex h-auto border-b border-cl-grey py-2'>
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-cl-dark-grey'>Overheidslaag</div>
-                    <div className='p-xs-semibold text-green-500'>
+                    <InstrumentMetadataTag>
                       {hit?.overheidslaag
                         ?.filter((x) => x !== null)
                         .map((level) => (
@@ -135,22 +127,20 @@ export const InstrumentHit = ({ hit }) => {
                             &nbsp;
                           </span>
                         ))}
-                    </div>
+                    </InstrumentMetadataTag>
                   </div>
                 </div>
                 <div className='flex border-b-2 border-cl-grey py-2'>
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-cl-dark-grey'>R-ladder</div>
-                    <div className='flex items-center'>
-                      <div className='flex flex-row items-center'>
-                        {hit?.rLadder?.map((rValue) => (
-                          <div key={rValue} className='p-xs-semibold text-green-500'>
-                            {rValue} {hit?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
-                            &nbsp;
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                    <InstrumentMetadataTag>
+                      {hit?.rLadder?.map((rValue) => (
+                        <div key={rValue} className='p-xs-semibold text-green-500'>
+                          {rValue} {hit?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
+                          &nbsp;
+                        </div>
+                      ))}
+                    </InstrumentMetadataTag>
                   </div>
                 </div>
               </div>
@@ -209,24 +199,20 @@ export const InstrumentHit = ({ hit }) => {
                       Juridische houdbaarheid
                     </div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold rounded-cl bg-green-200 px-1.5 py-1 text-green-500'>
-                        {hit?.juridischeHaalbaarheid}
-                      </div>
+                      <InstrumentMetadataTag>{hit?.juridischeHaalbaarheid}</InstrumentMetadataTag>
                     </div>
                   </div>
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-cl-dark-grey'>Invloed</div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold rounded-cl bg-green-200 px-1.5 py-1 text-green-500'>
-                        {hit?.juridischInvloed}
-                      </div>
+                      <InstrumentMetadataTag>{hit?.juridischInvloed}</InstrumentMetadataTag>
                     </div>
                   </div>
                 </div>
                 <div className='flex h-auto py-2'>
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-cl-dark-grey'>Overheidslaag</div>
-                    <div className='p-xs-semibold rounded-cl bg-green-200 p-1 pl-1.5 text-green-500'>
+                    <InstrumentMetadataTag>
                       {hit?.overheidslaag
                         ?.filter((x) => x !== null)
                         .map((level) => (
@@ -235,22 +221,20 @@ export const InstrumentHit = ({ hit }) => {
                             &nbsp;
                           </span>
                         ))}
-                    </div>
+                    </InstrumentMetadataTag>
                   </div>
                 </div>
                 <div className='flex py-2'>
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-cl-dark-grey'>R-ladder</div>
-                    <div className='flex items-center'>
-                      <div className='flex flex-row items-center rounded-cl bg-green-200 p-1 pl-1.5'>
-                        {hit?.rLadder?.map((rValue) => (
-                          <div key={rValue} className='p-xs-semibold text-green-500'>
-                            {rValue} {hit?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
-                            &nbsp;
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                    <InstrumentMetadataTag>
+                      {hit?.rLadder?.map((rValue) => (
+                        <div key={rValue} className='p-xs-semibold text-green-500'>
+                          {rValue} {hit?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
+                          &nbsp;
+                        </div>
+                      ))}
+                    </InstrumentMetadataTag>
                   </div>
                 </div>
               </div>

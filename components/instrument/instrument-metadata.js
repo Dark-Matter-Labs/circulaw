@@ -1,6 +1,7 @@
 import Modal from '../modal/modal';
 import InstrumentTooltipButton from '../modal/modal-buttons/instrument-tooltip-button';
 import ModalContent from '../modal/modal-content';
+import InstrumentMetadataTag from './instrumt-metadata-tag';
 import TooltipJuridischeHoudbaarheidContent from './tooltip-juridische-houdbaarheid-content';
 import TooltipJuridischeInvloedContent from './tooltip-juridische-invloed-content';
 import RladderTooltipContent from './tooltip-r-ladder-content';
@@ -26,9 +27,7 @@ export default function InstrumentMetaData({ data, borders }) {
               </div>
 
               <div className='flex items-center'>
-                <div className='p-xs-semibold rounded-cl bg-green-100 p-1 text-green-500'>
-                  {data?.juridischeHaalbaarheid}
-                </div>
+                <InstrumentMetadataTag>{data?.juridischeHaalbaarheid}</InstrumentMetadataTag>
               </div>
             </div>
             <div className='flex basis-invloed flex-col'>
@@ -41,9 +40,7 @@ export default function InstrumentMetaData({ data, borders }) {
                 </Modal>
               </div>
               <div className='flex items-center'>
-                <div className='p-xs-semibold rounded-cl bg-green-100 p-1 text-green-500'>
-                  {data?.juridischInvloed}
-                </div>
+                <InstrumentMetadataTag>{data?.juridischInvloed}</InstrumentMetadataTag>
               </div>
             </div>
             <div className='flex basis-overheidslaag flex-col'>
@@ -51,18 +48,16 @@ export default function InstrumentMetaData({ data, borders }) {
                 <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>Overheidslaag</div>
               </div>
 
-              <div className='p-xs-semibold flex text-green-500'>
-                <div className='shrink rounded-cl bg-green-100 p-1'>
-                  {data?.overheidslaag
-                    ?.filter((x) => x !== null)
-                    .map((level) => (
-                      <span key={level} className=''>
-                        {level} {data?.overheidslaag?.slice(-1)[0] !== level && <span>-</span>}
-                        &nbsp;
-                      </span>
-                    ))}
-                </div>
-              </div>
+              <InstrumentMetadataTag>
+                {data?.overheidslaag
+                  ?.filter((x) => x !== null)
+                  .map((level) => (
+                    <span key={level} className=''>
+                      {level} {data?.overheidslaag?.slice(-1)[0] !== level && <span>-</span>}
+                      &nbsp;
+                    </span>
+                  ))}
+              </InstrumentMetadataTag>
             </div>
             <div className='flex basis-rladder flex-col'>
               <div className='flex items-center'>
@@ -75,16 +70,14 @@ export default function InstrumentMetaData({ data, borders }) {
               </div>
 
               <div className='flex items-center'>
-                <div className='flex flex-row items-center'>
-                  <div className='shrink rounded-cl bg-green-100 p-1'>
-                    {data?.rLadder?.map((rValue) => (
-                      <span key={rValue} className='p-xs-semibold text-green-500'>
-                        {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
-                        &nbsp;
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <InstrumentMetadataTag>
+                  {data?.rLadder?.map((rValue) => (
+                    <span key={rValue} className='p-xs-semibold text-green-500'>
+                      {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
+                      &nbsp;
+                    </span>
+                  ))}
+                </InstrumentMetadataTag>
               </div>
             </div>
           </div>
@@ -103,9 +96,7 @@ export default function InstrumentMetaData({ data, borders }) {
               </Modal>
             </div>
             <div className='flex items-center'>
-              <div className='p-xs-semibold shrink rounded-cl bg-green-200 p-1 text-green-500'>
-                {data?.juridischeHaalbaarheid}
-              </div>
+              <InstrumentMetadataTag>{data?.juridischeHaalbaarheid}</InstrumentMetadataTag>
             </div>
           </div>
 
@@ -120,9 +111,7 @@ export default function InstrumentMetaData({ data, borders }) {
             </div>
 
             <div className='flex items-center'>
-              <div className='p-xs-semibold shrink rounded-cl bg-green-200 p-1 text-green-500'>
-                {data?.juridischInvloed}
-              </div>
+              <InstrumentMetadataTag>{data?.juridischInvloed}</InstrumentMetadataTag>
             </div>
           </div>
         </div>
@@ -132,7 +121,7 @@ export default function InstrumentMetaData({ data, borders }) {
               <div className='p-xs-semibold py-1 text-cl-dark-grey'>Overheidslaag</div>
             </div>
 
-            <div className='p-xs-semibold shrink rounded-cl bg-green-200 p-1 text-green-500'>
+            <InstrumentMetadataTag>
               {data?.overheidslaag
                 ?.filter((x) => x !== null)
                 .map((level) => (
@@ -141,7 +130,7 @@ export default function InstrumentMetaData({ data, borders }) {
                     &nbsp;
                   </span>
                 ))}
-            </div>
+            </InstrumentMetadataTag>
           </div>
         </div>
         <div className='flex py-2'>
@@ -156,14 +145,14 @@ export default function InstrumentMetaData({ data, borders }) {
             </div>
 
             <div className='flex items-center'>
-              <div className='flex flex-row items-center rounded-cl bg-green-200 p-1'>
+              <InstrumentMetadataTag>
                 {data?.rLadder?.map((rValue) => (
                   <div key={rValue} className='p-xs-semibold shrink text-green-500'>
                     {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
                   </div>
                 ))}
-              </div>
+              </InstrumentMetadataTag>
             </div>
           </div>
         </div>
