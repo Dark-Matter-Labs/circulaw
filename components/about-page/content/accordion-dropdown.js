@@ -9,7 +9,6 @@ import { IconChevronDown } from '@tabler/icons-react';
 import { aboutPageReducedPortableTextComponents } from '../../../lib/portable-text/pt-components';
 
 export default function AccordionDropdown({ data }) {
-  console.log('AccordionDropdown data:', data);
   if (data.design === 'default') {
     return (
       <div className='mb-[60px] sm:mb-[120px]'>
