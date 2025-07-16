@@ -206,7 +206,7 @@ export default function GovLevelLayout({ ...props }) {
                 <div className='flex flex-row items-start'>
                   <IconInfoSquareRoundedFilled className='mr-3 size-8 text-green-500' />
                   <p className='p-base-semibold text-green-500'>
-                    Klik op de cirkels of de titels hieronder om te filteren
+                    Klik op de cirkels of de titels om te filteren
                   </p>
                 </div>
               </div>
@@ -332,7 +332,7 @@ export default function GovLevelLayout({ ...props }) {
         <div className='global-margin my-16 flex'>
           <div className='hidden flex-col items-center sm:flex'>
             <div className='heading-3xl-semibold mb-6 rotate-180 text-green-500 [writing-mode:vertical-rl]'>
-              Instrumentn
+              Instrumenten
             </div>
             <div className='h-full w-2 rounded-full bg-green-300' />
           </div>
