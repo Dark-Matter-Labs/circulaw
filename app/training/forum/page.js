@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import commentIcon from '@/public/comment-icon.svg';
-import { DiscussionEmbed } from 'disqus-react';
 
 export default function ForumPage() {
   return (
@@ -54,13 +53,6 @@ export default function ForumPage() {
               Kaart een nieuw onderwerp aan of discussieer mee
             </h3>
           </div>
-          <DiscussionEmbed
-            shortname='circulaw'
-            config={{
-              identifier: 'eLearning',
-              title: 'eLearning',
-            }}
-          />
         </div>
       </div>
     </div>
