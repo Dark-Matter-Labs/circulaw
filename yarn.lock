@@ -3498,11 +3498,6 @@ react-fast-compare@^3.0.1:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.2.tgz#929a97a532304ce9fee4bcae44234f1ce2c21d49"
   integrity sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==
 
-react-hotjar@5.5.0:
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/react-hotjar/-/react-hotjar-5.5.0.tgz#5f74a659a4d85773a7988c6d6d6261c5e45a160b"
-  integrity sha512-cXp1DKUruibmbSvCCRl4hXLagT7fVUiFJbpXtVDovVjNxooClf7ZXdkkzbATpPSU4+IuvYP773T4vXXnjrV3dg==
-
 react-icons@^4.7.1:
   version "4.12.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.12.0.tgz#54806159a966961bfd5cdb26e492f4dafd6a8d78"

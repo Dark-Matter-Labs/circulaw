@@ -1,8 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
-import { hotjar } from 'react-hotjar';
-
 import CookieConsent from '@/components/cookie-banner';
 import Nav from '@/components/nav';
 import Footer from '@/components/nav/footer';
@@ -16,17 +13,9 @@ export default function Layout({
   homePageHeader,
   navData,
   partnerLogos,
-  hasLocalConsentCookie,
-  hotjarCookie,
+  hasLocalConsentCookie
 }) {
   const vraagSlug = '/vraag-en-antwoord';
-
-  useEffect(() => {
-    if (hotjarCookie === 'true') {
-      console.log('hotjar turned on');
-      hotjar.initialize(Number(process.env.NEXT_PUBLIC_HJID), Number(process.env.NEXT_PUBLIC_HJSV));
-    }
-  }, [hotjarCookie]);
 
   return (
     <>
