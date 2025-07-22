@@ -139,6 +139,14 @@ export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
                         buttonText='Neem contact op'
                         buttonLink='/contact'
                       />
+                      <div className='py-4'></div>
+                      <FooterLinkBlock
+                        title='Impact report 2024'
+                        paragraph='Circulaw heeft stevige circulaire intenties, maar maken we ook echt circulaire impact? Dat hebben we voor je uitgezocht. Download nu ons impact report!'
+                        buttonText='Download report'
+                        buttonLink='/CircuLaw_Impact_Report_2024_NLversie.pdf'
+                        isImpactReport={true}
+                      />
                       <div className='p-base block pt-6 text-white sm:hidden'>
                         <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline-block'>
                           Volg ons op:
@@ -214,7 +222,15 @@ export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
                         </ul>
                       </div>
                     </div>
-                    <div />
+                    <div>
+                      <FooterLinkBlock
+                        title='Impact report 2024'
+                        paragraph='Circulaw heeft stevige circulaire intenties, maar maken we ook echt circulaire impact? Dat hebben we voor je uitgezocht. Download nu ons impact report!'
+                        buttonText='Download report'
+                        buttonLink='/CircuLaw_Impact_Report_2024_NLversie.pdf'
+                        isImpactReport={true}
+                      />
+                    </div>
                     <div className='hidden sm:block'>
                       <FooterLinkBlock
                         title='Schrijf je in voor onze CircuLaw Nieuwsbrief'

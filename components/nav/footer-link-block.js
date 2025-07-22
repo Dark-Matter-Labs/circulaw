@@ -10,9 +10,20 @@ export default function FooterLinkBlock(props) {
             <div className='p-base mt-2 max-w-xl text-white'>{props.paragraph}</div>
           </div>
           <div className='mt-5'>
-            <NewButton variant='secondaryLight' icon='arrowRight' href={props.buttonLink}>
-              {props.buttonText}
-            </NewButton>
+            {props.isImpactReport ? (
+              <NewButton
+                variant='secondaryLight'
+                icon='download'
+                href={props.buttonLink}
+                newTab={true}
+              >
+                {props.buttonText}
+              </NewButton>
+            ) : (
+              <NewButton variant='secondaryLight' icon='arrowRight' href={props.buttonLink}>
+                {props.buttonText}
+              </NewButton>
+            )}
           </div>
         </div>
       </div>

@@ -14,6 +14,11 @@
             "permanent": true
         },
         {
+            "source": "/over/wat-vind-je-nu-op-circulaw",
+            "destination": "/over/wat-is-circulaw",
+            "permanent": true
+        },
+        {
             "source": "/over/Wetsanalyse-vanuit-circulaire-blik",
             "destination": "/over/methodiek-circulaw",
             "permanent": true

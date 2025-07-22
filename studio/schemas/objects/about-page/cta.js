@@ -16,12 +16,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Link',
-      name: 'link',
-      type: 'reference',
-      to: [{ type: 'aboutPage' }, { type: 'thema' }, { type: 'instrument' }],
-    },
-    {
       title: 'Link text',
       name: 'linkText',
       type: 'string',
