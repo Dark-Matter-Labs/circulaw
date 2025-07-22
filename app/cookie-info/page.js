@@ -7,11 +7,6 @@ export const metadata = {
 const cookies = [
   { name: '_localConsent', description: 'bewaart je cookievoorkeuren', valid: '1 jaar' },
   {
-    name: '_hjSessionUser',
-    description: 'creëert een unieke Hotjar ID voor deze site',
-    valid: '1 jaar',
-  },
-  {
     name: '_hjSession',
     description:
       'verzamelt statistieken over de bezoeken van de gebruiker aan de website, zoals het aantal bezoeken, de gemiddelde tijd besteed aan de site en welke pagina’s zijn gelezen',
@@ -76,7 +71,7 @@ export default function CookieInfo() {
       </h2>
       <p className='p-base max-w-4xl'>
         Om te begrijpen hoe bezoekers door onze site navigeren en om feedback te verzamelen om de
-        site te verbeteren, gebruiken we Hotjar en Piwik Pro. Heb je bezwaar tegen cookies? Kies dan
+        site te verbeteren, gebruiken we Piwik Pro. Heb je bezwaar tegen cookies? Kies dan
         voor ‘Weigeren’ of zet je instellingen op ‘cookies blokkeren.
       </p>
       <div className='p-base mt-8 flex max-w-4xl flex-col pb-6'>
