@@ -8,7 +8,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import HomepageHeader from '@/components/headers/homepage-header';
-import BetaBanner from '@/components/nav/beta-banner';
 import LangSwitch from '@/components/nav/lang-switch';
 import CirculawLogo from '@/public/circulaw_logotype2.png';
 import logo from '@/public/circulaw_logotype_home2.png';
@@ -293,10 +292,6 @@ export default function Nav(props) {
 
   return (
     <>
-      <div className='relative z-110 mx-auto -mb-9 flex w-96 justify-center' name='top'>
-        <BetaBanner />
-      </div>
-
       <div id='wrapper' className='sticky top-0 z-100 w-full'>
         <nav
           id='parent'

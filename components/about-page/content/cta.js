@@ -14,7 +14,7 @@ export default function Cta({ data }) {
       </div>
       <div className='flex max-w-[500px] flex-col'>
         <p className='heading-xl sm:heading-2xl mb-10 text-green-500'>{data?.ctaText}</p>
-        <NewButton href='/' variant='primaryDark' icon='arrowRight'>
+        <NewButton href='/contact' variant='primaryDark' icon='arrowRight'>
           {data?.linkText}
         </NewButton>
       </div>
