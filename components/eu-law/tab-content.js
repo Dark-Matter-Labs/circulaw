@@ -42,7 +42,7 @@ export default function TabContent({ summaryData, tabData }) {
       {selectedTab === 'relevantie-voor-de-circulaire-economie' && (
         <div className='global-margin my-12'>
           <div className='max-w-xl 2xl:max-w-2xl'>
-            <h2 className='heading-xl-semibold text-green-800'>
+            <h2 className='heading-xl-semibold text-cl-black'>
               Relevantie voor de circulaire economie
             </h2>
             <PortableText

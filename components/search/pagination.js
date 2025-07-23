@@ -18,7 +18,7 @@ export default function Pagination() {
         <li className='mx-1 flex h-8 w-8 items-center justify-center'>
           <button
             disabled={isFirstPage}
-            className='heading-xl-semibold flex h-full w-full items-center justify-center rounded-cl bg-green-50 text-green-900'
+            className='heading-xl-semibold flex h-full w-full items-center justify-center rounded-cl bg-green-100 text-green-900'
             onClick={(event) => {
               event.preventDefault();
               refine(previousPageIndex);
@@ -33,7 +33,7 @@ export default function Pagination() {
             disabled={isFirstPage}
             className={
               isFirstPage
-                ? 'heading-xl-semibold flex h-full w-full items-center justify-center rounded-cl bg-green-500 text-green-50'
+                ? 'heading-xl-semibold flex h-full w-full items-center justify-center rounded-cl bg-green-500 text-green-100'
                 : 'heading-xl-semibold'
             }
             onClick={(event) => {
@@ -61,7 +61,7 @@ export default function Pagination() {
                       pages[2] === label &&
                       currentRefinement !== 0 &&
                       currentRefinement !== nbPages - 1
-                        ? 'rounded-cl bg-green-500 font-semibold text-green-50'
+                        ? 'rounded-cl bg-green-500 font-semibold text-green-100'
                         : ''
                     } ${pages[0] === 0 && index === 0 ? 'hidden' : ''} ${
                       pages[2] + 1 === nbPages && index === 2 ? 'hidden' : ''
@@ -91,7 +91,7 @@ export default function Pagination() {
             disabled={isLastPage}
             className={`${
               isLastPage
-                ? 'heading-xl-semibold flex h-full w-full items-center justify-center rounded-cl bg-green-500 text-green-50'
+                ? 'heading-xl-semibold flex h-full w-full items-center justify-center rounded-cl bg-green-500 text-green-100'
                 : 'heading-xl-semibold'
             }`}
             onClick={(event) => {
@@ -106,7 +106,7 @@ export default function Pagination() {
         <li className='mx-1 flex h-8 w-8 items-center justify-center'>
           <button
             disabled={isLastPage}
-            className='heading-xl-semibold flex h-full w-full items-center justify-center rounded-cl bg-green-50 text-green-900'
+            className='heading-xl-semibold flex h-full w-full items-center justify-center rounded-cl bg-green-100 text-green-900'
             onClick={(event) => {
               event.preventDefault();
               refine(nextPageIndex);

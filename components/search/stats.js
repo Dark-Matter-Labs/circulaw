@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useInstantSearch, useStats } from 'react-instantsearch';
 
 export default function CustomStats({ index }) {
+  console.log('CustomStats rendered for index:', index);
   const { nbHits, query } = useStats();
   const { uiState } = useInstantSearch();
   const [categorie, setCategorie] = useState([]);

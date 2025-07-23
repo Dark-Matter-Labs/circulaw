@@ -39,9 +39,9 @@ export default function LangSwitch({ background }) {
           onClick={() => {
             setTranslateOpen(false);
           }}
-          className='float-right h-6 w-6 cursor-pointer text-green-800 hover:text-green-900'
+          className='float-right h-6 w-6 cursor-pointer text-cl-black hover:text-green-900'
         />
-        <h3 className='heading-2xl-semibold max-w-xs text-green-800'>
+        <h3 className='heading-2xl-semibold max-w-xs text-cl-black'>
           Let Google translate this website
         </h3>
         <div id='google_translate_element' className=''>
@@ -55,14 +55,14 @@ export default function LangSwitch({ background }) {
       </div>
       <div className=''>
         <button
-          className='p-sm group relative z-100 ml-5 flex h-full flex-row items-center justify-center rounded-clSm text-green-50 sm:hidden lg:ml-4'
+          className='p-sm group relative z-100 ml-5 flex h-full flex-row items-center justify-center rounded-clSm text-green-100 sm:hidden lg:ml-4'
           onClick={() => {
             setTranslateOpen(!translateOpen);
           }}
           aria-label='Open google translate for CircuLaw'
         >
-          <span className='heading-xl-semibold mr-2 text-green-800'>Vertaling</span>
-          <span className='flex h-6 w-7 items-center justify-center rounded-clSm bg-green-800'>
+          <span className='heading-xl-semibold mr-2 text-cl-black'>Vertaling</span>
+          <span className='flex h-6 w-7 items-center justify-center rounded-clSm bg-cl-black'>
             <IconWorld className='h-4 w-4' />
           </span>
         </button>
@@ -70,7 +70,7 @@ export default function LangSwitch({ background }) {
 
       <div
         className={`${
-          background === 'dark' ? 'bg-green-50 text-green-600' : 'bg-green-600 text-green-50'
+          background === 'dark' ? 'bg-green-100 text-green-500' : 'bg-green-500 text-green-100'
         } ml-4 hidden rounded-clSm sm:block lg:ml-4`}
       >
         <button

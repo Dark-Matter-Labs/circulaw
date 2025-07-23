@@ -7,11 +7,6 @@ export const metadata = {
 const cookies = [
   { name: '_localConsent', description: 'bewaart je cookievoorkeuren', valid: '1 jaar' },
   {
-    name: '_hjSessionUser',
-    description: 'creëert een unieke Hotjar ID voor deze site',
-    valid: '1 jaar',
-  },
-  {
     name: '_hjSession',
     description:
       'verzamelt statistieken over de bezoeken van de gebruiker aan de website, zoals het aantal bezoeken, de gemiddelde tijd besteed aan de site en welke pagina’s zijn gelezen',
@@ -48,7 +43,7 @@ const cookies = [
 
 export default function CookieInfo() {
   return (
-    <div className='global-margin my-20 max-w-2xl text-gray-800'>
+    <div className='global-margin my-20 max-w-2xl text-cl-black'>
       <h1 className='heading-3xl-semibold sm:heading-5xl-semibold pb-6'>Cookiebeleid CircuLaw</h1>
       <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>Wat zijn cookies?</h2>
       <p className='p-base max-w-4xl pb-6'>
@@ -76,17 +71,17 @@ export default function CookieInfo() {
       </h2>
       <p className='p-base max-w-4xl'>
         Om te begrijpen hoe bezoekers door onze site navigeren en om feedback te verzamelen om de
-        site te verbeteren, gebruiken we Hotjar en Piwik Pro. Heb je bezwaar tegen cookies? Kies dan
+        site te verbeteren, gebruiken we Piwik Pro. Heb je bezwaar tegen cookies? Kies dan
         voor ‘Weigeren’ of zet je instellingen op ‘cookies blokkeren.
       </p>
       <div className='p-base mt-8 flex max-w-4xl flex-col pb-6'>
         <div className='-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
           <div className='inline-block min-w-full py-2 align-middle md:px-6 lg:px-8'>
             <div className='overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-cl'>
-              <table className='min-w-full divide-y divide-green-800'>
+              <table className='min-w-full divide-y divide-cl-black'>
                 <thead className='bg-gray-50'>
-                  <tr className='divide-x divide-gray-200'>
-                    <th scope='col' className='py-3.5 pl-4 pr-4 text-left text-gray-800 sm:pl-6'>
+                  <tr className='divide-x divide-green-100'>
+                    <th scope='col' className='py-3.5 pl-4 pr-4 text-left text-cl-black sm:pl-6'>
                       Cookie naam
                     </th>
                     <th scope='col' className='px-4 py-3.5 text-left text-gray-900'>
@@ -97,14 +92,14 @@ export default function CookieInfo() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className='divide-y divide-gray-200 bg-gray-100'>
+                <tbody className='divide-y divide-green-100 bg-green-100'>
                   {cookies.map((cookie) => (
-                    <tr key={cookie.email} className='divide-x divide-gray-200'>
-                      <td className='whitespace-nowrap py-4 pl-4 pr-4 text-gray-800 sm:pl-6'>
+                    <tr key={cookie.email} className='divide-x divide-green-100'>
+                      <td className='whitespace-nowrap py-4 pl-4 pr-4 text-cl-black sm:pl-6'>
                         {cookie.name}
                       </td>
-                      <td className='p-4 text-gray-800'>{cookie.description}</td>
-                      <td className='whitespace-nowrap p-4 text-gray-800'>{cookie.valid}</td>
+                      <td className='p-4 text-cl-black'>{cookie.description}</td>
+                      <td className='whitespace-nowrap p-4 text-cl-black'>{cookie.valid}</td>
                     </tr>
                   ))}
                 </tbody>
