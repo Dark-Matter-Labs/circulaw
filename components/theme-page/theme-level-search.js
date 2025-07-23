@@ -9,6 +9,7 @@ import Pagination from '@/components/search/pagination';
 import { IconX } from '@tabler/icons-react';
 import algoliasearch from 'algoliasearch';
 
+import Header from '../headers';
 import TooltipJuridischeHoudbaarheidContent from '../instrument/tooltip-juridische-houdbaarheid-content';
 import TooltipJuridischeInvloedContent from '../instrument/tooltip-juridische-invloed-content';
 import RladderTooltipContent from '../instrument/tooltip-r-ladder-content';
@@ -19,7 +20,7 @@ import ModalContent from '../modal/modal-content';
 import NoResultsBoundary from '../search/no-results-boundary';
 import NoResultsInstruments from '../search/no-results-instrument';
 import CustomStats from '../search/stats';
-import OverviewPageHeader from './overview-page-header';
+import PagePagination from '../shared/pagination';
 
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
@@ -41,7 +42,6 @@ export default function ThemeLevelSearch(props) {
       label: rLadderLabes[item.label],
     }));
   };
-
   return (
     <InstantSearchNext
       searchClient={algoliaClient}
@@ -53,13 +53,18 @@ export default function ThemeLevelSearch(props) {
       insights={true}
     >
       <Configure hitsPerPage={10} filters={`thema:${props?.thema}`} />
-      <div className='mt-3 flex h-[300px] w-full items-end justify-center bg-green-600 sm:h-[360px]'>
-        <OverviewPageHeader
-          thema={props?.thema}
-          productChain={props.productChain}
-          page='list'
-          title={props.title}
-        />
+
+      <Header
+        thema={props?.thema}
+        productChain={props.productChain}
+        page='list'
+        title={props.title}
+        pageType='instrumentOverview'
+        bgColor='bg-green-500'
+        imageURL='/big-decoration.png'
+      />
+      <div className='global-margin'>
+        <PagePagination pages={props.pages} position='top' />
       </div>
       <div className='mt-4 flex items-center justify-center'>
         <div className='mb-10 mt-10 hidden items-center justify-start sm:flex'>
@@ -70,13 +75,13 @@ export default function ThemeLevelSearch(props) {
               root: 'h-16 w-[600px] bg-white',
               form: 'bg-white shadow-card w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex',
               input:
-                'w-[600px] h-[66px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-green-600 p-base text-green-600 focus:ring-1 focus:ring-white placeholder:text-green-600 placeholder:p-base-semibold',
+                'w-[600px] h-[66px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-green-500 p-base text-green-500 focus:ring-1 focus:ring-white placeholder:text-green-500 placeholder:p-base-semibold',
               submitIcon: 'visible',
             }}
             submitIconComponent={() => (
               <div
                 type='submit'
-                className='p-base-semibold absolute right-3 top-3 ml-2 h-[42px] w-24 rounded-cl border border-white bg-white p-2 text-green-600 shadow-card hover:border-green-200 hover:bg-green-200'
+                className='p-base-semibold absolute right-3 top-3 ml-2 h-[42px] w-24 rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300'
               >
                 Zoeken
               </div>
@@ -85,9 +90,9 @@ export default function ThemeLevelSearch(props) {
               <div
                 type='reset'
                 title='Clear the search query'
-                className='group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-300/50'
+                className='group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-400/50'
               >
-                <IconX className='h-6 w-6 text-green-600 group-hover:text-green-900' />
+                <IconX className='h-6 w-6 text-green-500 group-hover:text-green-900' />
               </div>
             )}
           />
@@ -101,13 +106,13 @@ export default function ThemeLevelSearch(props) {
             root: 'h-16 max-w-sm w-full bg-white',
             form: 'bg-white shadow-card max-w-sm w-full h-[60px] rounded-cl flex-row items-center justify-between relative flex',
             input:
-              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white/50 caret-green-600 p-base text-green-600 focus:ring-1 focus:ring-white placeholder:text-green-600 placeholder:p-base-semibold',
+              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white/50 caret-green-500 p-base text-green-500 focus:ring-1 focus:ring-white placeholder:text-green-500 placeholder:p-base-semibold',
             submitIcon: 'visible',
           }}
           submitIconComponent={() => (
             <div
               type='submit'
-              className='w-22 p-base-semibold absolute right-2.5 top-2.5 ml-2 flex h-[40px] items-center rounded-cl border border-white bg-white p-2 text-green-600 shadow-card'
+              className='w-22 p-base-semibold absolute right-2.5 top-2.5 ml-2 flex h-[40px] items-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card'
             >
               Zoeken
             </div>
@@ -116,9 +121,9 @@ export default function ThemeLevelSearch(props) {
             <div
               type='reset'
               title='Clear the search query'
-              className='group absolute right-24 top-3 rounded-full p-2 hover:bg-green-300/50'
+              className='group absolute right-24 top-3 rounded-full p-2 hover:bg-green-400/50'
             >
-              <IconX className='h-6 w-6 text-green-600 group-hover:text-green-900' />
+              <IconX className='h-6 w-6 text-green-500 group-hover:text-green-900' />
             </div>
           )}
         />
@@ -139,7 +144,7 @@ export default function ThemeLevelSearch(props) {
                       item: 'pt-2',
                       list: 'empty:hidden',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -158,7 +163,7 @@ export default function ThemeLevelSearch(props) {
                       item: 'pt-2',
                       list: 'empty:hidden',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -184,7 +189,7 @@ export default function ThemeLevelSearch(props) {
                       list: 'empty:hidden',
                       item: 'pt-2',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -210,7 +215,7 @@ export default function ThemeLevelSearch(props) {
                       list: 'empty:hidden',
                       item: 'pt-2',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -235,7 +240,7 @@ export default function ThemeLevelSearch(props) {
                       list: 'empty:hidden',
                       item: 'pt-2',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -254,7 +259,7 @@ export default function ThemeLevelSearch(props) {
                       item: 'pt-2',
                       list: 'empty:hidden before:content-["Inclusief"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -282,7 +287,7 @@ export default function ThemeLevelSearch(props) {
                   item: 'pt-2',
                   list: 'empty:hidden',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:
@@ -301,7 +306,7 @@ export default function ThemeLevelSearch(props) {
                   item: 'pt-2',
                   list: 'empty:hidden',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:
@@ -327,7 +332,7 @@ export default function ThemeLevelSearch(props) {
                   list: 'empty:hidden',
                   item: 'pt-2',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:
@@ -352,7 +357,7 @@ export default function ThemeLevelSearch(props) {
                   list: 'empty:hidden',
                   item: 'pt-2',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:
@@ -377,7 +382,7 @@ export default function ThemeLevelSearch(props) {
                   list: 'empty:hidden',
                   item: 'pt-2',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:
@@ -396,7 +401,7 @@ export default function ThemeLevelSearch(props) {
                   item: 'pt-2',
                   list: 'empty:hidden before:content-["Inclusief"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:

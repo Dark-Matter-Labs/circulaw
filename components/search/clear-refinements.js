@@ -10,7 +10,7 @@ export default function CustomClearRefinements(props) {
         <button
           onClick={refine}
           className={`${
-            canRefine ? 'text-green-500' : 'text-gray-400'
+            canRefine ? 'text-green-500' : 'text-cl-grey'
           } heading-xl-semibold underline`}
         >
           Wis filters

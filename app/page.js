@@ -1,90 +1,112 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
-import HomePageAboutSection from '@/components/homepage/home-page-about-section';
 import HomePageEUSection from '@/components/homepage/home-page-eu-section';
+import LatestContent from '@/components/homepage/latest-content';
 import PCHomePage from '@/components/homepage/product-chain-homepage';
-import LinkIcon from '@/components/link-icon';
-import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
-import FeaturedCard from '@/components/news-page/featured-card';
+import FeaturedNewsSection from '@/components/news-page/featured-section';
+import InlineExternalLink from '@/components/shared/inline-external-link';
+import TitleDecorator from '@/components/title-decorator';
 import { HOME_PAGE_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
-import { IconArrowRight } from '@tabler/icons-react';
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { IconArrowRight, IconInfoSquareRoundedFilled } from '@tabler/icons-react';
 
 export default async function Page() {
   const data = await sanityFetch({
     query: HOME_PAGE_QUERY,
-    tags: ['siteConfig', 'transitionAgenda', 'thema', 'newsItem'],
+    tags: ['siteConfig', 'transitionAgenda', 'thema', 'newsItem', 'euLaw'],
   });
   return (
     <>
-      <div className='sm:pt-18 -z-50 bg-gray-100 py-12 sm:pb-24' name='thema'>
-        <div className='global-margin -z-20'>
-          <h2 className='heading-2xl-semibold sm:heading-5xl-semibold border-b border-gray-600 pb-6 pt-8 text-green-600'>
-            Ontdek direct onze instrumenten
-          </h2>
-          <p className='heading-xl max-w-[750px] whitespace-normal py-4'>
-            De overheid heeft 5 productketens gekozen voor het{' '}
+      <div className=''>
+        <div
+          className='global-margin mb-20 flex flex-col gap-y-6 md:flex-row xl:gap-x-24'
+          name='thema'
+        >
+          <div className='group relative mb-20 flex w-full items-center justify-center md:hidden'>
             <Link
-              className='whitespace-normal text-green-500'
-              href='https://www.rijksoverheid.nl/documenten/beleidsnotas/2023/02/03/nationaal-programma-circulaire-economie-2023-2030'
-              target='_blank'
+              href='/over/wat-is-circulaw'
+              className='flex h-full w-full items-center justify-center'
             >
-              <span className='link-interaction whitespace-normal font-semibold'>
+              <Image
+                src='/home-page/homepage-video-cta.png'
+                alt='screenshot of CircuLaw animation'
+                width={760}
+                height={730}
+                className='-rotate-30 size-80'
+              />
+              <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform'>
+                <div className='flex flex-col gap-y-8'>
+                  <h3 className='heading-4xl-semibold text-green-100'>Wat is CircuLaw?</h3>
+                  <div className='heading-xl-semibold text-green-100 group-hover:underline'>
+                    Video bekijken
+                    <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className='flex basis-1/2 flex-col'>
+            <div className=''>
+              <h2 className='heading-3xl-semibold sm:heading-5xl-semibold inline text-green-500'>
+                Ontdek direct onze instrumenten
+              </h2>
+              <Popover className='inline align-top'>
+                <PopoverButton className=''>
+                  <IconInfoSquareRoundedFilled className='ml-1 inline fill-green-500' />
+                </PopoverButton>
+                <PopoverPanel
+                  anchor='bottom'
+                  className='z-50 flex max-w-[250px] flex-col rounded-cl bg-green-100 p-5 text-green-500 shadow-card [--anchor-gap:8px]'
+                >
+                  <p className='p-base'>
+                    Een instrument beschrijft per thema hoe bepaalde juridische regels toegepast
+                    kunnen worden om circulariteit te bevorderen.
+                  </p>
+                  <p className='p-base mt-4'>
+                    Meerdere instrumenten kunnen dus gebaseerd zijn op dezelfde wet-en regelgeving,
+                    maar van elkaar verschillen in de manier waarop zij per thema toepasbaar zijn.
+                    Niet waarop zij per thema toepasbaar zijn.{' '}
+                  </p>{' '}
+                </PopoverPanel>
+              </Popover>
+            </div>
+            <TitleDecorator width='w-1/4' />
+          </div>
+          <div className='basis-1/2'>
+            <p className='heading-xl sm:heading-2xl whitespace-normal'>
+              De overheid heeft 5 productketens gekozen voor het
+              <InlineExternalLink
+                href='https://www.rijksoverheid.nl/documenten/beleidsnotas/2023/02/03/nationaal-programma-circulaire-economie-2023-2030'
+                size='6'
+              >
                 Nationaal Programma Circulaire Economie 2023-2030
-                <span className=''>
-                  <LinkIcon />
-                </span>
-                .{' '}
-              </span>
-            </Link>{' '}
-            Deze ketens zijn belangrijk voor de economie, maar belasten ook het milieu. In
-            transitieagenda’s staat hoe deze ketens in 2050 circulair kunnen zijn.
-          </p>
-          <div className='-z-20 pt-4'>
-            <PCHomePage pcData={data.pcHomePageQuery} />
+              </InlineExternalLink>
+              Deze ketens zijn belangrijk voor de economie, maar belasten ook het milieu. In
+              transitieagenda&apos;s staat hoe deze ketens in 2050 circulair kunnen zijn.
+            </p>
           </div>
         </div>
-      </div>
-
-      <div className='bg-gray-100 pb-12 sm:pb-24 sm:pt-0'>
-        <div className='global-margin'>
+        <div className='global-margin mb-20 sm:mb-32'>
+          <PCHomePage pcData={data.pcHomePageQuery} />
+        </div>
+        <div className='global-margin mb-20 sm:mb-40'>
           <HomePageEUSection euData={data.euData} />
         </div>
-      </div>
-
-      <div className='bg-gray-100 pb-12 pt-12 sm:pt-0'>
-        <div className='global-margin'>
-          <div className='flex flex-col pb-12 sm:pb-24'>
-            <h3 className='heading-2xl-semibold sm:heading-5xl-semibold w-full border-b border-green-800 pb-6 text-green-600'>
-              Uitgelichte nieuwsberichten
-            </h3>
-
-            <div className='grid grid-cols-1 grid-rows-1 gap-6 overflow-hidden py-10 sm:grid-cols-2 lg:grid-cols-4'>
-              {data.newsItems.map((item, id) => (
-                <div
-                  className={`${
-                    item.image
-                      ? 'sm:flex-cols-2 col-span-1 flex-col sm:col-span-2'
-                      : 'col-span-1 flex-col gap-3'
-                  }`}
-                  key={id}
-                >
-                  {item.newsOrAgenda === true && <FeaturedAgendaCard data={item} />}
-                  {item.newsOrAgenda === false && <FeaturedCard data={item} />}
-                </div>
-              ))}
-            </div>
-            <div className='p-base-bold flex items-center justify-end text-green-600'>
-              <Link
-                href='/nieuws'
-                className='flex items-center hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'
-              >
-                Bekijk alle nieuwsberichten{' '}
-                <IconArrowRight className='ml-0.5 inline-block h-6 w-6' aria-hidden='true' />
-              </Link>
+        <div className='mb-40'>
+          <div className='global-margin'>
+            <div className='mb-10 sm:w-1/2'>
+              <h3 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500' id='news'>
+                Uitgelicht nieuws
+              </h3>
+              <TitleDecorator width='w-1/4' />
             </div>
           </div>
-          <HomePageAboutSection aboutSection={data.aboutSection} />
+          <LatestContent latestContent={data.latestContent} />
+          <div className='global-margin'>
+            <FeaturedNewsSection items={data.newsItems} />
+          </div>
         </div>
       </div>
     </>
