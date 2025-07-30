@@ -4,7 +4,6 @@ import { defineConfig } from 'sanity';
 import { getIdPair } from 'sanity';
 import { structureTool } from 'sanity/structure';
 
-import { defaultDocumentNode } from './default-document-node';
 import { Structure } from './desk-structure';
 import { schemaTypes } from './schemas';
 
@@ -38,7 +37,6 @@ export default defineConfig({
   plugins: [
     structureTool({
       structure: Structure,
-      defaultDocumentNode,
     }),
     visionTool(),
     table(),
