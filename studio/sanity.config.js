@@ -1,7 +1,5 @@
-import { table } from '@sanity/table';
 import { visionTool } from '@sanity/vision';
 import { defineConfig } from 'sanity';
-import { getIdPair } from 'sanity';
 import { structureTool } from 'sanity/structure';
 
 import { Structure } from './desk-structure';
@@ -39,7 +37,6 @@ export default defineConfig({
       structure: Structure,
     }),
     visionTool(),
-    table(),
   ],
   schema: {
     types: schemaTypes,
