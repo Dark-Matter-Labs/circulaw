@@ -15,14 +15,14 @@ export default defineBlueprint({
   resources: [
     defineDocumentFunction({
       type: 'sanity.function.document',
-      name: 'algolia-document-sync',
+      name: 'algolia-instrument-sync',
       memory: 1,
       timeout: 10,
-      src: './functions/algolia-document-sync',
+      src: './functions/algolia-instrument-sync',
       event: {
         on: ['publish'],
         filter: "_type == 'instrument'",
-        projection: '_id, title, hideFromSearch',
+        projection: '_id, _type, _rev, titel, subtitel, subrechtsgebied, citeertitel, "content": pt::text(content), "slug": slug.current, "transitionAgenda":transitionAgenda, "thema": thema->themaName, extraContent, overheidslaag, juridischInvloed, juridischeHaalbaarheid, rLadder, rechtsgebied, "categorie": [select(beleid == true => "beleid"), select(inkoop == true => "inkoop"), select(grondpositie == true => "grondpositie"), select(subsidie == true => "subsidie"), select(fiscaal == true => "fiscaal")]',
       },
       env: {
         ALGOLIA_APP_ID,
