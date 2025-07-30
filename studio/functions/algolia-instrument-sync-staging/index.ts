@@ -43,7 +43,7 @@ export const handler = documentEventHandler(async ({context, event}) => {
     {id: event.data._id}
   )
 
-  const algolia = algoliasearch(env.ALGOLIA_APP_ID, env.ALGOLIA_WRITE_KEY)
+  const algolia = algoliasearch(env.ALGOLIA_APP_ID_STAGING, env.ALGOLIA_WRITE_KEY_STAGING)
   await algolia.addOrUpdateObject({
     indexName: 'instruments',
     objectID: fullDoc._id,
