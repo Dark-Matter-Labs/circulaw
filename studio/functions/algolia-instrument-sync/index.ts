@@ -5,32 +5,10 @@ import {algoliasearch} from 'algoliasearch'
 
 const {ALGOLIA_APP_ID = '', ALGOLIA_WRITE_KEY = ''} = env
 
-const INSTRUMENT_PROJECTION = `{
-    _type,
-    _rev,
-    titel,
-    subtitel,
-    subrechtsgebied,
-    citeertitel,
-    "content": pt::text(content),
-    "slug": slug.current,
-    "transitionAgenda":transitionAgenda->pcName,
-    "thema": thema->themaName,
-    extraContent,
-    overheidslaag,
-    juridischInvloed,
-    juridischeHaalbaarheid,
-    rLadder,
-    rechtsgebied,
-    "categorie": [select(beleid == true => "beleid"), 
-          select(inkoop == true => "inkoop"),
-          select(grondpositie == true => "grondpositie"),
-          select(subsidie == true => "subsidie"),
-          select(fiscaal == true => "fiscaal")],
-        }`;
 
 export const handler = documentEventHandler(async ({event}) => {
   const data = event.data
+  console.log(data)
   console.log(`Received event for document ${data._id} with title "${data.titel}"`)
   const algolia = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_WRITE_KEY)
 
