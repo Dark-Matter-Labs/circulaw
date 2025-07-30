@@ -22,7 +22,7 @@ export default defineBlueprint({
       event: {
         on: ['publish'],
         filter: "_type == 'instrument'",
-        projection: '_id, _type, _rev, titel, subtitel, subrechtsgebied, citeertitel, "content": pt::text(content), "slug": slug.current, "transitionAgenda":transitionAgenda, "thema": thema->themaName, extraContent, overheidslaag, juridischInvloed, juridischeHaalbaarheid, rLadder, rechtsgebied, "categorie": [select(beleid == true => "beleid"), select(inkoop == true => "inkoop"), select(grondpositie == true => "grondpositie"), select(subsidie == true => "subsidie"), select(fiscaal == true => "fiscaal")]',
+        projection: '_id, _type, _rev, titel, subtitel, subrechtsgebied, citeertitel, "content": pt::text(content), "slug": slug.current, "transitionAgenda":transitionAgenda->pcName, "thema": thema->themaName, extraContent, overheidslaag, juridischInvloed, juridischeHaalbaarheid, rLadder, rechtsgebied, "categorie": [select(beleid == true => "beleid"), select(inkoop == true => "inkoop"), select(grondpositie == true => "grondpositie"), select(subsidie == true => "subsidie"), select(fiscaal == true => "fiscaal")]',
       },
       env: {
         ALGOLIA_APP_ID,
