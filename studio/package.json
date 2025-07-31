@@ -18,21 +18,24 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/orderable-document-list": "^1.2.1",
-    "@sanity/table": "^1.1.2",
-    "@sanity/ui": "^2.8.8",
-    "@sanity/vision": "3.38.0",
+    "@sanity/functions": "^1.0.3",
+    "@sanity/icons": "^3.7.4",
+    "@sanity/insert-menu": "^2.0.0",
+    "@sanity/orderable-document-list": "^1.4.0",
+    "@sanity/ui": "^3.0.3",
+    "@sanity/vision": "^4.2.0",
+    "algoliasearch": "^5.34.1",
+    "dotenv": "^17.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-is": "^18.2.0",
     "react-player": "^2.16.0",
-    "sanity": "^3.75.1",
-    "sanity-plugin-iframe-pane": "^2.3.0",
-    "sanity-plugin-vercel-deploy": "^3.3.4",
-    "styled-components": "6.1.8"
+    "sanity": "^4.2.0",
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
+    "@sanity/blueprints": "0.1.0",
     "@sanity/eslint-config-studio": "^2.0.1",
     "eslint": "^8.6.0",
     "prettier": "^2.8.1",
