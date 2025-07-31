@@ -59,7 +59,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
       <Header title='Nieuws' bgColor='bg-green-500' imageURL='/big-decoration.png' />
       <div className='global-margin mt-20 flex flex-col'>
         <div className='mb-6 w-1/2'>
-          <h3 className='heading-5xl-semibold text-green-500'>Uitgelichte nieuwsberichten</h3>
+          <h3 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-500'>Uitgelichte nieuwsberichten</h3>
           <TitleDecorator width='w-1/4' />
         </div>
         <div className='py-10'>
@@ -68,7 +68,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
         <div className=''>
           <div className='mt-20 flex flex-col justify-between pb-6 sm:flex-row sm:items-center'>
             <div className='w-1/2'>
-              <h3 className='heading-5xl-semibold text-green-500'>Uitgelichte nieuwsberichten</h3>
+              <h3 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-500'>Uitgelichte nieuwsberichten</h3>
               <TitleDecorator width='w-1/4' />
             </div>
             <div className='flex flex-row items-center justify-between place-self-start'>
