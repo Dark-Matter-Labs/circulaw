@@ -71,8 +71,8 @@ export default function CookieInfo() {
       </h2>
       <p className='p-base max-w-4xl'>
         Om te begrijpen hoe bezoekers door onze site navigeren en om feedback te verzamelen om de
-        site te verbeteren, gebruiken we Piwik Pro. Heb je bezwaar tegen cookies? Kies dan
-        voor ‘Weigeren’ of zet je instellingen op ‘cookies blokkeren.
+        site te verbeteren, gebruiken we Piwik Pro. Heb je bezwaar tegen cookies? Kies dan voor
+        ‘Weigeren’ of zet je instellingen op ‘cookies blokkeren.
       </p>
       <div className='p-base mt-8 flex max-w-4xl flex-col pb-6'>
         <div className='-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
