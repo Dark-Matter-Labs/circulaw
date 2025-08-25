@@ -222,7 +222,7 @@ export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
                         </ul>
                       </div>
                     </div>
-                    <div>
+                    <div className='hidden sm:block'>
                       <FooterLinkBlock
                         title='Impact report 2024'
                         paragraph='Circulaw heeft stevige circulaire intenties, maar maken we ook echt circulaire impact? Dat hebben we voor je uitgezocht. Download nu ons impact report!'
