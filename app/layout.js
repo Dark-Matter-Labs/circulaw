@@ -47,7 +47,6 @@ export default async function RootLayout({ children }) {
   });
   const hasLocalConsentCookie = hasCookie('localConsent', { cookies });
 
-
   return (
     <html lang='nl' className={plus_Jakarta_Sans.variable}>
       <body className='text-cl-black'>

@@ -13,7 +13,7 @@ export default function Layout({
   homePageHeader,
   navData,
   partnerLogos,
-  hasLocalConsentCookie
+  hasLocalConsentCookie,
 }) {
   const vraagSlug = '/vraag-en-antwoord';
 
