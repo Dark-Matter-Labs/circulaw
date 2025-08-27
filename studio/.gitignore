@@ -25,3 +25,9 @@
 # Typescript
 *.tsbuildinfo
 .vercel
+
+
+# Sanity Functions
+functions/**/.env*
+functions/**/.build/
+functions/**/node_modules/
