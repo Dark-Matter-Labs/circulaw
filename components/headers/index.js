@@ -7,6 +7,14 @@ import NewButton from '../shared/new-button';
 import Tag from '../shared/new-tag';
 import Breadcrumb from './breadcrumbs';
 
+// Function to format date to Dutch format (DD MM YYYY)
+const formatDateToDutch = (dateString) => 
+  dateString ? new Date(dateString).toLocaleDateString('nl-NL', {
+    day: '2-digit',
+    month: '2-digit', 
+    year: 'numeric'
+  }).replace(/\//g, ' ') : '';
+
 export default function Header({
   imageURL,
   bgColor,
@@ -118,7 +126,7 @@ export default function Header({
               )}
               {pageType === 'news' && (
                 <p className='heading-2xl-semibold max-w-3xl pt-2 text-green-100'>
-                  {props.newsData.newsDate}{' '}
+                  {formatDateToDutch(props.newsData.newsDate)}{' '}
                 </p>
               )}
               {pageType === 'euOverview' && (
