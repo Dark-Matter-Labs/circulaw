@@ -71,6 +71,7 @@ export default function PCLayout({ ...props }) {
                       title={cta.title}
                       text={cta.text}
                       buttonText={cta.buttonText}
+                      link={cta.link}
                     />
                   ))}
                 </div>
@@ -234,10 +235,10 @@ export default function PCLayout({ ...props }) {
   );
 }
 
-function CallToAction({ title, text, buttonText }) {
+function CallToAction({ title, text, buttonText, link }) {
   return (
     <div className='group w-full rounded-cl border border-green-100 bg-green-100'>
-      <Link href='/training' className='h-full w-full'>
+      <Link href={link} className='h-full w-full'>
         <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-6 p-6'>
           <h3 className='heading-2xl-semibold text-green-500'>{title}</h3>
           <div>
