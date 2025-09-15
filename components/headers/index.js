@@ -8,12 +8,16 @@ import Tag from '../shared/new-tag';
 import Breadcrumb from './breadcrumbs';
 
 // Function to format date to Dutch format (DD MM YYYY)
-const formatDateToDutch = (dateString) => 
-  dateString ? new Date(dateString).toLocaleDateString('nl-NL', {
-    day: '2-digit',
-    month: '2-digit', 
-    year: 'numeric'
-  }).replace(/\//g, ' ') : '';
+const formatDateToDutch = (dateString) =>
+  dateString
+    ? new Date(dateString)
+        .toLocaleDateString('nl-NL', {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric',
+        })
+        .replace(/\//g, ' ')
+    : '';
 
 export default function Header({
   imageURL,
