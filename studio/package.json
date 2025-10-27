@@ -29,7 +29,7 @@
     "react-player": "^2.16.0",
     "sanity": "^4.11.0",
     "sanity-plugin-iframe-pane": "^2.3.0",
-    "styled-components": "^6.1.15",
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^2.0.1",
