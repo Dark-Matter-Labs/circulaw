@@ -34,6 +34,12 @@ import tax6 from '@/public/eu-taxonomie-icons/6-taxonomie.svg';
 import wfd1 from '@/public/eu-wfd-icons/wfd-1.svg';
 import wfd2 from '@/public/eu-wfd-icons/wfd-2.svg';
 import wfd3 from '@/public/eu-wfd-icons/wfd-3.svg';
+import crma1 from 'public/eu-cmra-icons/crma-1.svg';
+import crma2 from 'public/eu-cmra-icons/crma-2.svg';
+import crma3 from 'public/eu-cmra-icons/crma-3.svg';
+import crma4 from 'public/eu-cmra-icons/crma-4.svg';
+import crma5 from 'public/eu-cmra-icons/crma-5.svg';
+import crma6 from 'public/eu-cmra-icons/crma-6.svg';
 
 import HighlightCard from './highlight-card';
 import HighlightsSmallCard from './highlights-small-card';
@@ -236,6 +242,41 @@ export default function Highlights({ law }) {
             icon={wfd3}
           />
         </div>
+      </div>
+    );
+  } else if (law === 'Critical Raw Materials Act') {
+    return (
+      <div className='global-margin'>
+        <h2 className='heading-3xl-semibold mb-4 text-cl-black'>Critical Raw Materials Act highlights</h2>
+        <p className='mb-12 max-w-xl'>Waar is de Critical Raw Materials Act voor bedoeld?</p>
+        <div className='mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 lgNav:grid-cols-3'>
+        <HighlightCard
+            text='De toegang van de Europese Unie tot een veilige en duurzame voorzieningvan kritieke grondstoffen waarborgen'
+            icon={crma1}
+          />
+            <HighlightCard
+            text='De economische veerkracht en de open strategische autonomie van de Europese Unie beschermen'
+            icon={crma2}
+          /></div>
+
+        <p className='my-16 max-w-xl'>
+        De tussendoelen van de Critical Raw Materials Act
+        </p>
+        <div className='mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 lgNav:grid-cols-3'>
+        <HighlightCard
+            text='Het versterken van de capaciteit van Europese Unie op het gebied van kritieke grondstoffen in alle stadia van de waardeketen'
+            icon={crma3}
+          />  <HighlightCard
+          text='Het vergroten van de veerkracht door afhankelijkheden te verminderen'
+          icon={crma4}
+        />  <HighlightCard
+        text='Het vergroten van de paraatheid'
+        icon={crma5}
+      />  <HighlightCard
+      text='Het bevorderen van de duurzaamheid en circulariteit van toeleveringsketens'
+      icon={crma6}
+    />
+    </div>
       </div>
     );
   }
