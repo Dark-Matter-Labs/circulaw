@@ -27,10 +27,9 @@
     "react-icons": "^4.7.1",
     "react-is": "^18.2.0",
     "react-player": "^2.16.0",
-    "sanity": "^3.75.1",
+    "sanity": "^4.11.0",
     "sanity-plugin-iframe-pane": "^2.3.0",
-    "sanity-plugin-vercel-deploy": "^3.3.4",
-    "styled-components": "6.1.8"
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^2.0.1",
