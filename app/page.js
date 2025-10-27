@@ -4,6 +4,7 @@ import Link from 'next/link';
 import HomePageEUSection from '@/components/homepage/home-page-eu-section';
 import LatestContent from '@/components/homepage/latest-content';
 import PCHomePage from '@/components/homepage/product-chain-homepage';
+import Reactions from '@/components/homepage/reaction';
 import FeaturedNewsSection from '@/components/news-page/featured-section';
 import InlineExternalLink from '@/components/shared/inline-external-link';
 import TitleDecorator from '@/components/title-decorator';
@@ -15,8 +16,9 @@ import { IconArrowRight, IconInfoSquareRoundedFilled } from '@tabler/icons-react
 export default async function Page() {
   const data = await sanityFetch({
     query: HOME_PAGE_QUERY,
-    tags: ['siteConfig', 'transitionAgenda', 'thema', 'newsItem', 'euLaw'],
+    tags: ['siteConfig', 'transitionAgenda', 'thema', 'newsItem', 'euLaw', 'reaction'],
   });
+
   return (
     <>
       <div className=''>
@@ -94,7 +96,7 @@ export default async function Page() {
         <div className='global-margin mb-20 sm:mb-40'>
           <HomePageEUSection euData={data.euData} />
         </div>
-        <div className='mb-40'>
+        <div className='mb-20 sm:mb-40'>
           <div className='global-margin'>
             <div className='mb-10 sm:w-1/2'>
               <h3 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500' id='news'>
@@ -107,6 +109,16 @@ export default async function Page() {
           <div className='global-margin'>
             <FeaturedNewsSection items={data.newsItems} />
           </div>
+        </div>
+        <div className='global-margin mb-40'>
+          <div className='mb-10 sm:w-1/2'>
+            <h3 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500' id='news'>
+              Reacties
+            </h3>
+            <TitleDecorator width='w-1/4' />
+          </div>
+
+          <Reactions reactions={data.reactions} />
         </div>
       </div>
     </>
