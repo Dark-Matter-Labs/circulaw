@@ -253,7 +253,7 @@ export default function Highlights({ law }) {
         <p className='mb-12 max-w-xl'>Waar is de Critical Raw Materials Act voor bedoeld?</p>
         <div className='mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 lgNav:grid-cols-3'>
           <HighlightCard
-            text='De toegang van de Europese Unie tot een veilige en duurzame voorzieningvan kritieke grondstoffen waarborgen'
+            text='De toegang van de Europese Unie tot een veilige en duurzame voorziening van kritieke grondstoffen waarborgen'
             icon={crma1}
           />
           <HighlightCard
