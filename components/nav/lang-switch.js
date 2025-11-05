@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { IconWorld, IconX } from '@tabler/icons-react';
 

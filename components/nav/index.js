@@ -138,7 +138,7 @@ export default function Nav(props) {
     } else {
       setSearchIndex(0);
     }
-  });
+  }, [searchMenuIsOpen, mobileMenuIsOpen]);
 
   // main menu
   const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
