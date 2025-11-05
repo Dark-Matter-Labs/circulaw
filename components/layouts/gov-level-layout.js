@@ -117,7 +117,7 @@ export default function GovLevelLayout({ ...props }) {
       return { x1, y1, x2, y2, stroke };
     });
     setLines(newLines.filter(Boolean));
-  }, [selected, natBg, provBg, gemBg]);
+  }, [selected, natBg, provBg, gemBg, buttonRefs, circleRefs]);
 
   return (
     <div>
