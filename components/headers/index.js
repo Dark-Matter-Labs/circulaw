@@ -46,8 +46,8 @@ export default function Header({
                 fill
                 sizes='100vw'
                 className={`${pageType === 'thema' ? 'object-cover' : 'min-h-[40vh] object-cover object-right sm:!h-auto sm:!w-auto sm:origin-top'} rounded-cl`}
-                priority={true}
-                quality={100}
+                priority={pageType === 'thema'}
+                quality={70}
               />
               {pageType === 'thema' && (
                 <div className='absolute left-0 top-0 z-0 h-full w-full rounded-cl bg-gradient-to-t from-[#035E46] to-[#035E4600]'></div>

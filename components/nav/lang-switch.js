@@ -18,15 +18,27 @@ function classNames(...classes) {
 
 export default function LangSwitch({ background }) {
   const [translateOpen, setTranslateOpen] = useState(false);
-  useEffect(() => {
+  const [translateLoaded, setTranslateLoaded] = useState(false);
+
+  // Load Google Translate script on demand (when opening), and use explicit https
+  const ensureTranslateLoaded = () => {
+    if (translateLoaded) return;
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
+    // Avoid duplicate script tags
+    if (document.getElementById('google-translate-script')) {
+      setTranslateLoaded(true);
+      return;
+    }
     const addScript = document.createElement('script');
-    addScript.setAttribute(
-      'src',
-      '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
-    );
+    addScript.id = 'google-translate-script';
+    addScript.async = true;
+    addScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    addScript.onload = () => setTranslateLoaded(true);
+    // Some Safari configurations are sensitive to third-party scripts; set referrerPolicy conservatively
+    addScript.referrerPolicy = 'no-referrer-when-downgrade';
     document.body.appendChild(addScript);
     window.googleTranslateElementInit = googleTranslateElementInit;
-  }, []);
+  };
   return (
     <>
       <div
@@ -57,7 +69,9 @@ export default function LangSwitch({ background }) {
         <button
           className='p-sm group relative z-100 ml-5 flex h-full flex-row items-center justify-center rounded-clSm text-green-100 sm:hidden lg:ml-4'
           onClick={() => {
-            setTranslateOpen(!translateOpen);
+            const next = !translateOpen;
+            setTranslateOpen(next);
+            if (next) ensureTranslateLoaded();
           }}
           aria-label='Open google translate for CircuLaw'
         >
@@ -76,7 +90,9 @@ export default function LangSwitch({ background }) {
         <button
           className='p-sm group relative z-100 hidden h-full flex-row items-center sm:flex'
           onClick={() => {
-            setTranslateOpen(!translateOpen);
+            const next = !translateOpen;
+            setTranslateOpen(next);
+            if (next) ensureTranslateLoaded();
           }}
           aria-label='Open google translate for CircuLaw'
         >

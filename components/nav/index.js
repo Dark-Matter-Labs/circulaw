@@ -898,8 +898,8 @@ export default function Nav(props) {
                                   <input
                                     className={`${
                                       pathname === '/'
-                                        ? 'bg-green-100/50 text-white caret-white placeholder:text-white focus:bg-[url("/search-icon.png")] focus:bg-[length:24px_24px] focus:ring-white'
-                                        : 'bg-white text-green-500 caret-green-500 shadow-card placeholder:text-green-500 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] focus:ring-green-500'
+                                        ? 'bg-green-100/50 text-white caret-white placeholder:text-white focus:ring-white'
+                                        : 'bg-white text-green-500 caret-green-500 shadow-card placeholder:text-green-500 focus:ring-green-500'
                                     } p-base placeholder:p-base-semibold h-[66px] w-[600px] rounded-cl border-none bg-left bg-no-repeat pl-12 [background-position-x:10px] focus:ring-1`}
                                     placeholder={placeholder}
                                     onChange={onChange()}
