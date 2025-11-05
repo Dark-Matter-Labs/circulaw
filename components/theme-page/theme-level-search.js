@@ -50,7 +50,7 @@ export default function ThemeLevelSearch(props) {
       future={{
         preserveSharedStateOnUnmount: true,
       }}
-      insights={true}
+      insights={false}
     >
       <Configure hitsPerPage={10} filters={`thema:${props?.thema}`} />
 
