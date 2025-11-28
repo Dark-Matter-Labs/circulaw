@@ -79,21 +79,17 @@ export default function ThemeLevelSearch(props) {
               submitIcon: 'visible',
             }}
             submitIconComponent={() => (
-              <button
-                type='submit'
-                className='p-base-semibold absolute right-3 top-3 ml-2 h-[42px] w-24 rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300 cursor-pointer'
-              >
+              <div className='p-base-semibold absolute right-3 top-3 ml-2 h-[42px] w-24 rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300 cursor-pointer'>
                 Zoeken
-              </button>
+              </div>
             )}
             resetIconComponent={() => (
-              <button
-                type='reset'
+              <div
                 title='Clear the search query'
                 className='group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-400/50 cursor-pointer'
               >
                 <IconX className='h-6 w-6 text-green-500 group-hover:text-green-900' />
-              </button>
+              </div>
             )}
           />
         </div>
@@ -110,21 +106,17 @@ export default function ThemeLevelSearch(props) {
             submitIcon: 'visible',
           }}
           submitIconComponent={() => (
-            <button
-              type='submit'
-              className='w-22 p-base-semibold absolute right-2.5 top-2.5 ml-2 flex h-[40px] items-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card cursor-pointer'
-            >
+            <div className='w-22 p-base-semibold absolute right-2.5 top-2.5 ml-2 flex h-[40px] items-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card cursor-pointer'>
               Zoeken
-            </button>
+            </div>
           )}
           resetIconComponent={() => (
-            <button
-              type='reset'
+            <div
               title='Clear the search query'
               className='group absolute right-24 top-3 rounded-full p-2 hover:bg-green-400/50 cursor-pointer'
             >
               <IconX className='h-6 w-6 text-green-500 group-hover:text-green-900' />
-            </button>
+            </div>
           )}
         />
       </div>
