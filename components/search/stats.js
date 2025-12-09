@@ -1,48 +1,38 @@
-import { useMemo } from 'react';
 import { useInstantSearch, useStats } from 'react-instantsearch';
 
 export default function CustomStats({ index }) {
   const { nbHits, query } = useStats();
   const { uiState } = useInstantSearch();
   
-  // Use JSON.stringify to create a stable dependency
-  const refinementListString = JSON.stringify(uiState?.instruments?.refinementList || {});
-  
-  const refinements = useMemo(() => {
-    const refinementList = JSON.parse(refinementListString);
-    return {
-      categorie: refinementList.categorie,
-      thema: refinementList.thema,
-      overheidslaag: refinementList.overheidslaag,
-      rLadder: refinementList.rLadder,
-      juridischInvloed: refinementList.juridischInvloed,
-      juridischeHaalbaarheid: refinementList.juridischeHaalbaarheid,
-      extraContent: refinementList.extraContent,
-    };
-  }, [refinementListString]);
+  // Read directly from uiState - no memoization, no state
+  const refinementList = uiState?.instruments?.refinementList || {};
+  const categorie = refinementList.categorie;
+  const thema = refinementList.thema;
+  const overheidslaag = refinementList.overheidslaag;
+  const rLadder = refinementList.rLadder;
+  const juridischInvloed = refinementList.juridischInvloed;
+  const juridischeHaalbaarheid = refinementList.juridischeHaalbaarheid;
+  const extraContent = refinementList.extraContent;
 
-  const { 
-    categorie, 
-    thema, 
-    overheidslaag, 
-    rLadder, 
-    juridischInvloed, 
-    juridischeHaalbaarheid, 
-    extraContent 
-  } = refinements;
-
-  const hasFilters = categorie || thema || overheidslaag || rLadder || 
-                     juridischInvloed || juridischeHaalbaarheid || extraContent;
+  const hasFilters = Boolean(
+    categorie?.length || 
+    thema?.length || 
+    overheidslaag?.length || 
+    rLadder?.length || 
+    juridischInvloed?.length || 
+    juridischeHaalbaarheid?.length || 
+    extraContent?.length
+  );
 
   return (
     <>
       {/* No query and no filter */}
-      {query === '' && !hasFilters && (
+      {!query && !hasFilters && (
         <div className='heading-2xl sm:heading-3xl'>{nbHits} resultaten.</div>
       )}
 
       {/* Query and no filter */}
-      {query !== '' && !hasFilters && (
+      {query && !hasFilters && (
         <div className='heading-2xl sm:heading-3xl'>
           {nbHits} resultaten gevonden voor:{' '}
           <span className='font-semibold'>&apos;{query}&apos;</span>
@@ -51,7 +41,7 @@ export default function CustomStats({ index }) {
       )}
 
       {/* Filter and no query */}
-      {hasFilters && query === '' && (
+      {hasFilters && !query && (
         <div className='heading-2xl sm:heading-3xl'>
           {nbHits} resultaten gevonden voor:{' '}
           {categorie?.map((item) => (
@@ -94,7 +84,7 @@ export default function CustomStats({ index }) {
       )}
 
       {/* Filter and query */}
-      {hasFilters && query !== '' && (
+      {hasFilters && query && (
         <div className='heading-2xl sm:heading-3xl'>
           {nbHits} resultaten gevonden voor:{' '}
           <span className='font-semibold'>
