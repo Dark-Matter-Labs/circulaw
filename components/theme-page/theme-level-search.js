@@ -58,7 +58,7 @@ export default function ThemeLevelSearch(props) {
     <InstantSearchNext
       searchClient={searchClientWithDebounce}
       indexName={'instruments'}
-      routing={false}
+      routing={true}
       insights={true}
     >
       <Configure hitsPerPage={10} filters={`thema:${props?.thema}`} />
