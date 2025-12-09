@@ -42,7 +42,7 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-// export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic';
 
 export default async function InstrumentenPage({ params }) {
   const { productChain, thema } = params;
