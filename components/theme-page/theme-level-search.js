@@ -25,17 +25,34 @@ import PagePagination from '../shared/pagination';
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
 
-const searchClient = algoliasearch(api_id, api_key);
+const algoliaClient = algoliasearch(api_id, api_key);
 
-// Wrap the search client to prevent excessive requests
-const searchClientWithDebounce = {
-  ...searchClient,
+// Create a search client that prevents duplicate simultaneous requests
+const pendingRequests = new Map();
+
+const searchClient = {
+  ...algoliaClient,
   search(requests) {
-    // Only search if there are actual requests
-    if (requests.every(({ params }) => !params.query)) {
-      return searchClient.search(requests);
+    // Create a unique key for this request
+    const requestKey = JSON.stringify(requests);
+    
+    // If this exact request is already pending, return the existing promise
+    if (pendingRequests.has(requestKey)) {
+      console.log('⚡ Reusing pending request');
+      return pendingRequests.get(requestKey);
     }
-    return searchClient.search(requests);
+    
+    // Create new request
+    console.log('🔍 New search request');
+    const searchPromise = algoliaClient.search(requests).finally(() => {
+      // Clean up after request completes
+      pendingRequests.delete(requestKey);
+    });
+    
+    // Store the promise
+    pendingRequests.set(requestKey, searchPromise);
+    
+    return searchPromise;
   },
 };
 
@@ -54,12 +71,13 @@ export default function ThemeLevelSearch(props) {
       label: rLadderLabes[item.label],
     }));
   };
+  
   return (
     <InstantSearchNext
-      searchClient={searchClientWithDebounce}
+      searchClient={searchClient}
       indexName={'instruments'}
-      routing={true}
-      insights={true}
+      routing={false}
+      insights={false}
     >
       <Configure hitsPerPage={10} filters={`thema:${props?.thema}`} />
 
@@ -78,6 +96,7 @@ export default function ThemeLevelSearch(props) {
       <div className='mt-4 flex items-center justify-center'>
         <div className='mb-10 mt-10 hidden items-center justify-start sm:flex'>
           <SearchBox
+            searchAsYouType={false}
             placeholder={props.searchTitle + '...'}
             classNames={{
               root: 'h-16 w-[600px] bg-white',
@@ -87,24 +106,24 @@ export default function ThemeLevelSearch(props) {
               submitIcon: 'visible',
             }}
             submitIconComponent={() => (
-              <button  type="submit" className='p-base-semibold absolute right-3 top-3 ml-2 h-[42px] w-24 rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300 cursor-pointer'>
+              <div className='p-base-semibold absolute right-3 top-3 ml-2 h-[42px] w-24 rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300 cursor-pointer'>
                 Zoeken
-              </button>
+              </div>
             )}
             resetIconComponent={() => (
-              <button
-                type="button"
+              <div
                 title='Clear the search query'
                 className='group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-400/50 cursor-pointer'
               >
                 <IconX className='h-6 w-6 text-green-500 group-hover:text-green-900' />
-              </button>
+              </div>
             )}
           />
         </div>
       </div>
       <div className='mt-4 flex items-center justify-center sm:hidden'>
         <SearchBox
+          searchAsYouType={false}
           placeholder={props.searchTitle + '...'}
           classNames={{
             root: 'h-16 max-w-sm w-full bg-white',
@@ -114,18 +133,17 @@ export default function ThemeLevelSearch(props) {
             submitIcon: 'visible',
           }}
           submitIconComponent={() => (
-            <button type="submit" className='w-22 p-base-semibold absolute right-2.5 top-2.5 ml-2 flex h-[40px] items-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card cursor-pointer'>
+            <div className='w-22 p-base-semibold absolute right-2.5 top-2.5 ml-2 flex h-[40px] items-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card cursor-pointer'>
               Zoeken
-            </button>
+            </div>
           )}
           resetIconComponent={() => (
-            <button
-              type="button"
+            <div
               title='Clear the search query'
               className='group absolute right-24 top-3 rounded-full p-2 hover:bg-green-400/50 cursor-pointer'
             >
               <IconX className='h-6 w-6 text-green-500 group-hover:text-green-900' />
-            </button>
+            </div>
           )}
         />
       </div>
