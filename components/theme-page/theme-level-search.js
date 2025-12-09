@@ -46,7 +46,7 @@ export default function ThemeLevelSearch(props) {
     <InstantSearchNext
       searchClient={algoliaClient}
       indexName={'instruments'}
-      routing={false}
+      routing={true}
       future={{
         preserveSharedStateOnUnmount: true,
       }}
