@@ -25,36 +25,7 @@ import PagePagination from '../shared/pagination';
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
 
-const algoliaClient = algoliasearch(api_id, api_key);
-
-// Create a search client that prevents duplicate simultaneous requests
-const pendingRequests = new Map();
-
-const searchClient = {
-  ...algoliaClient,
-  search(requests) {
-    // Create a unique key for this request
-    const requestKey = JSON.stringify(requests);
-    
-    // If this exact request is already pending, return the existing promise
-    if (pendingRequests.has(requestKey)) {
-      console.log('⚡ Reusing pending request');
-      return pendingRequests.get(requestKey);
-    }
-    
-    // Create new request
-    console.log('🔍 New search request');
-    const searchPromise = algoliaClient.search(requests).finally(() => {
-      // Clean up after request completes
-      pendingRequests.delete(requestKey);
-    });
-    
-    // Store the promise
-    pendingRequests.set(requestKey, searchPromise);
-    
-    return searchPromise;
-  },
-};
+const searchClient = algoliasearch(api_id, api_key);
 
 export default function ThemeLevelSearch(props) {
   const transformItems = (items) => {
