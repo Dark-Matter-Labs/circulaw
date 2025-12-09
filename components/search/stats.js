@@ -5,9 +5,11 @@ export default function CustomStats({ index }) {
   const { nbHits, query } = useStats();
   const { uiState } = useInstantSearch();
   
-  // Extract refinements directly - no useState needed!
+  // Use JSON.stringify to create a stable dependency
+  const refinementListString = JSON.stringify(uiState?.instruments?.refinementList || {});
+  
   const refinements = useMemo(() => {
-    const refinementList = uiState?.instruments?.refinementList || {};
+    const refinementList = JSON.parse(refinementListString);
     return {
       categorie: refinementList.categorie,
       thema: refinementList.thema,
@@ -17,7 +19,7 @@ export default function CustomStats({ index }) {
       juridischeHaalbaarheid: refinementList.juridischeHaalbaarheid,
       extraContent: refinementList.extraContent,
     };
-  }, [uiState?.instruments?.refinementList]);
+  }, [refinementListString]);
 
   const { 
     categorie, 
