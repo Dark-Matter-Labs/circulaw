@@ -36,7 +36,7 @@
     "algoliasearch": "^4.24.0",
     "axios": "^1.12.0",
     "cookies-next": "^4.2.1",
-    "next": "^14.2.32",
+    "next": "14.2.35",
     "next-sanity": "^9.5.0",
     "next-sanity-image": "^5.0.0",
     "next-share": "0.27.0",
