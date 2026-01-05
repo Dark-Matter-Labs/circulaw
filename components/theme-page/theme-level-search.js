@@ -7,7 +7,7 @@ import CustomClearRefinements from '@/components/search/clear-refinements';
 import { InstrumentHit } from '@/components/search/instrument-hit';
 import Pagination from '@/components/search/pagination';
 import { IconX } from '@tabler/icons-react';
-import algoliasearch from 'algoliasearch';
+import algoliasearch from 'algoliasearch/lite';
 
 import Header from '../headers';
 import TooltipJuridischeHoudbaarheidContent from '../instrument/tooltip-juridische-houdbaarheid-content';
