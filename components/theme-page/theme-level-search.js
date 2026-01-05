@@ -25,7 +25,7 @@ import PagePagination from '../shared/pagination';
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
 
-const algoliaClient = algoliasearch(api_id, api_key);
+const searchClient = algoliasearch(api_id, api_key);
 
 export default function ThemeLevelSearch(props) {
   const transformItems = (items) => {
@@ -42,15 +42,13 @@ export default function ThemeLevelSearch(props) {
       label: rLadderLabes[item.label],
     }));
   };
+  
   return (
     <InstantSearchNext
-      searchClient={algoliaClient}
+      searchClient={searchClient}
       indexName={'instruments'}
-      routing
-      future={{
-        preserveSharedStateOnUnmount: true,
-      }}
-      insights={true}
+      routing={false}
+      insights={false}
     >
       <Configure hitsPerPage={10} filters={`thema:${props?.thema}`} />
 
@@ -79,18 +77,14 @@ export default function ThemeLevelSearch(props) {
               submitIcon: 'visible',
             }}
             submitIconComponent={() => (
-              <div
-                type='submit'
-                className='p-base-semibold absolute right-3 top-3 ml-2 h-[42px] w-24 rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300'
-              >
+              <div className='p-base-semibold absolute right-3 top-3 ml-2 h-[42px] w-24 rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300 cursor-pointer'>
                 Zoeken
               </div>
             )}
             resetIconComponent={() => (
               <div
-                type='reset'
                 title='Clear the search query'
-                className='group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-400/50'
+                className='group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-400/50 cursor-pointer'
               >
                 <IconX className='h-6 w-6 text-green-500 group-hover:text-green-900' />
               </div>
@@ -110,18 +104,14 @@ export default function ThemeLevelSearch(props) {
             submitIcon: 'visible',
           }}
           submitIconComponent={() => (
-            <div
-              type='submit'
-              className='w-22 p-base-semibold absolute right-2.5 top-2.5 ml-2 flex h-[40px] items-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card'
-            >
+            <div className='w-22 p-base-semibold absolute right-2.5 top-2.5 ml-2 flex h-[40px] items-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card cursor-pointer'>
               Zoeken
             </div>
           )}
           resetIconComponent={() => (
             <div
-              type='reset'
               title='Clear the search query'
-              className='group absolute right-24 top-3 rounded-full p-2 hover:bg-green-400/50'
+              className='group absolute right-24 top-3 rounded-full p-2 hover:bg-green-400/50 cursor-pointer'
             >
               <IconX className='h-6 w-6 text-green-500 group-hover:text-green-900' />
             </div>

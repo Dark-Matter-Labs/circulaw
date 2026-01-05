@@ -2,7 +2,6 @@ import { table } from '@sanity/table';
 import { visionTool } from '@sanity/vision';
 import { defineConfig } from 'sanity';
 import { getIdPair } from 'sanity';
-import { vercelDeployTool } from 'sanity-plugin-vercel-deploy';
 import { structureTool } from 'sanity/structure';
 
 import { defaultDocumentNode } from './default-document-node';
@@ -42,7 +41,6 @@ export default defineConfig({
       defaultDocumentNode,
     }),
     visionTool(),
-    vercelDeployTool(),
     table(),
   ],
   schema: {

@@ -14,6 +14,7 @@ import modelText from './documents/modeltexts/model-text';
 import pillar from './documents/modeltexts/pillar';
 import newsItem from './documents/news-item';
 import partners from './documents/partners';
+import reaction from './documents/reaction';
 import siteConfig from './documents/site-config';
 import accordionDropdown from './objects/about-page/accordion-dropdown';
 import accordionDropdownContent from './objects/about-page/accordion-dropdown-content';
@@ -51,7 +52,7 @@ import themePageReport from './objects/thema-report';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
-
+  reaction,
   // INSTRUMENTS
   instrument,
   simpleThema,

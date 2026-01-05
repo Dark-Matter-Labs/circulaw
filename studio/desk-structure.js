@@ -2,10 +2,9 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { BsCircle, BsNewspaper } from 'react-icons/bs';
 import { CiTextAlignJustify } from 'react-icons/ci';
 import { FaHandshake, FaQuestion } from 'react-icons/fa';
+import { FaQuoteLeft } from 'react-icons/fa';
 import { FcAbout } from 'react-icons/fc';
 import { GiEuropeanFlag, GiGreekTemple } from 'react-icons/gi';
-import { IoCalendarOutline } from 'react-icons/io5';
-import { RiTeamLine } from 'react-icons/ri';
 
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 
@@ -120,6 +119,10 @@ export const Structure = (S, context) =>
         .id('PartnersList')
         .icon(FaHandshake)
         .child(S.document().title('Partners').schemaType('partners').documentId('PartnersList')),
+      S.listItem()
+        .title('Reactions')
+        .icon(FaQuoteLeft)
+        .child(S.documentList().title('Reactions').filter('_type == "reaction"')),
       S.divider(),
       S.listItem()
         .title('Home Page')
