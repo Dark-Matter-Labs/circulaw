@@ -106,6 +106,9 @@ export default function SummaryComponent({ lawData }) {
         {lawData.title === 'Waste Framework Directive (WFD)' && (
           <Highlights law='Waste Framework Directive (WFD)' />
         )}
+        {lawData.title === 'Critical Raw Materials Act' && (
+          <Highlights law='Critical Raw Materials Act' />
+        )}
       </div>
       {/* Links */}
       <div className='py-10'>
