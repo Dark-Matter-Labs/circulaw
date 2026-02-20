@@ -5,7 +5,6 @@ import Layout from '@/components/layouts/layout';
 import { NAV_QUERY, PARTNERS_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 import globalMeta from '@/utils/global-meta';
-import { hasCookie } from 'cookies-next';
 
 import '../global.css';
 
@@ -45,7 +44,8 @@ export default async function RootLayout({ children }) {
     query: NAV_QUERY,
     tags: ['aboutPages', 'navigation', 'thema', 'simpleThema', 'euLaw', 'siteConfig', 'navigation'],
   });
-  const hasLocalConsentCookie = hasCookie('localConsent', { cookies });
+  const cookieStore = await cookies();
+  const hasLocalConsentCookie = cookieStore.has('localConsent');
 
   return (
     <html lang='nl' className={plus_Jakarta_Sans.variable}>
