@@ -3,10 +3,7 @@
 // TODO: Need to fix mobile design of tab layout and everything.
 import { useEffect, useState, useTransition } from 'react';
 
-import { usePathname } from 'next/navigation';
-
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
-import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import { IconChevronUp } from '@tabler/icons-react';
 
 import TabButton from '../expertise-page/tab-button';
@@ -39,8 +36,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   }, [expertiseData, selectedTab]);
 
   const [local, setLocal] = useState({ value: 'alle' });
-  const pathname = usePathname();
-  const { CustomEvent } = usePiwikPro();
 
   useEffect(() => {
     if (
@@ -309,7 +304,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
       startTransition(() => {
         setSelectedTab(value);
       });
-      CustomEvent.trackEvent('Categorie Tab Change', pathname, value);
     }
   }
   return (

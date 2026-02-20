@@ -18,8 +18,7 @@ const nextConfig = {
       },
     ]
   },
-  transpilePackages: ['@piwikpro/next-piwik-pro'],
-    images: {
+  images: {
       remotePatterns: [
         {
           protocol: 'https',
