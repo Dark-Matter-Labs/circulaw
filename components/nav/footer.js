@@ -210,14 +210,14 @@ export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
                               </li>
                             ))}
                           <li>
-                            <a
+                            <Link
                               className='p-base-semibold link-interaction text-white'
                               href='/vraag-en-antwoord'
                             >
                               <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
                                 Vraag en antwoord
                               </span>
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </div>
