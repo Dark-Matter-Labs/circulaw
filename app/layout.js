@@ -1,5 +1,6 @@
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import { cookies } from 'next/headers';
+import Script from 'next/script';
 
 import Layout from '@/components/layouts/layout';
 import { NAV_QUERY, PARTNERS_QUERY } from '@/lib/queries';
@@ -50,6 +51,10 @@ export default async function RootLayout({ children }) {
   return (
     <html lang='nl' className={plus_Jakarta_Sans.variable}>
       <body className='text-cl-black'>
+        <Script
+          src='https://scripts.simpleanalyticscdn.com/latest.js'
+          strategy='afterInteractive'
+        />
         <Layout
           navData={navData}
           partnerLogos={partnerLogos}
