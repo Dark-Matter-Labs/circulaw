@@ -26,7 +26,6 @@
     "@floating-ui/react": "^0.27.18",
     "@headlessui/react": "^2.2.9",
     "@lottiefiles/react-lottie-player": "^3.6.0",
-    "@piwikpro/next-piwik-pro": "^3.4.0",
     "@portabletext/react": "^2.0.0",
     "@radix-ui/react-accordion": "^1.2.12",
     "@react-spring/web": "^9.7.5",

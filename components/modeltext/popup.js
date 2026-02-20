@@ -10,14 +10,12 @@ import {
   reducedPortableTextComponents,
 } from '@/lib/portable-text/pt-components';
 import { Button, Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
-import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import { PortableText } from '@portabletext/react';
 import { IconCheck, IconCopy, IconX } from '@tabler/icons-react';
 
 import ModelTextCard from './modeltext-card';
 
 export default function PopUp({ pillars, modelTexts }) {
-  const { CustomEvent } = usePiwikPro();
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -175,7 +173,6 @@ export default function PopUp({ pillars, modelTexts }) {
                         id='copy_modeltext'
                         onClick={() => {
                           navigator.clipboard.writeText(selectedModelText.modelTextPT);
-                          CustomEvent.trackEvent('modeltext', selectedModelText.title);
                           setShowLinkCopied(true);
                           setTimeout(() => {
                             setShowLinkCopied(false);

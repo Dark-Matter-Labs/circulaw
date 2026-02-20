@@ -1,10 +1,6 @@
-import { useState } from 'react';
-
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 import Partners from '@/components/nav/partners';
-import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import { IconBrandGithub, IconBrandLinkedin, IconFileSearch } from '@tabler/icons-react';
 
 import NewButton from '../shared/new-button';
@@ -20,14 +16,6 @@ const navigation = {
   ],
 };
 export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
-  const { CustomEvent } = usePiwikPro();
-  const [moreInfoOpen, setMoreInfoOpen] = useState('hidden');
-  const [successMessage, setSuccessMessage] = useState('hidden');
-  const [jeeNee, setJeeNee] = useState('');
-  const [feedbackState, setFeedBackState] = useState('');
-  const [feedback, setFeedback] = useState('');
-
-  const pathname = usePathname();
   return (
     <>
       <footer className='' aria-labelledby='footer-heading'>
@@ -36,89 +24,6 @@ export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
             <NewButton variant='secondaryDark' icon='arrowUp' scrollTo='top'>
               Top
             </NewButton>
-          </div>
-          <div className='border-t border-t-green-500'>
-            <div className='global-margin py-10'>
-              <div className={`flex items-center justify-center ${jeeNee}`}>
-                <h3 className='heading-xl-semibold sm:heading-2xl-semibold pr-8 text-green-500'>
-                  Vond je deze pagina nuttig?
-                </h3>
-                <div className='mr-4'>
-                  <NewButton
-                    variant='secondaryDark'
-                    icon='thumbUp'
-                    id='je'
-                    onClick={() => {
-                      setFeedback('');
-                      setFeedBackState('Ja');
-                      CustomEvent.trackEvent('Footer Feedback Ja', pathname);
-                      setMoreInfoOpen('block');
-                    }}
-                  >
-                    Ja
-                  </NewButton>
-                </div>
-                <div>
-                  <NewButton
-                    variant='secondaryDark'
-                    icon='thumbDown'
-                    id='nee'
-                    onClick={() => {
-                      setFeedback('');
-                      setFeedBackState('Nee');
-                      CustomEvent.trackEvent('Footer Feedback Nee', pathname);
-                      setMoreInfoOpen(true);
-                    }}
-                  >
-                    Nee
-                  </NewButton>
-                </div>
-              </div>
-              <div className={moreInfoOpen}>
-                <div className='mt-3 sm:mt-5'>
-                  {feedbackState === 'Ja' ? (
-                    <h5 className='p-base leading-6 text-gray-900'>
-                      Fijn! Laat ons kort weten waarom.
-                    </h5>
-                  ) : (
-                    <h5 className='p-base leading-6 text-gray-900'>
-                      Jammer, vertel ons waarom niet, zodat we onze website kunnen verbeteren.
-                    </h5>
-                  )}
-                  <div className='mt-2'>
-                    <textarea
-                      id='message'
-                      name='message'
-                      rows={2}
-                      value={feedback}
-                      onChange={(e) => setFeedback(e.target.value)}
-                      className='block w-3/4 rounded-cl border border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
-                    />
-                  </div>
-                </div>
-                <div className='mt-5 sm:mt-6'>
-                  <NewButton
-                    variant='secondaryDark'
-                    id='moreFeedback'
-                    onClick={() => {
-                      CustomEvent.trackEvent(
-                        'Footer Feedback More Info',
-                        pathname,
-                        feedback + ' ,state:' + feedbackState,
-                      );
-                      setMoreInfoOpen('hidden');
-                      setJeeNee('hidden');
-                      setSuccessMessage('block');
-                    }}
-                  >
-                    Versturen
-                  </NewButton>
-                </div>
-              </div>
-              <div className={`success-message max-w-sm px-4 py-4 ${successMessage}`}>
-                <p className='p-base mx-auto leading-6 text-gray-900'>Bedankt voor je reactie!</p>
-              </div>
-            </div>
           </div>
           <div className='bg-green-500'>
             <div className='global-margin pt-8 lg:pt-16'>
@@ -181,11 +86,11 @@ export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
                         <ul role='list' className='mt-4 space-y-4'>
                           {navigation.thema?.map((thema) => (
                             <li key={thema.name}>
-                              <a href={thema.slug} className='p-base-semibold text-white'>
+                              <Link href={thema.slug} className='p-base-semibold text-white'>
                                 <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
                                   {thema.name}
                                 </span>
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -199,14 +104,14 @@ export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
                           {aboutSlugs &&
                             aboutSlugs?.map((slug, id) => (
                               <li key={id}>
-                                <a
+                                <Link
                                   href={`/over/${encodeURIComponent(slug.slug)}`}
                                   className='p-base-semibold text-white'
                                 >
                                   <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
                                     {slug.pageTitle.replaceAll('-', ' ')}
                                   </span>
-                                </a>
+                                </Link>
                               </li>
                             ))}
                           <li>
