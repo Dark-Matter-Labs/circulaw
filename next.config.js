@@ -18,8 +18,7 @@ const nextConfig = {
       },
     ]
   },
-  transpilePackages: ['@piwikpro/next-piwik-pro'],
-    images: {
+  images: {
       remotePatterns: [
         {
           protocol: 'https',
@@ -27,6 +26,7 @@ const nextConfig = {
           pathname: '**',
         },
       ],
+      qualities: [75, 90, 100],
     },
   }
 module.exports = nextConfig

@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import { IconChevronRight } from '@tabler/icons-react';
 
 export default function DesktopNavCard({ navData, closeNav }) {
   const pathname = usePathname();
-  const { CustomEvent } = usePiwikPro();
   return (
     <div
       className={`${
@@ -21,10 +19,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
         id='navClick'
         href={`/${navData.slug}`}
         className='flex items-center hover:underline'
-        onClick={() => {
-          closeNav(false);
-          CustomEvent.trackEvent('Nav click', pathname, navData.title);
-        }}
+        onClick={() => closeNav(false)}
       >
         {navData.title} <IconChevronRight className='ml-1 mt-1 size-4' />
       </Link>
@@ -45,10 +40,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
             className={`${
               pathname === '/' ? 'text-white' : 'text-green-500 hover:text-green-500'
             } p-xs active:p-xs-semibold cursor-pointer active:no-underline`}
-            onClick={() => {
-              CustomEvent.trackEvent('Nav click', pathname, thema.themaName);
-              closeNav(false);
-            }}
+            onClick={() => closeNav(false)}
           >
             <span className='hover:underline'> {thema.themaName} </span>
 
@@ -78,10 +70,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
           <div>
             <Link
               href='/bouw/planregels'
-              onClick={() => {
-                CustomEvent.trackEvent('Nav click', pathname, 'planregels');
-                closeNav(false);
-              }}
+              onClick={() => closeNav(false)}
               className={`${
                 pathname === '/' ? 'text-white' : 'text-green-500 hover:text-green-500'
               } p-xs active:p-xs-semibold mt-2 flex cursor-pointer flex-row items-center active:no-underline`}
@@ -92,10 +81,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
           <div className='mt-[2px]'>
             <Link
               href='/training'
-              onClick={() => {
-                CustomEvent.trackEvent('Nav click', pathname, 'training');
-                closeNav(false);
-              }}
+              onClick={() => closeNav(false)}
               className={`${
                 pathname === '/' ? 'text-white' : 'text-green-500 hover:text-green-500'
               } p-xs active:p-xs-semibold flex cursor-pointer flex-row items-center pt-2 active:no-underline`}
@@ -106,10 +92,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
           <div className='mt-[2px]'>
             <Link
               href='/bouw/gebiedsontwikkeling'
-              onClick={() => {
-                CustomEvent.trackEvent('Nav click', pathname, 'gebiedsontwikkeling');
-                closeNav(false);
-              }}
+              onClick={() => closeNav(false)}
               className={`${
                 pathname === '/' ? 'text-white' : 'text-green-500 hover:text-green-500'
               } p-xs active:p-xs-semibold flex cursor-pointer flex-row items-center pt-2 active:no-underline`}

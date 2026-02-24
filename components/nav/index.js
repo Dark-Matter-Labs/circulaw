@@ -25,7 +25,6 @@ import {
   useTransitionStyles,
 } from '@floating-ui/react';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
-import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import {
   IconChevronDown,
   IconFileDownload,
@@ -47,7 +46,6 @@ const PlayerWithNoSSR = dynamic(
 
 export default function Nav(props) {
   const pathname = usePathname();
-  const { CustomEvent } = usePiwikPro();
   const [scrollEffect, setScrollEffect] = useState(false);
 
   useEffect(() => {
@@ -130,15 +128,6 @@ export default function Nav(props) {
 
   const { getReferenceProps: searchMenuReferencProps, getFloatingProps: searchMenuFloatingProps } =
     useInteractions([searchMenuClick, searchMenuDismiss, searchMenuRole]);
-
-  // remove search index when user opens search menu from another page
-  useEffect(() => {
-    if (searchMenuIsOpen || mobileMenuIsOpen) {
-      localStorage.removeItem('selectedIndex');
-    } else {
-      setSearchIndex(0);
-    }
-  });
 
   // main menu
   const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
@@ -290,6 +279,15 @@ export default function Nav(props) {
       },
     });
 
+  // remove search index when user opens search menu from another page
+  useEffect(() => {
+    if (searchMenuIsOpen || mobileMenuIsOpen) {
+      localStorage.removeItem('selectedIndex');
+    } else {
+      setSearchIndex(0);
+    }
+  }, [searchMenuIsOpen, mobileMenuIsOpen]);
+
   return (
     <>
       <div id='wrapper' className='sticky top-0 z-100 w-full'>
@@ -360,6 +358,7 @@ export default function Nav(props) {
                         alt='CircuLaw logo'
                         quality={100}
                         className='relative z-80'
+                        priority
                       />
                     </Link>
                   </div>
@@ -371,6 +370,7 @@ export default function Nav(props) {
                         src={CirculawLogo}
                         alt='CircuLaw logo'
                         quality={100}
+                        priority
                       />
                     </Link>
                   </div>
@@ -684,10 +684,7 @@ export default function Nav(props) {
                             <Link
                               href='/eu-wetgeving'
                               id='navClick'
-                              onClick={() => {
-                                setEuMenuIsOpen(false);
-                                CustomEvent.trackEvent('Nav click', pathname);
-                              }}
+                              onClick={() => setEuMenuIsOpen(false)}
                             >
                               Overzicht
                             </Link>
@@ -704,10 +701,7 @@ export default function Nav(props) {
                               <Link
                                 href={`/eu-wetgeving/${euLaw?.slug}`}
                                 id='navClick'
-                                onClick={() => {
-                                  setEuMenuIsOpen(false);
-                                  CustomEvent.trackEvent('Nav click', pathname, euLaw.title);
-                                }}
+                                onClick={() => setEuMenuIsOpen(false)}
                               >
                                 {euLaw.title}
                               </Link>
@@ -724,10 +718,7 @@ export default function Nav(props) {
                               href='https://www.circulaw.nl/European_green_deal.pdf'
                               id='navClick'
                               target='_blank'
-                              onClick={() => {
-                                setEuMenuIsOpen(false);
-                                CustomEvent.trackEvent('Nav click', pathname);
-                              }}
+                              onClick={() => setEuMenuIsOpen(false)}
                               className='flex flex-row items-center justify-start'
                             >
                               <IconFileDownload className='mr-2 h-5 w-5' /> EU Green Deal
@@ -809,14 +800,7 @@ export default function Nav(props) {
                               <Link
                                 href={`/over/${aboutPage?.slug}`}
                                 id='navClick'
-                                onClick={() => {
-                                  setOverMenuIsOpen(false);
-                                  CustomEvent.trackEvent(
-                                    'Nav click',
-                                    pathname,
-                                    aboutPage.pageTitle,
-                                  );
-                                }}
+                                onClick={() => setOverMenuIsOpen(false)}
                               >
                                 {aboutPage.pageTitle}
                               </Link>
