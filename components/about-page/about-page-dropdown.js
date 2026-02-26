@@ -12,7 +12,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
 
   return (
     <div className='w-full pt-8'>
-      <Disclosure>
+      <Disclosure as='div'>
         <>
           <DisclosureButton className='group flex h-10 w-full items-center justify-between rounded-cl border border-green-500 bg-green-500 text-black data-[open]:rounded-b-none data-[open]:rounded-t-cl'>
             <div className='flex h-full w-11/12 items-center justify-start truncate rounded-l-cl bg-green-100 pl-3 group-data-[open]:rounded-bl-none group-data-[open]:rounded-tl-cl'>

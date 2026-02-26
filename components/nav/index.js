@@ -413,7 +413,7 @@ export default function Nav(props) {
                           style={{ ...mobileMenuTransitionStyles }}
                         >
                           <div className='global-margin flex flex-col items-start justify-end'>
-                            <Disclosure>
+                            <Disclosure as='div'>
                               <>
                                 <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center py-4 text-left text-cl-black data-[open]:text-green-500'>
                                   Productketens
@@ -434,7 +434,7 @@ export default function Nav(props) {
                             </Disclosure>
 
                             {/* EU */}
-                            <Disclosure>
+                            <Disclosure as='div'>
                               <>
                                 <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center border-t py-4 text-left text-cl-black data-[open]:text-green-500'>
                                   EU wetgeving
@@ -478,7 +478,7 @@ export default function Nav(props) {
                               </>
                             </Disclosure>
 
-                            <Disclosure>
+                            <Disclosure as='div'>
                               <>
                                 <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center border-t py-4 text-left text-cl-black data-[open]:text-green-500'>
                                   Over CircuLaw
