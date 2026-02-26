@@ -1,9 +1,8 @@
 import algoliasearch from 'algoliasearch';
 
-const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
-const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
+import { algoliaConfig } from '@/lib/algolia-search-client';
 
-const algoliaClient = algoliasearch(api_id, api_key);
+const algoliaClient = algoliasearch(algoliaConfig.apiId, algoliaConfig.apiKey);
 
 const searchClient = {
   ...algoliaClient,
