@@ -12,7 +12,7 @@ export default function AccordionDropdown({ data }) {
   if (data.design === 'default') {
     return (
       <div className='mb-[60px] sm:mb-[120px]'>
-        <Disclosure>
+        <Disclosure as='div'>
           {({ open }) => (
             <>
               <DisclosureButton
@@ -79,7 +79,7 @@ export default function AccordionDropdown({ data }) {
   if (data.design === 'orange') {
     return (
       <div className='mb-[60px] sm:mb-[120px]'>
-        <Disclosure>
+        <Disclosure as='div'>
           {({ open }) => (
             <>
               <DisclosureButton
