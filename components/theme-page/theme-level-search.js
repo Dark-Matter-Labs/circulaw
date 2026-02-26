@@ -1,7 +1,6 @@
 'use client';
 
-import { Configure, Hits, RefinementList, SearchBox } from 'react-instantsearch';
-import { InstantSearchNext } from 'react-instantsearch-nextjs';
+import { Configure, Hits, InstantSearch, RefinementList, SearchBox } from 'react-instantsearch';
 
 import CustomClearRefinements from '@/components/search/clear-refinements';
 import { InstrumentHit } from '@/components/search/instrument-hit';
@@ -42,12 +41,11 @@ export default function ThemeLevelSearch(props) {
   };
   
   return (
-    <InstantSearchNext
+    <InstantSearch
       key={`${props?.productChain ?? ''}-${props?.thema ?? ''}`}
       searchClient={searchClient}
-      indexName={'instruments'}
+      indexName='instruments'
       routing={false}
-      insights={false}
     >
       <Configure hitsPerPage={10} filters={`thema:${props?.thema}`} />
 
@@ -418,6 +416,6 @@ export default function ThemeLevelSearch(props) {
           </div>
         </NoResultsBoundary>
       </div>
-    </InstantSearchNext>
+    </InstantSearch>
   );
 }
