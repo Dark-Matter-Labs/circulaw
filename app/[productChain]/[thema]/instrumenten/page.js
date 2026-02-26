@@ -59,6 +59,7 @@ export default async function InstrumentenPage({ params }) {
   }));
   return (
     <ThemeLevelSearch
+      key={`${productChain}-${thema}`}
       title={`Lijst van alle ${params?.thema.replace('-', ' ')} instrumenten`}
       thema={params?.thema}
       productChain={params?.productChain}
