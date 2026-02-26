@@ -6,6 +6,7 @@ import { Index, InstantSearch, useHits, useInstantSearch } from 'react-instantse
 import { TabGroup, TabPanel, TabPanels } from '@headlessui/react';
 import algoliasearch from 'algoliasearch';
 
+import { algoliaConfig } from '@/lib/algolia-search-client';
 import EUSearch from './eu-search';
 import InstrumentSearch from './instrument-search';
 import NewsSearch from './news-search';
@@ -16,10 +17,7 @@ import NewSearchBar from './search-bar';
 
 const indexName = 'root';
 
-const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
-const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
-
-const algoliaClient = algoliasearch(api_id, api_key);
+const algoliaClient = algoliasearch(algoliaConfig.apiId, algoliaConfig.apiKey);
 
 const searchClient = {
   ...algoliaClient,

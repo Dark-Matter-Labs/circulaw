@@ -6,7 +6,7 @@ import { IconChevronDown } from '@tabler/icons-react';
 export default function MobileDisclosure({ navData, closeMenu }) {
   return (
     <li className='p-base-semibold border-b py-6 text-cl-black last:border-b-0'>
-      <Disclosure>
+      <Disclosure as='div'>
         <>
           <DisclosureButton className='group flex flex-row items-center data-[open]:text-green-500'>
             {navData?.title}

@@ -1,7 +1,6 @@
 'use client';
 
-import { Configure, Hits, RefinementList, SearchBox } from 'react-instantsearch';
-import { InstantSearchNext } from 'react-instantsearch-nextjs';
+import { Configure, Hits, InstantSearch, RefinementList, SearchBox } from 'react-instantsearch';
 
 import CustomClearRefinements from '@/components/search/clear-refinements';
 import { InstrumentHit } from '@/components/search/instrument-hit';
@@ -9,6 +8,7 @@ import Pagination from '@/components/search/pagination';
 import { IconX } from '@tabler/icons-react';
 import algoliasearch from 'algoliasearch/lite';
 
+import { algoliaConfig } from '@/lib/algolia-search-client';
 import Header from '../headers';
 import TooltipJuridischeHoudbaarheidContent from '../instrument/tooltip-juridische-houdbaarheid-content';
 import TooltipJuridischeInvloedContent from '../instrument/tooltip-juridische-invloed-content';
@@ -22,10 +22,7 @@ import NoResultsInstruments from '../search/no-results-instrument';
 import CustomStats from '../search/stats';
 import PagePagination from '../shared/pagination';
 
-const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
-const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
-
-const searchClient = algoliasearch(api_id, api_key);
+const searchClient = algoliasearch(algoliaConfig.apiId, algoliaConfig.apiKey);
 
 export default function ThemeLevelSearch(props) {
   const transformItems = (items) => {
@@ -44,11 +41,11 @@ export default function ThemeLevelSearch(props) {
   };
   
   return (
-    <InstantSearchNext
+    <InstantSearch
+      key={`${props?.productChain ?? ''}-${props?.thema ?? ''}`}
       searchClient={searchClient}
-      indexName={'instruments'}
+      indexName='instruments'
       routing={false}
-      insights={false}
     >
       <Configure hitsPerPage={10} filters={`thema:${props?.thema}`} />
 
@@ -419,6 +416,6 @@ export default function ThemeLevelSearch(props) {
           </div>
         </NoResultsBoundary>
       </div>
-    </InstantSearchNext>
+    </InstantSearch>
   );
 }

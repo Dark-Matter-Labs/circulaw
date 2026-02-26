@@ -8,7 +8,7 @@ import { IconChevronDown } from '@tabler/icons-react';
 export default function MediaItems({ data }) {
   return (
     <div className='mb-[60px] sm:mb-[120px]'>
-      <Disclosure>
+      <Disclosure as='div'>
         {({ open }) => (
           <>
             <DisclosureButton

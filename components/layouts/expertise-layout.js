@@ -453,7 +453,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 <p className='p-base'>Toon overheidslaag:</p>
                 <div className='w-full min-w-[260px] pt-3'>
                   {local?.value === 'alle' && (
-                    <Disclosure>
+                    <Disclosure as='div'>
                       {({ open }) => (
                         <>
                           <DisclosureButton
@@ -510,7 +510,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                     </Disclosure>
                   )}
                   {local?.value === 'Nationaal' && (
-                    <Disclosure>
+                    <Disclosure as='div'>
                       {({ open }) => (
                         <>
                           <DisclosureButton
@@ -563,7 +563,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                     </Disclosure>
                   )}
                   {local?.value === 'Provinciaal' && (
-                    <Disclosure>
+                    <Disclosure as='div'>
                       {({ open }) => (
                         <>
                           <DisclosureButton
@@ -616,7 +616,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                     </Disclosure>
                   )}
                   {local?.value === 'Gemeentelijk' && (
-                    <Disclosure>
+                    <Disclosure as='div'>
                       {({ open }) => (
                         <>
                           <DisclosureButton
