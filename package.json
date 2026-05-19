@@ -35,7 +35,7 @@
     "@tailwindcss/forms": "^0.5.11",
     "@vercel/og": "^0.8.6",
     "algoliasearch": "^4.24.0",
-    "axios": "^1.13.5",
+    "axios": "^1.15.2",
     "cookies-next": "^4.2.1",
     "next": "15.5.10",
     "next-sanity": "^9.12.3",
