@@ -325,7 +325,7 @@ export default function GovLevelLayout({ ...props }) {
                 <div className='h-9 w-9 rounded-clSm bg-green-400' />
                 <div className='h-9 w-9 rounded-clSm bg-green-300' />
               </div>
-              <h4 className='p-2xs flex-shrink text-right'>Laagste aantal instrumenten</h4>
+              <h4 className='p-2xs shrink text-right'>Laagste aantal instrumenten</h4>
             </div>
           </div>
         </div>

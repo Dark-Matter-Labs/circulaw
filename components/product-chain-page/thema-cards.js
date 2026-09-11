@@ -43,7 +43,7 @@ export default function ThemaCard({ themaCards }) {
                   </h3>
                   <p className='p-base p-xs pb-2 text-green-500'>{thema.count} instrumenten</p>
                   <p className='p-base w-full text-cl-black'>{thema.homePageCardText}</p>
-                  <div className='flex flex-grow items-end justify-start'>
+                  <div className='flex grow items-end justify-start'>
                     <NewRoundButton variant='orange' />
                   </div>
                 </div>
@@ -55,9 +55,9 @@ export default function ThemaCard({ themaCards }) {
       <div className='flex flex-col gap-y-[10px] sm:hidden'>
         {themaCards.map((thema, id) => (
           <Link key={id} href={`/${thema.transitionAgenda}/${thema.slug}`}>
-            <div className='h-28 w-full rounded-cl bg-green-100 shadow'>
+            <div className='h-28 w-full rounded-cl bg-green-100 shadow-sm'>
               <div className='flex items-center justify-start'>
-                <div className='relative !h-28 !w-24'>
+                <div className='relative h-28! w-24!'>
                   <Image
                     src={urlFor(thema?.mobileCardImage).url()}
                     alt={thema?.themaName + 'image'}
@@ -74,7 +74,7 @@ export default function ThemaCard({ themaCards }) {
                 </div>
                 <div className='flex grow flex-row items-center justify-between pl-6 pr-4 text-black'>
                   <div>
-                    <h3 className='heading-xl-semibold max-w-[132px] break-words'>
+                    <h3 className='heading-xl-semibold max-w-[132px] wrap-break-word'>
                       {thema.themaName}
                     </h3>
 

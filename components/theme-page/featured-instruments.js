@@ -37,7 +37,7 @@ export default function FeaturedInstruments({ featuredLaws, thema }) {
             ) : (
               <>
                 <div className='flex max-w-7xl pb-10'>
-                  <div className='mb-10 mr-4 w-5 rounded-full bg-gradient-to-b from-[#25C38B] to-[#035E46] sm:w-2'></div>
+                  <div className='mb-10 mr-4 w-5 rounded-full bg-linear-to-b from-[#25C38B] to-[#035E46] sm:w-2'></div>
                   <div>
                     {/* This can be a component - policy list, theme bottom section + here */}
                     {featuredLaws?.map((instrument, index) => (

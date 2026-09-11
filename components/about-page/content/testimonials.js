@@ -10,14 +10,14 @@ export default function Testimonials({ data }) {
             className='grid grid-cols-1 items-center justify-between gap-y-8 rounded-cl border border-green-400 p-8 sm:grid-cols-2 sm:gap-20 lg:gap-40'
           >
             <div className='relative'>
-              <div className='absolute -top-0 left-2 font-jakarta text-[40px] font-bold leading-none text-green-600 sm:left-1 sm:text-[50px]'>
+              <div className='absolute top-0 left-2 font-jakarta text-[40px] font-bold leading-none text-green-600 sm:left-1 sm:text-[50px]'>
                 &quot;
               </div>
               <div className='pl-8'>
                 <p className='heading-xl sm:heading-2xl leading-relaxed'>
                   {testimonial.content}
                   <span className='ml-1 inline-block align-top leading-none'>
-                    <span className='block font-jakarta text-[40px] font-bold leading-[1] text-green-600 sm:text-[50px]'>
+                    <span className='block font-jakarta text-[40px] font-bold leading-none text-green-600 sm:text-[50px]'>
                       &quot;
                     </span>
                   </span>

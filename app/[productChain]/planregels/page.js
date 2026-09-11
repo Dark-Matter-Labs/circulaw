@@ -81,7 +81,7 @@ export default async function ScrollyTellingPage(props) {
                           Omgevingsvisie, - programma&apos;s, - plan
                         </h5>
                       </div>
-                      <IconChevronDown className='h-6 w-6 place-self-start text-cl-black group-data-[open]:rotate-180' />
+                      <IconChevronDown className='h-6 w-6 place-self-start text-cl-black group-data-open:rotate-180' />
                     </DisclosureButton>
                     <DisclosurePanel className='-mt-6 rounded-b-clSm bg-green-100 px-6 pb-4 sm:px-10'>
                       <div className='flex flex-col gap-8 py-6'>

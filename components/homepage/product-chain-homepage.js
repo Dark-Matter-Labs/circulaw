@@ -56,27 +56,27 @@ export default function PCHomePage({ pcData }) {
                 <div className='flex w-full max-w-[200px] grow flex-col justify-between'>
                   <div>
                     {chain.pcName === 'Consumptiegoederen' && (
-                      <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500'>
+                      <div className='heading-3xl-semibold min-h-[100px] items-end wrap-break-word pt-4 text-green-500'>
                         Consumptie-goederen
                       </div>
                     )}
                     {chain.pcName === 'Bouw' && (
-                      <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500'>
+                      <div className='heading-3xl-semibold min-h-[100px] items-end wrap-break-word pt-4 text-green-500'>
                         Bouw en infra
                       </div>
                     )}
                     {chain.pcName === 'Biomassa en voedsel' && (
-                      <div className='heading-3xl-semibold break-pretty min-h-[100px] items-end break-words pt-4 text-green-500'>
+                      <div className='heading-3xl-semibold break-pretty min-h-[100px] items-end wrap-break-word pt-4 text-green-500'>
                         {chain.pcName}
                       </div>
                     )}
                     {chain.pcName === 'Maakindustrie' && (
-                      <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500'>
+                      <div className='heading-3xl-semibold min-h-[100px] items-end wrap-break-word pt-4 text-green-500'>
                         Maak-industrie
                       </div>
                     )}
                     {chain.pcName === 'Kunststoffen' && (
-                      <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500 lg:mr-6'>
+                      <div className='heading-3xl-semibold min-h-[100px] items-end wrap-break-word pt-4 text-green-500 lg:mr-6'>
                         Kunst-stoffen
                       </div>
                     )}
@@ -110,9 +110,9 @@ export default function PCHomePage({ pcData }) {
       <div className='flex flex-col gap-y-[10px] sm:hidden'>
         {pcData.map((chain, id) => (
           <Link key={id} href={`/${chain.slug}`}>
-            <div className='h-28 w-full rounded-cl bg-green-200 shadow'>
+            <div className='h-28 w-full rounded-cl bg-green-200 shadow-sm'>
               <div className='flex items-center justify-start'>
-                <div className='relative !h-28 !w-24'>
+                <div className='relative h-28! w-24!'>
                   <Image
                     src={urlFor(chain?.image).url()}
                     alt={chain.alt}

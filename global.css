@@ -1,285 +1,336 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer components {
-  .global-margin {
-    @apply max-w-7xl;
-    @apply mx-[20px];
-    @apply md:mx-[70px];
-    @apply xl:mx-[140px];
-    @apply 2xl:mx-auto;
+@config './tailwind.config.js';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
+}
 
-/* used in the nav component */
-  .global-padding {
-    @apply px-4;  
-    @apply md:px-10;
-    @apply xl:px-20;
-    @apply 2xl:px-40
+/*
+  Tailwind v4's Preflight sets `cursor: default` on buttons, where v3 set
+  `cursor: pointer`. Without this, every button on the site silently loses its
+  hand cursor. Anchors are unaffected and keep `pointer` from the UA stylesheet.
+*/
+@layer base {
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
   }
+}
 
+@utility global-margin {
+  @apply max-w-7xl;
+  @apply mx-[20px];
+  @apply md:mx-[70px];
+  @apply xl:mx-[140px];
+  @apply 2xl:mx-auto;
+}
+
+@utility global-padding {
+  /* used in the nav component */
+  @apply px-4;
+  @apply md:px-10;
+  @apply xl:px-20;
+  @apply 2xl:px-40;
+}
+
+@utility heading-6xl {
   /* new system */
-  .heading-6xl {
-    @apply font-jakarta text-8xl leading-17
-  }
+  @apply font-jakarta text-8xl leading-17;
+}
 
-  .heading-6xl-semibold {
-    @apply heading-6xl  font-semibold
-  }
+@utility heading-6xl-semibold {
+  @apply heading-6xl  font-semibold;
+}
 
-  .heading-5xl {
-    @apply font-jakarta text-7xl leading-16
-  }
+@utility heading-5xl {
+  @apply font-jakarta text-7xl leading-16;
+}
 
-  .heading-5xl-semibold {
-    @apply heading-5xl font-semibold 
-  }
+@utility heading-5xl-semibold {
+  @apply heading-5xl font-semibold;
+}
 
-  .heading-4xl {
-    @apply font-jakarta text-[40px] leading-[50px]
-  }
+@utility heading-4xl {
+  @apply font-jakarta text-[40px] leading-[50px];
+}
 
-  .heading-4xl-semibold {
-    @apply heading-4xl font-semibold
-  }
+@utility heading-4xl-semibold {
+  @apply heading-4xl font-semibold;
+}
 
-  .heading-3xl {
-    @apply font-jakarta text-[32px] leading-[42px]
-  }
+@utility heading-3xl {
+  @apply font-jakarta text-[32px] leading-[42px];
+}
 
-  .heading-3xl-semibold {
-    @apply heading-3xl font-semibold
-  }
+@utility heading-3xl-semibold {
+  @apply heading-3xl font-semibold;
+}
 
-  .heading-2xl {
-    @apply font-jakarta text-[24px] leading-[34px]
-  }
+@utility heading-2xl {
+  @apply font-jakarta text-[24px] leading-[34px];
+}
 
-  .heading-2xl-semibold {
-    @apply heading-2xl font-semibold
-  }
+@utility heading-2xl-semibold {
+  @apply heading-2xl font-semibold;
+}
 
-  .heading-xl {
-    @apply font-jakarta text-[18px] leading-12
-  }
+@utility heading-xl {
+  @apply font-jakarta text-[18px] leading-12;
+}
 
-  .heading-xl-semibold {
-    @apply heading-xl font-semibold
-  }
- 
-  .p-base {
-    @apply font-jakarta text-base font-normal leading-11
-  }
+@utility heading-xl-semibold {
+  @apply heading-xl font-semibold;
+}
 
-  .p-base-semibold {
-    @apply p-base font-semibold
-  }
+@utility p-base {
+  @apply font-jakarta text-base font-normal leading-11;
+}
 
-  .p-base-bold {
-    @apply p-base text-base font-bold
-  }
+@utility p-base-semibold {
+  @apply p-base font-semibold;
+}
 
-  .p-xs {
-    @apply font-jakarta text-xs font-normal leading-8;
-  }
+@utility p-base-bold {
+  @apply p-base text-base font-bold;
+}
 
-  .p-xs-semibold {
-    @apply p-xs font-semibold;
-  }
+@utility p-xs {
+  @apply font-jakarta text-xs font-normal leading-8;
+}
 
-  .p-xs-bold {
-    @apply p-xs font-bold;
-  }
+@utility p-xs-semibold {
+  @apply p-xs font-semibold;
+}
 
-  .p-2xs {
-    @apply font-jakarta text-xxs font-normal leading-2;
-  }
+@utility p-xs-bold {
+  @apply p-xs font-bold;
+}
 
-  .p-2xs-semibold {
-    @apply p-2xs font-semibold ;
-  }
+@utility p-2xs {
+  @apply font-jakarta text-xxs font-normal leading-2;
+}
 
-  .p-2xs-bold {
-    @apply p-2xs font-bold;
-  }
+@utility p-2xs-semibold {
+  @apply p-2xs font-semibold;
+}
 
-  .p-2xs-extrabold {
-    @apply p-2xs font-extrabold;
-  }
+@utility p-2xs-bold {
+  @apply p-2xs font-bold;
+}
 
-  .p-3xs {
-    @apply text-[10px] font-jakarta leading-[12px]
-  }
+@utility p-2xs-extrabold {
+  @apply p-2xs font-extrabold;
+}
 
-  .p-3xs-semibold {
-    @apply p-3xs font-semibold
-  }
+@utility p-3xs {
+  @apply text-[10px] font-jakarta leading-[12px];
+}
 
+@utility p-3xs-semibold {
+  @apply p-3xs font-semibold;
+}
+
+@utility p-agenda-card-day {
   /* special fonts */
-  .p-agenda-card-day {
-    @apply font-jakarta text-[88px] font-bold leading-[88px]
-  }
+  @apply font-jakarta text-[88px] font-bold leading-[88px];
+}
 
-  .p-agenda-card-month {
-    @apply font-jakarta text-[25px] font-bold leading-[40px]
-  }
+@utility p-agenda-card-month {
+  @apply font-jakarta text-[25px] font-bold leading-[40px];
+}
 
-  .p-agenda-card-year {
-    @apply font-jakarta text-[46px] font-bold leading-[40px] text-justify	
-  }
+@utility p-agenda-card-year {
+  @apply font-jakarta text-[46px] font-bold leading-[40px] text-justify;
+}
 
+@utility link-lg {
   /* link fonts -- use the font styles above rather than re-defining these*/
-  .link-lg {
-    @apply font-jakarta text-xl font-semibold leading-13 underline;
-  }
-
-  .new-link-primary {
-    @apply hover:text-white active:text-white focus:text-white focus:ring-2 focus:ring-white group-hover:text-white group-active:text-white group-focus:text-white group-focus:ring-2 group-focus:ring-white 
-  }
-
-  .new-link-secondary {
-    @apply hover:text-green-400 active:text-green-400 focus:text-green-400 focus:ring-2 focus:ring-green-400 group-hover:text-green-400 group-active:text-green-400 group-focus:text-green-400 group-focus:ring-2 group-focus:ring-green-400 
-  }
-
-  .link-base {
-    @apply font-jakarta text-base font-medium leading-11 underline;
-  }
-
-  .link-interaction {
-    @apply hover:text-green-400 active:text-green-400 focus:ring-2 focus:text-green-400;
-  }
-
-  .link-interaction-light-green-bg {
-    @apply text-green-100 hover:text-green-300 active:text-green-200 focus:text-green-200 focus:right-2 focus:ring-white
-  }
-
-  .link-interaction-dark-bg {
-    @apply text-green-100 hover:text-green-300 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white
-  }
-
-  .button {
-    @apply font-jakarta text-base font-bold leading-10;
-  }
-
-  .enLink {
-    @apply font-jakarta text-xs font-semibold leading-9;
-  }
+  @apply font-jakarta text-xl font-semibold leading-13 underline;
 }
 
-
-/* styles  */
-body {
-  padding-right: 0 !important;
+@utility new-link-primary {
+  @apply hover:text-white active:text-white focus:text-white focus:ring-2 focus:ring-white group-hover:text-white group-active:text-white group-focus:text-white group-focus:ring-2 group-focus:ring-white;
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@utility new-link-secondary {
+  @apply hover:text-green-400 active:text-green-400 focus:text-green-400 focus:ring-2 focus:ring-green-400 group-hover:text-green-400 group-active:text-green-400 group-focus:text-green-400 group-focus:ring-2 group-focus:ring-green-400;
 }
 
-.newlineDisplay {
-  white-space: break-spaces;
+@utility link-base {
+  @apply font-jakarta text-base font-medium leading-11 underline;
 }
 
-
-/* used on EU law card  */
-.gradient-600 {
-  background: linear-gradient(71deg, #6CAB93 3.79%, #30BD88 38.64%, #39B086 45.9%, #42D4A8 64.06%, #34C19A 76.4%);
+@utility link-interaction {
+  @apply hover:text-green-400 active:text-green-400 focus:ring-2 focus:text-green-400;
 }
 
-.gradient-700 {
-  background: linear-gradient(35deg, #3DB989 20.34%, #028453 56.51%, #03794F 64.05%, #066548 82.89%, #085E46 95.7%);
+@utility link-interaction-light-green-bg {
+  @apply text-green-100 hover:text-green-300 active:text-green-200 focus:text-green-200 focus:right-2 focus:ring-white;
 }
 
-.gradient-homepage-cards {
-  background: linear-gradient(0deg, rgba(217, 239, 231, 0) -16.44%, rgba(217, 239, 231, 0.68) 72.35%, #D9EFE7 100%);
+@utility link-interaction-dark-bg {
+  @apply text-green-100 hover:text-green-300 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white;
 }
 
-/* used for PDF blocks in Portable text */
-.gradient-pdf {
-  background: linear-gradient(#042D36 0%, rgba(34, 83, 44, 0) 100%);
+@utility button {
+  @apply font-jakarta text-base font-bold leading-10;
 }
 
-/* used on gov level page  */
-.overview-radial-gradient {
-  background: radial-gradient(rgba(246, 214, 197, 0.3) 100%, rgba(247, 220, 206, 0.41) 89%, rgba(250, 232, 223, 0.62) 66%, 
-  rgba(252, 242, 237, 0.78) 45%, rgba(253, 249, 246, 0.9) 26%, rgba(254, 253, 252, 0.97) 10%, #FFFFFF 0%);
+@utility enLink {
+  @apply font-jakarta text-xs font-semibold leading-9;
 }
 
-/* used for filters on the Instrument list pages */
-[type='checkbox']:checked {
-  background-color: #22532c !important;
-  border: 1px solid #22532c !important;
-}
-
-[type='checkbox']:focus {
-  border-color: #22532c !important;
-}
-
-
-[type='checkbox']:not(:checked)  {
-  border-color: #DAD8D8 !important;
-  background-color: #FFFFFF !important;
-}
-
-[type='checkbox']:disabled {
-  border-color: #DAD8D8 !important;
-  background-color: #F8FBF8 !important;
-}
-
-/* cookie banner */
-.shadow-top {
-  -webkit-box-shadow: 0px -3px 3px rgb(0 0 0 / 0.06);
-  -moz-box-shadow: 0px -3px 3px rgb(0 0 0 / 0.06);
-  box-shadow: 0px -3px 3px rgb(0 0 0 / 0.06);
-}
-
-/* used for hover effect of social icons in footer */
-.tooltip {
-  position:relative;
-}
-
-.tooltip:before {
-  content: attr(data-text);
-  position: absolute;
-  
-  top:50%;
-  transform:translateY(-50%);
-  
-  left:100%;
-  margin-left:15px;
-  
-  width:200px;
-  padding:10px;
-  border-radius:10px;
-  background:#000;
-  color: #fff;
-  text-align:center;
-
-  display:none;
-}
-
-.tooltip:hover:before {
-  display:block;
-}
-
-.social-svg-mask:hover {
-  fill:#25C38B !important;
-}
-
-@layer utilities {
+@utility no-scrollbar {
   @layer responsive {
     /* Hide scrollbar for Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
+    &::-webkit-scrollbar {
+      display: none;
     }
 
     /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-    }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@layer utilities {
+  /* styles  */
+  body {
+    padding-right: 0 !important;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .newlineDisplay {
+    white-space: break-spaces;
+  }
+
+  /* used on EU law card  */
+  .gradient-600 {
+    background: linear-gradient(
+      71deg,
+      #6cab93 3.79%,
+      #30bd88 38.64%,
+      #39b086 45.9%,
+      #42d4a8 64.06%,
+      #34c19a 76.4%
+    );
+  }
+
+  .gradient-700 {
+    background: linear-gradient(
+      35deg,
+      #3db989 20.34%,
+      #028453 56.51%,
+      #03794f 64.05%,
+      #066548 82.89%,
+      #085e46 95.7%
+    );
+  }
+
+  .gradient-homepage-cards {
+    background: linear-gradient(
+      0deg,
+      rgba(217, 239, 231, 0) -16.44%,
+      rgba(217, 239, 231, 0.68) 72.35%,
+      #d9efe7 100%
+    );
+  }
+
+  /* used for PDF blocks in Portable text */
+  .gradient-pdf {
+    background: linear-gradient(#042d36 0%, rgba(34, 83, 44, 0) 100%);
+  }
+
+  /* used on gov level page  */
+  .overview-radial-gradient {
+    background: radial-gradient(
+      rgba(246, 214, 197, 0.3) 100%,
+      rgba(247, 220, 206, 0.41) 89%,
+      rgba(250, 232, 223, 0.62) 66%,
+      rgba(252, 242, 237, 0.78) 45%,
+      rgba(253, 249, 246, 0.9) 26%,
+      rgba(254, 253, 252, 0.97) 10%,
+      #ffffff 0%
+    );
+  }
+
+  /* used for filters on the Instrument list pages */
+  [type='checkbox']:checked {
+    background-color: #22532c !important;
+    border: 1px solid #22532c !important;
+  }
+
+  [type='checkbox']:focus {
+    border-color: #22532c !important;
+  }
+
+  [type='checkbox']:not(:checked) {
+    border-color: #dad8d8 !important;
+    background-color: #ffffff !important;
+  }
+
+  [type='checkbox']:disabled {
+    border-color: #dad8d8 !important;
+    background-color: #f8fbf8 !important;
+  }
+
+  /* cookie banner */
+  .shadow-top {
+    -webkit-box-shadow: 0px -3px 3px rgb(0 0 0 / 0.06);
+    -moz-box-shadow: 0px -3px 3px rgb(0 0 0 / 0.06);
+    box-shadow: 0px -3px 3px rgb(0 0 0 / 0.06);
+  }
+
+  /* used for hover effect of social icons in footer */
+  .tooltip {
+    position: relative;
+  }
+
+  .tooltip:before {
+    content: attr(data-text);
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    left: 100%;
+    margin-left: 15px;
+
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+
+    display: none;
+  }
+
+  .tooltip:hover:before {
+    display: block;
+  }
+
+  .social-svg-mask:hover {
+    fill: #25c38b !important;
   }
 }
 

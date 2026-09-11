@@ -77,7 +77,7 @@ export default function CookieInfo() {
       <div className='p-base mt-8 flex max-w-4xl flex-col pb-6'>
         <div className='-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
           <div className='inline-block min-w-full py-2 align-middle md:px-6 lg:px-8'>
-            <div className='overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-cl'>
+            <div className='overflow-hidden shadow-sm ring-1 ring-black ring-opacity-5 md:rounded-cl'>
               <table className='min-w-full divide-y divide-cl-black'>
                 <thead className='bg-gray-50'>
                   <tr className='divide-x divide-green-100'>

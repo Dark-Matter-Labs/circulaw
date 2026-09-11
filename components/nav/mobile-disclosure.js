@@ -8,9 +8,9 @@ export default function MobileDisclosure({ navData, closeMenu }) {
     <li className='p-base-semibold border-b py-6 text-cl-black last:border-b-0'>
       <Disclosure as='div'>
         <>
-          <DisclosureButton className='group flex flex-row items-center data-[open]:text-green-500'>
+          <DisclosureButton className='group flex flex-row items-center data-open:text-green-500'>
             {navData?.title}
-            <IconChevronDown className='ml-2 mt-1 h-5 w-5 group-data-[open]:rotate-180' />
+            <IconChevronDown className='ml-2 mt-1 h-5 w-5 group-data-open:rotate-180' />
           </DisclosureButton>
           <DisclosurePanel className='p-base text-green-500'>
             <ul>

@@ -70,7 +70,7 @@ export default function ThemeLevelSearch(props) {
               root: 'h-16 w-[600px] bg-white',
               form: 'bg-white shadow-card w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex',
               input:
-                'w-[600px] h-[66px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-green-500 p-base text-green-500 focus:ring-1 focus:ring-white placeholder:text-green-500 placeholder:p-base-semibold',
+                'w-[600px] h-[66px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-size-[24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-green-500 p-base text-green-500 focus:ring-1 focus:ring-white placeholder:text-green-500 placeholder:p-base-semibold',
               submitIcon: 'visible',
             }}
             submitIconComponent={() => (
@@ -97,7 +97,7 @@ export default function ThemeLevelSearch(props) {
             root: 'h-16 max-w-sm w-full bg-white',
             form: 'bg-white shadow-card max-w-sm w-full h-[60px] rounded-cl flex-row items-center justify-between relative flex',
             input:
-              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white/50 caret-green-500 p-base text-green-500 focus:ring-1 focus:ring-white placeholder:text-green-500 placeholder:p-base-semibold',
+              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-size-[24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white/50 caret-green-500 p-base text-green-500 focus:ring-1 focus:ring-white placeholder:text-green-500 placeholder:p-base-semibold',
             submitIcon: 'visible',
           }}
           submitIconComponent={() => (
@@ -133,7 +133,7 @@ export default function ThemeLevelSearch(props) {
                       checkbox:
                         'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
-                      labelText: 'p-base flex-grow capitalize ml-2',
+                      labelText: 'p-base grow capitalize ml-2',
                       count:
                         'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                     }}
@@ -152,7 +152,7 @@ export default function ThemeLevelSearch(props) {
                       checkbox:
                         'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
-                      labelText: 'p-base flex-grow capitalize ml-2',
+                      labelText: 'p-base grow capitalize ml-2',
                       count:
                         'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                     }}
@@ -178,7 +178,7 @@ export default function ThemeLevelSearch(props) {
                       checkbox:
                         'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
-                      labelText: 'p-base flex-grow capitalize ml-2',
+                      labelText: 'p-base grow capitalize ml-2',
                       count:
                         'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                     }}
@@ -204,7 +204,7 @@ export default function ThemeLevelSearch(props) {
                       checkbox:
                         'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
-                      labelText: 'p-base flex-grow capitalize ml-2',
+                      labelText: 'p-base grow capitalize ml-2',
                       count:
                         'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                     }}
@@ -229,7 +229,7 @@ export default function ThemeLevelSearch(props) {
                       checkbox:
                         'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
-                      labelText: 'p-base flex-grow capitalize ml-2',
+                      labelText: 'p-base grow capitalize ml-2',
                       count:
                         'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                     }}
@@ -248,7 +248,7 @@ export default function ThemeLevelSearch(props) {
                       checkbox:
                         'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
-                      labelText: 'p-base flex-grow capitalize ml-2',
+                      labelText: 'p-base grow capitalize ml-2',
                       count:
                         'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                     }}
@@ -276,7 +276,7 @@ export default function ThemeLevelSearch(props) {
                   checkbox:
                     'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
-                  labelText: 'p-base flex-grow capitalize ml-2',
+                  labelText: 'p-base grow capitalize ml-2',
                   count:
                     'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                 }}
@@ -295,7 +295,7 @@ export default function ThemeLevelSearch(props) {
                   checkbox:
                     'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
-                  labelText: 'p-base flex-grow capitalize ml-2',
+                  labelText: 'p-base grow capitalize ml-2',
                   count:
                     'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                 }}
@@ -321,7 +321,7 @@ export default function ThemeLevelSearch(props) {
                   checkbox:
                     'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
-                  labelText: 'p-base flex-grow capitalize ml-2',
+                  labelText: 'p-base grow capitalize ml-2',
                   count:
                     'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                 }}
@@ -346,7 +346,7 @@ export default function ThemeLevelSearch(props) {
                   checkbox:
                     'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
-                  labelText: 'p-base flex-grow capitalize ml-2',
+                  labelText: 'p-base grow capitalize ml-2',
                   count:
                     'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                 }}
@@ -371,7 +371,7 @@ export default function ThemeLevelSearch(props) {
                   checkbox:
                     'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
-                  labelText: 'p-base flex-grow capitalize ml-2',
+                  labelText: 'p-base grow capitalize ml-2',
                   count:
                     'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                 }}
@@ -390,7 +390,7 @@ export default function ThemeLevelSearch(props) {
                   checkbox:
                     'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
-                  labelText: 'p-base flex-grow capitalize ml-2',
+                  labelText: 'p-base grow capitalize ml-2',
                   count:
                     'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                 }}

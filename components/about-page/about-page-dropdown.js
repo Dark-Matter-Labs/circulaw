@@ -14,12 +14,12 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
     <div className='w-full pt-8'>
       <Disclosure as='div'>
         <>
-          <DisclosureButton className='group flex h-10 w-full items-center justify-between rounded-cl border border-green-500 bg-green-500 text-black data-[open]:rounded-b-none data-[open]:rounded-t-cl'>
-            <div className='flex h-full w-11/12 items-center justify-start truncate rounded-l-cl bg-green-100 pl-3 group-data-[open]:rounded-bl-none group-data-[open]:rounded-tl-cl'>
+          <DisclosureButton className='group flex h-10 w-full items-center justify-between rounded-cl border border-green-500 bg-green-500 text-black data-open:rounded-b-none data-open:rounded-t-cl'>
+            <div className='flex h-full w-11/12 items-center justify-start truncate rounded-l-cl bg-green-100 pl-3 group-data-open:rounded-bl-none group-data-open:rounded-tl-cl'>
               <span className='inline text-left'>{currentPage[0]?.pageTitle}</span>
             </div>
             <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
-              <IconChevronDown className='z-10 h-6 w-6 transform text-white group-data-[open]:rotate-180' />
+              <IconChevronDown className='z-10 h-6 w-6 transform text-white group-data-open:rotate-180' />
             </div>
           </DisclosureButton>
           <DisclosurePanel as='ul'>

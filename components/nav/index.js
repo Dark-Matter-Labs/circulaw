@@ -415,11 +415,11 @@ export default function Nav(props) {
                           <div className='global-margin flex flex-col items-start justify-end'>
                             <Disclosure as='div'>
                               <>
-                                <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center py-4 text-left text-cl-black data-[open]:text-green-500'>
+                                <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center py-4 text-left text-cl-black data-open:text-green-500'>
                                   Productketens
-                                  <IconChevronDown className='ml-2 mt-1 h-5 w-5 group-data-[open]:rotate-180' />
+                                  <IconChevronDown className='ml-2 mt-1 h-5 w-5 group-data-open:rotate-180' />
                                 </DisclosureButton>
-                                <DisclosurePanel className='ml-4 flex flex-grow flex-col'>
+                                <DisclosurePanel className='ml-4 flex grow flex-col'>
                                   <ul>
                                     {props?.navItems?.map((navItem, id) => (
                                       <MobileDisclosure
@@ -436,9 +436,9 @@ export default function Nav(props) {
                             {/* EU */}
                             <Disclosure as='div'>
                               <>
-                                <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center border-t py-4 text-left text-cl-black data-[open]:text-green-500'>
+                                <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center border-t py-4 text-left text-cl-black data-open:text-green-500'>
                                   EU wetgeving
-                                  <IconChevronDown className='ml-2 mt-1 h-5 w-5 group-data-[open]:rotate-180' />
+                                  <IconChevronDown className='ml-2 mt-1 h-5 w-5 group-data-open:rotate-180' />
                                 </DisclosureButton>
                                 <DisclosurePanel className='ml-4'>
                                   <ul>
@@ -480,9 +480,9 @@ export default function Nav(props) {
 
                             <Disclosure as='div'>
                               <>
-                                <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center border-t py-4 text-left text-cl-black data-[open]:text-green-500'>
+                                <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center border-t py-4 text-left text-cl-black data-open:text-green-500'>
                                   Over CircuLaw
-                                  <IconChevronDown className='ml-2 mt-1 h-5 w-5 group-data-[open]:rotate-180' />
+                                  <IconChevronDown className='ml-2 mt-1 h-5 w-5 group-data-open:rotate-180' />
                                 </DisclosureButton>
                                 <DisclosurePanel className='ml-4'>
                                   <ul>
@@ -601,7 +601,7 @@ export default function Nav(props) {
                           <div
                             className={`${
                               pathname === '/' ? 'bg-green-100' : 'bg-green-500'
-                            } flex-cols-5 relative flex h-full gap-[1px]`}
+                            } flex-cols-5 relative flex h-full gap-px`}
                           >
                             {props?.navItems?.map((navItem, id) => (
                               <DesktopNavCard
@@ -882,8 +882,8 @@ export default function Nav(props) {
                                   <input
                                     className={`${
                                       pathname === '/'
-                                        ? 'bg-green-100/50 text-white caret-white placeholder:text-white focus:bg-[url("/search-icon.png")] focus:bg-[length:24px_24px] focus:ring-white'
-                                        : 'bg-white text-green-500 caret-green-500 shadow-card placeholder:text-green-500 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] focus:ring-green-500'
+                                        ? 'bg-green-100/50 text-white caret-white placeholder:text-white focus:bg-[url("/search-icon.png")] focus:bg-size-[24px_24px] focus:ring-white'
+                                        : 'bg-white text-green-500 caret-green-500 shadow-card placeholder:text-green-500 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-size-[24px_24px] focus:ring-green-500'
                                     } p-base placeholder:p-base-semibold h-[66px] w-[600px] rounded-cl border-none bg-left bg-no-repeat pl-12 [background-position-x:10px] focus:ring-1`}
                                     placeholder={placeholder}
                                     onChange={onChange()}
@@ -1033,7 +1033,7 @@ export default function Nav(props) {
         </nav>
       </div>
       {pathname === '/' && (
-        <div className='relative -mt-[9rem] min-h-[750px] md:min-h-[886px]'>
+        <div className='relative -mt-36 min-h-[750px] md:min-h-[886px]'>
           <Image
             src='/home-page/homepage-header.png'
             alt='homepage decoration'

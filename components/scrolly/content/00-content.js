@@ -13,7 +13,7 @@ export default function ContentZero({ screenHeight }) {
       <div
         className={`${
           screenHeight < 934 ? 'h-80' : 'h-[450px]'
-        } mt-10 flex w-full flex-col items-center justify-end rounded-cl bg-gradient-to-b from-[#F6FEFB30]/20 to-[#D3F3E8]/20 pb-4`}
+        } mt-10 flex w-full flex-col items-center justify-end rounded-cl bg-linear-to-b from-[#F6FEFB30]/20 to-[#D3F3E8]/20 pb-4`}
       >
         <PlayerWithNoSSR
           autoplay
