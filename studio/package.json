@@ -18,24 +18,23 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/orderable-document-list": "^1.2.1",
-    "@sanity/table": "^1.1.2",
-    "@sanity/ui": "^3.0.0",
-    "@sanity/vision": "^4.22.1",
+    "@sanity/orderable-document-list": "^2.0.23",
+    "@sanity/table": "^3.1.16",
+    "@sanity/ui": "^4.2.1",
+    "@sanity/vision": "^6.13.1",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "react-icons": "^4.7.1",
     "react-is": "^19.3.0",
-    "react-player": "^2.16.0",
-    "sanity": "^4.22.0",
-    "sanity-plugin-iframe-pane": "^2.3.0",
-    "styled-components": "^6.1.15"
+    "sanity": "^6.13.1",
+    "sanity-plugin-iframe-pane": "^5.0.35",
+    "styled-components": "^6.5.3"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^2.0.1",
     "eslint": "^8.57.0",
     "prettier": "^2.8.8",
-    "typescript": "^4.9.5"
+    "typescript": "^5.9.3"
   },
   "prettier": {
     "semi": false,
@@ -45,5 +44,8 @@
   },
   "engines": {
     "node": "24.x"
+  },
+  "resolutions": {
+    "@lezer/lr": "^1.4.10"
   }
 }
