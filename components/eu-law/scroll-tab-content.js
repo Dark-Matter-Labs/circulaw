@@ -48,8 +48,8 @@ export default function ScrollPagesTabContent({ content, title }) {
                   duration={500}
                   offset={-155}
                   spy={true}
-                  activeClass='bg-green-500 !text-white font-semibold transition-all duration-100 min-w-[390px]'
-                  className='p-base h-full min-w-[390px] cursor-pointer whitespace-nowrap break-words rounded-cl py-2 pl-4 pr-8'
+                  activeClass='bg-green-500 text-white! font-semibold transition-all duration-100 min-w-[390px]'
+                  className='p-base h-full min-w-[390px] cursor-pointer whitespace-nowrap wrap-break-word rounded-cl py-2 pl-4 pr-8'
                 >
                   {id + 1}. {section.title}
                 </Link>
@@ -69,11 +69,11 @@ export default function ScrollPagesTabContent({ content, title }) {
             open={isOpen}
             onClose={closeModal}
             transition
-            className='fixed inset-0 z-120 flex w-screen items-center justify-end bg-cl-grey/75 transition duration-500 ease-out data-[closed]:opacity-0'
+            className='fixed inset-0 z-120 flex w-screen items-center justify-end bg-cl-grey/75 transition duration-500 ease-out data-closed:opacity-0'
           >
             <DialogPanel
               transition
-              className='z-130 ml-10 min-h-[101vh] w-full max-w-sm bg-white p-8 pt-10 duration-500 ease-out data-[closed]:translate-x-[28rem] sm:max-w-md'
+              className='z-130 ml-10 min-h-[101vh] w-full max-w-sm bg-white p-8 pt-10 duration-500 ease-out data-closed:translate-x-112 sm:max-w-md'
             >
               <CloseButton className='absolute right-0 top-0 float-right flex pr-8 pt-4 sm:-ml-10'>
                 <span className='sr-only'>Close panel</span>
@@ -90,8 +90,8 @@ export default function ScrollPagesTabContent({ content, title }) {
                         duration={500}
                         offset={-135}
                         spy={true}
-                        activeClass='bg-green-500 !text-white font-semibold transition-all duration-100'
-                        className='p-base h-full cursor-pointer whitespace-nowrap break-words rounded-cl py-2 pl-4 pr-8'
+                        activeClass='bg-green-500 text-white! font-semibold transition-all duration-100'
+                        className='p-base h-full cursor-pointer whitespace-nowrap wrap-break-word rounded-cl py-2 pl-4 pr-8'
                         onClick={closeModal}
                       >
                         {id + 1}. {section.title}

@@ -4,7 +4,8 @@ import Instrument from '@/components/instrument';
 import { INSTRUMENT_META_DATA, INSTRUMENT_PAGE_QUERY, INSTRUMENT_PATHS_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 
-export async function generateMetadata({ params }, parent) {
+export async function generateMetadata(props, parent) {
+  const params = await props.params;
   // read route params
   const slug = params.slug;
   // fetch data
@@ -47,7 +48,8 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-export default async function InstrumentPage({ params }) {
+export default async function InstrumentPage(props) {
+  const params = await props.params;
   const instrumentContent = await sanityFetch({
     query: INSTRUMENT_PAGE_QUERY,
     qParams: params,

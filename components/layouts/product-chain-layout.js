@@ -239,7 +239,7 @@ function CallToAction({ title, text, buttonText, link }) {
   return (
     <div className='group w-full rounded-cl border border-green-100 bg-green-100'>
       <Link href={link} className='h-full w-full'>
-        <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-6 p-6'>
+        <div className='flex h-full w-full grow flex-col justify-between gap-y-6 p-6'>
           <h3 className='heading-2xl-semibold text-green-500'>{title}</h3>
           <div>
             <p className='p-base pt-4 text-cl-black'>{text}</p>

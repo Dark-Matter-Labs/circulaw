@@ -27,7 +27,7 @@ export default function EULawCard({ law }) {
               </div>
             </div>
           </div>
-          <div className='gradient-600 -z-10 h-[20px] w-full -translate-y-[20px] rounded-b-cl transition-all duration-300 group-hover:-translate-y-[10px]'></div>
+          <div className='gradient-600 -z-10 h-[20px] w-full translate-y-[-20px] rounded-b-cl transition-all duration-300 group-hover:translate-y-[-10px]'></div>
         </div>
       </Link>
 

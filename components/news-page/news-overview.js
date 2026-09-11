@@ -85,7 +85,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                 <ListboxOptions
                   anchor='bottom'
                   transition
-                  className='w-64 rounded-cl border-2 border-green-500 transition duration-100 ease-in [--anchor-gap:2px] data-[leave]:data-[closed]:opacity-0 sm:w-80'
+                  className='w-64 rounded-cl border-2 border-green-500 transition duration-100 ease-in [--anchor-gap:2px] data-leave:data-closed:opacity-0 sm:w-80'
                 >
                   {articleTypes.map((type) => (
                     <ListboxOption

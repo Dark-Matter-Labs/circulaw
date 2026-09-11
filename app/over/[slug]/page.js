@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+
 import AboutPageComponent from '@/components/about-page';
 import { ABOUT_PAGE_PATHS_QUERY, ABOUT_PAGE_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
@@ -11,7 +13,8 @@ const ABOUT_PAGE_METADATA_QUERY = `
 }
 `;
 
-export async function generateMetadata({ params }, parent) {
+export async function generateMetadata(props, parent) {
+  const params = await props.params;
   // read route params
   const slug = params.slug;
   // fetch data
@@ -48,7 +51,12 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-export default async function Page({ params }) {
+export default async function Page(props) {
+  const params = await props.params;
   const data = await sanityFetch({ query: ABOUT_PAGE_QUERY, qParams: params, tags: ['aboutPage'] });
+
+  if (!data) {
+    notFound();
+  }
   return <AboutPageComponent data={data} />;
 }

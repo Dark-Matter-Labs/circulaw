@@ -4,7 +4,8 @@ import { FUll_THEME_PATHS_QUERY, GOV_LEVEL_QUERY, THEME_METADATA_QUERY } from '@
 import { sanityFetch } from '@/lib/sanity';
 import placeholderImage from '@/public/gov-level-placeholder-mobile.png';
 
-export async function generateMetadata({ params }, parent) {
+export async function generateMetadata(props, parent) {
+  const params = await props.params;
   // read route params
   const thema = params.thema;
   // fetch data
@@ -44,7 +45,8 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-export default async function GovernmentLevelPage({ params }) {
+export default async function GovernmentLevelPage(props) {
+  const params = await props.params;
   const govLevelContent = await sanityFetch({
     query: GOV_LEVEL_QUERY,
     qParams: params,

@@ -2,7 +2,8 @@ import ExpertiseLayout from '@/components/layouts/expertise-layout';
 import { CATEGORIE_PAGE_QUERY, FUll_THEME_PATHS_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 
-export async function generateMetadata({ params }, parent) {
+export async function generateMetadata(props, parent) {
+  const params = await props.params;
   // read route params
   const thema = params.thema;
   // fetch data
@@ -39,7 +40,8 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-export default async function CategoriePage({ params }) {
+export default async function CategoriePage(props) {
+  const params = await props.params;
   const categorieContent = await sanityFetch({
     query: CATEGORIE_PAGE_QUERY,
     qParams: params,

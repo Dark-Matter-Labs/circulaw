@@ -411,7 +411,7 @@ export default function ScrollyTellingAnimation() {
             </div>
           </div>
 
-          <div className='relative z-[999] mr-6 h-full w-[300px]'>
+          <div className='relative z-999 mr-6 h-full w-[300px]'>
             {contentComponents.map((Content, index) => {
               const contentId = `c${index}`; // Generate IDs like c1, c2, ...
               const isActive = activeContent === contentId;
@@ -428,8 +428,8 @@ export default function ScrollyTellingAnimation() {
                       : prevActive
                         ? 'translate-y-[200px] opacity-0'
                         : nextActive
-                          ? '-translate-y-[200px] opacity-0'
-                          : '-translate-y-[200px] opacity-0'
+                          ? 'translate-y-[-200px] opacity-0'
+                          : 'translate-y-[-200px] opacity-0'
                   } absolute left-0 top-0 transition-all duration-500`}
                 >
                   <Content scrollPosition={scrollPosition} screenHeight={screenHeight} />
@@ -964,7 +964,7 @@ export default function ScrollyTellingAnimation() {
               </animated.svg>
             )}
           </div>
-          <div className='z-[20] h-full w-[216px]'>
+          <div className='z-20 h-full w-[216px]'>
             <div
               style={{
                 transform: `translateY(${

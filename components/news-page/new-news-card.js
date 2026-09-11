@@ -69,7 +69,7 @@ export default function NewNewsCard({ data }) {
           />
         </div>
       )}
-      <div className='flex flex-grow flex-col justify-between gap-y-4 px-6 py-6 md:px-8'>
+      <div className='flex grow flex-col justify-between gap-y-4 px-6 py-6 md:px-8'>
         <div>
           <div className='flex'>
             <Badge variant='black'>{data.category}</Badge>

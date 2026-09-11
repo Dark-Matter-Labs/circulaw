@@ -6,7 +6,8 @@ import ScrollyTellingAnimation from '@/components/scrolly/scrolly-telling-animat
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconArrowRight, IconChevronDown } from '@tabler/icons-react';
 
-export default function ScrollyTellingPage({ params }) {
+export default async function ScrollyTellingPage(props) {
+  const params = await props.params;
   if (params.productChain === 'bouw') {
     return (
       <>
@@ -80,7 +81,7 @@ export default function ScrollyTellingPage({ params }) {
                           Omgevingsvisie, - programma&apos;s, - plan
                         </h5>
                       </div>
-                      <IconChevronDown className='h-6 w-6 place-self-start text-cl-black group-data-[open]:rotate-180' />
+                      <IconChevronDown className='h-6 w-6 place-self-start text-cl-black group-data-open:rotate-180' />
                     </DisclosureButton>
                     <DisclosurePanel className='-mt-6 rounded-b-clSm bg-green-100 px-6 pb-4 sm:px-10'>
                       <div className='flex flex-col gap-8 py-6'>

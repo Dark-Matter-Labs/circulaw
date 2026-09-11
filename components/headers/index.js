@@ -45,12 +45,12 @@ export default function Header({
                 alt='homepage decoration'
                 fill
                 sizes='100vw'
-                className={`${pageType === 'thema' ? 'object-cover' : 'min-h-[40vh] object-cover object-right sm:!h-auto sm:!w-auto sm:origin-top'} rounded-cl`}
+                className={`${pageType === 'thema' ? 'object-cover' : 'min-h-[40vh] object-cover object-right sm:h-auto! sm:w-auto! sm:origin-top'} rounded-cl`}
                 priority={true}
                 quality={100}
               />
               {pageType === 'thema' && (
-                <div className='absolute left-0 top-0 z-0 h-full w-full rounded-cl bg-gradient-to-t from-[#035E46] to-[#035E4600]'></div>
+                <div className='absolute left-0 top-0 z-0 h-full w-full rounded-cl bg-linear-to-t from-[#035E46] to-[#035E4600]'></div>
               )}
             </>
           )}
@@ -122,7 +122,7 @@ export default function Header({
               {pageType === 'productChain' && (
                 <div className='p-base sm:heading-2xl-semibold text-green-300'>{subtitle}</div>
               )}
-              <h1 className='heading-3xl-semibold sm:heading-5xl-semibold inline-block max-w-xs break-words text-green-100 sm:max-w-none'>
+              <h1 className='heading-3xl-semibold sm:heading-5xl-semibold inline-block max-w-xs wrap-break-word text-green-100 sm:max-w-none'>
                 {title}
               </h1>
               {(pageType === 'thema' || pageType === 'euOverview') && (

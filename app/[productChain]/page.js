@@ -10,7 +10,8 @@ import {
 import { sanityFetch } from '@/lib/sanity';
 
 // metadata
-export async function generateMetadata({ params }, parent) {
+export async function generateMetadata(props, parent) {
+  const params = await props.params;
   // read route params
   const productChain = params.productChain;
   // fetch data
@@ -51,7 +52,8 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-export default async function ProductChainPage({ params }) {
+export default async function ProductChainPage(props) {
+  const params = await props.params;
   const productChainData = await sanityFetch({
     query: PRODUCT_CHAIN_PAGE_QUERY,
     qParams: params,

@@ -32,7 +32,7 @@ export default function LangSwitch({ background }) {
       <div
         className={classNames(
           translateOpen ? 'block' : 'hidden',
-          'fixed top-20 z-[999] rounded-cl bg-white p-5 sm:right-0',
+          'fixed top-20 z-999 rounded-cl bg-white p-5 sm:right-0',
         )}
       >
         <IconX

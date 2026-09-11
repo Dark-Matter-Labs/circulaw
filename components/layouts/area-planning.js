@@ -110,7 +110,7 @@ export default function AreaPlanningLayout() {
                       Alle fasen kort uitgelegd
                     </h3>
                   </div>
-                  <IconChevronDown className='h-6 w-6 text-gray-800 group-data-[open]:rotate-180' />
+                  <IconChevronDown className='h-6 w-6 text-gray-800 group-data-open:rotate-180' />
                 </DisclosureButton>
                 <DisclosurePanel className='-mt-6 rounded-b-clSm bg-gray-200 px-6 pb-4 sm:px-10'>
                   <div className='flex flex-col gap-8 py-6'>
@@ -205,7 +205,7 @@ export default function AreaPlanningLayout() {
           <div className='mb-10 max-w-[700px] rounded-cl bg-green-50 p-4 md:mb-20 md:block md:p-10'>
             <div className='w-full'>
               {/* Using an arbitrary aspect ratio for A4: 210 / 297 */}
-              <div className='hidden aspect-[1788/1670] md:block'>
+              <div className='hidden aspect-1788/1670 md:block'>
                 <embed
                   src='/Gebiedsontwikkeling-Framework.pdf#zoom=44'
                   title='PDF Viewer'
@@ -257,7 +257,7 @@ export default function AreaPlanningLayout() {
                     />
                   </div>
                   <div className='group flex h-full w-full flex-col bg-green-50 p-6'>
-                    <div className='flex flex-grow items-center justify-center'>
+                    <div className='flex grow items-center justify-center'>
                       <NewButton
                         variant='primaryDark'
                         icon='download'

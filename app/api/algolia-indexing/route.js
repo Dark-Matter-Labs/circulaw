@@ -3,7 +3,9 @@ import algoliasearch from 'algoliasearch';
 
 export const agoliaInstance = algoliasearch(
   process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID,
-  process.env.NEXT_PUBLIC_AGOLIA_ADMIN_KEY,
+  // Server-only write key. NEXT_PUBLIC_ fallback is legacy: remove once Vercel
+  // defines AGOLIA_ADMIN_KEY, so a write key can never be inlined client-side.
+  process.env.AGOLIA_ADMIN_KEY ?? process.env.NEXT_PUBLIC_AGOLIA_ADMIN_KEY,
 );
 
 const QUERY = `

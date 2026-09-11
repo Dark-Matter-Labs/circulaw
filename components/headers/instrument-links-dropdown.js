@@ -14,7 +14,7 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
             <PopoverButton
               className={`${
                 open ? 'rounded-t-cl' : 'rounded-cl'
-              } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
+              } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 hover:text-green-500 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
             >
               <div
                 className={`${
@@ -65,7 +65,7 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
             <PopoverButton
               className={`${
                 open ? 'rounded-t-cl' : 'rounded-cl'
-              } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
+              } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
             >
               <div
                 className={`${
@@ -114,7 +114,7 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
             <PopoverButton
               className={`${
                 open ? 'rounded-t-cl' : 'rounded-cl'
-              } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
+              } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
             >
               <div
                 className={`${

@@ -322,7 +322,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
         <div className='global-margin'>
           <div className='flex w-full flex-col justify-start'>
             <div className='z-5 relative'>
-              <div className='no-scrollbar z-50 -mt-[76px] flex h-[76px] flex-row justify-start gap-x-3 overflow-x-scroll rounded-b-cl px-6 sm:px-16'>
+              <div className='no-scrollbar z-50 mt-[-76px] flex h-[76px] flex-row justify-start gap-x-3 overflow-x-scroll rounded-b-cl px-6 sm:px-16'>
                 <TabButton
                   selected={selectedTab}
                   onClick={() => {
@@ -459,7 +459,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                           <DisclosureButton
                             className={`${
                               open ? 'rounded-t-cl' : 'rounded-cl'
-                            } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
+                            } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
                           >
                             <div
                               className={`${
@@ -516,7 +516,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                           <DisclosureButton
                             className={`${
                               open ? 'rounded-t-cl' : 'rounded-cl'
-                            } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
+                            } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
                           >
                             <div
                               className={`${
@@ -569,7 +569,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                           <DisclosureButton
                             className={`${
                               open ? 'rounded-t-cl' : 'rounded-cl'
-                            } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
+                            } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
                           >
                             <div
                               className={`${
@@ -622,7 +622,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                           <DisclosureButton
                             className={`${
                               open ? 'rounded-t-cl' : 'rounded-cl'
-                            } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
+                            } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
                           >
                             <div
                               className={`${

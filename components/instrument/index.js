@@ -83,14 +83,14 @@ export default function Instrument({ data }) {
                     {data.modelTexts.map((text, id) => (
                       <>
                         <Disclosure as='div' key={id} className='my-6'>
-                          <DisclosureButton className='group rounded-cl data-[open]:rounded-b-none text-cl-black bg-green-100 flex justify-between items-center w-full px-6 sm:px-10 py-6'>
+                          <DisclosureButton className='group rounded-cl data-open:rounded-b-none text-cl-black bg-green-100 flex justify-between items-center w-full px-6 sm:px-10 py-6'>
                             <div className='flex flex-col text-left'>
                               <div className='rounded-cl max-w-min text-nowrap border border-green-400 text-green-400 px-2 py-1 p-2xs-semibold first-letter:uppercase mb-4'>
                                 {text.pillar}
                               </div>
                               <h5 className='heading-2xl-semibold'>{text.title}</h5>
                             </div>
-                            <IconChevronDown className='h-6 w-6 text-cl-black group-data-[open]:rotate-180 place-self-start' />
+                            <IconChevronDown className='h-6 w-6 text-cl-black group-data-open:rotate-180 place-self-start' />
                           </DisclosureButton>
                           <DisclosurePanel className='rounded-b-cl bg-green-100 w-full py-6 px-4 sm:px-10'>
                             <div className='w-full border border-green-400 flex flex-col rounded-cl mb-10 overflow-hidden'>

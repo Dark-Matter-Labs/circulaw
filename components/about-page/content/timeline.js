@@ -159,7 +159,7 @@ export default function Timeline({ data }) {
                 ))}
               </ul>
               {group.aggregateMilestones.length > 0 && (
-                <ul className='flex-shrink divide-y-2 divide-orange-200 border-y-2 border-orange-200 sm:w-2/3'>
+                <ul className='shrink divide-y-2 divide-orange-200 border-y-2 border-orange-200 sm:w-2/3'>
                   {group.aggregateMilestones.map((item, index) => (
                     <li key={index} className='flex flex-row items-center'>
                       {item.typeOfMilestone === 'aggregateMilestone' && (
