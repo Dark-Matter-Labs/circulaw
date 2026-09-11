@@ -1,4 +1,4 @@
-import { PlayIcon } from '@sanity/icons';
+import { PlayIcon } from '@sanity/icons/Play';
 import { defineField, defineType } from 'sanity';
 
 import { YouTubePreview } from '../../../components/YouTubePreview';

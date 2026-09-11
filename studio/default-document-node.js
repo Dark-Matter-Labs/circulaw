@@ -1,4 +1,4 @@
-import Iframe from 'sanity-plugin-iframe-pane';
+import { Iframe } from 'sanity-plugin-iframe-pane';
 
 // this function will not work on individual branches
 function getPreviewUrl(doc) {
