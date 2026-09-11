@@ -1,5 +1,4 @@
 import { Plus_Jakarta_Sans } from 'next/font/google';
-import { cookies } from 'next/headers';
 import Script from 'next/script';
 
 import Layout from '@/components/layouts/layout';
@@ -45,9 +44,6 @@ export default async function RootLayout({ children }) {
     query: NAV_QUERY,
     tags: ['aboutPages', 'navigation', 'thema', 'simpleThema', 'euLaw', 'siteConfig', 'navigation'],
   });
-  const cookieStore = await cookies();
-  const hasLocalConsentCookie = cookieStore.has('localConsent');
-
   return (
     <html lang='nl' className={plus_Jakarta_Sans.variable}>
       <body className='text-cl-black'>
@@ -55,11 +51,7 @@ export default async function RootLayout({ children }) {
           src='https://scripts.simpleanalyticscdn.com/latest.js'
           strategy='afterInteractive'
         />
-        <Layout
-          navData={navData}
-          partnerLogos={partnerLogos}
-          hasLocalConsentCookie={hasLocalConsentCookie}
-        >
+        <Layout navData={navData} partnerLogos={partnerLogos}>
           {children}
         </Layout>
       </body>

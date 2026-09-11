@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -26,6 +28,15 @@ const MODELTEXT_QUERY = `
   } 
 `;
 
+// These pages only ever render for the 'bouw' product chain and notFound() for
+// anything else, so the path set is knowable at build time. Declaring it lets the
+// route prerender instead of being server-rendered on every request.
+export async function generateStaticParams() {
+  return [{ productChain: 'bouw' }];
+}
+
+export const dynamicParams = false;
+
 export default async function ModelTextPage(props) {
   const params = await props.params;
   const pillars = await sanityFetch({ query: PILLARS_QUERY, tags: ['pillar'] });
@@ -52,7 +63,7 @@ export default async function ModelTextPage(props) {
               href='/bouw/planregels'
               className='hover:link-interaction p-base-semibold group mb-6 flex items-center text-green-500 underline'
             >
-              <div className='mr-2 flex h-12 w-12 items-center justify-center self-end rounded-full border-2 border-green-500 bg-transparent text-green-500 focus:bg-green-200 focus:outline-hidden focus:ring-2 focus:ring-white active:bg-green-400 group-hover:border-green-300 group-hover:bg-green-300 group-hover:text-green-500'>
+              <div className='mr-2 flex h-12 w-12 items-center justify-center self-end rounded-full border-2 border-green-500 bg-transparent text-green-500 group-hover:border-green-300 group-hover:bg-green-300 group-hover:text-green-500 focus:bg-green-200 focus:ring-2 focus:ring-white focus:outline-hidden active:bg-green-400'>
                 <IconArrowLeft className='inline-block h-6 w-6' aria-hidden='true' />
               </div>
               <span className='max-w-xs'>
@@ -60,7 +71,9 @@ export default async function ModelTextPage(props) {
               </span>
             </Link>
           </div>
-          <PopUp modelTexts={modelTexts} pillars={pillars} />
+          <Suspense fallback={null}>
+            <PopUp modelTexts={modelTexts} pillars={pillars} />
+          </Suspense>
         </div>
       </>
     );

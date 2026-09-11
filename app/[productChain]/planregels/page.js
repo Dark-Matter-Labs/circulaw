@@ -6,6 +6,15 @@ import ScrollyTellingAnimation from '@/components/scrolly/scrolly-telling-animat
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconArrowRight, IconChevronDown } from '@tabler/icons-react';
 
+// These pages only ever render for the 'bouw' product chain and notFound() for
+// anything else, so the path set is knowable at build time. Declaring it lets the
+// route prerender instead of being server-rendered on every request.
+export async function generateStaticParams() {
+  return [{ productChain: 'bouw' }];
+}
+
+export const dynamicParams = false;
+
 export default async function ScrollyTellingPage(props) {
   const params = await props.params;
   if (params.productChain === 'bouw') {

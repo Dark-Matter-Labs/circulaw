@@ -4,6 +4,15 @@ import { notFound } from 'next/navigation';
 import Header from '@/components/headers';
 import AreaPlanningLayout from '@/components/layouts/area-planning';
 
+// These pages only ever render for the 'bouw' product chain and notFound() for
+// anything else, so the path set is knowable at build time. Declaring it lets the
+// route prerender instead of being server-rendered on every request.
+export async function generateStaticParams() {
+  return [{ productChain: 'bouw' }];
+}
+
+export const dynamicParams = false;
+
 export default async function AreaPlanning(props) {
   const params = await props.params;
   if (params.productChain === 'bouw') {
