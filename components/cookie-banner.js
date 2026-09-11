@@ -3,15 +3,19 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-import { setCookie } from 'cookies-next';
+import { hasCookie, setCookie } from 'cookies-next';
 
-const CookieConsent = ({ hasLocalConsentCookie }) => {
+const CookieConsent = () => {
   const [consent, setConsent] = useState(true);
   const router = useRouter();
 
+  // Read the consent cookie on the client rather than via cookies() in the root
+  // layout: that call opted every page in the app out of static rendering, and the
+  // value was only ever used here. Behaviour is unchanged, because consent starts
+  // as `true` so the banner is hidden until this effect runs either way.
   useEffect(() => {
-    setConsent(hasLocalConsentCookie);
-  }, [hasLocalConsentCookie]);
+    setConsent(hasCookie('localConsent'));
+  }, []);
 
   const acceptCookie = () => {
     setConsent(true);
@@ -52,7 +56,7 @@ const CookieConsent = ({ hasLocalConsentCookie }) => {
         consent === true ? 'hidden' : ''
       }`}
     >
-      <div className='flex flex-col items-start space-y-2 bg-green-500 px-20 py-6 md:flex-row md:items-stretch md:space-x-2 md:space-y-0'>
+      <div className='flex flex-col items-start space-y-2 bg-green-500 px-20 py-6 md:flex-row md:items-stretch md:space-y-0 md:space-x-2'>
         <div className='flex grow items-center text-green-100'>
           <p className='p-base'>
             Op deze site gebruiken we cookies om te analyseren hoe jij de site gebruikt en om de
@@ -69,13 +73,13 @@ const CookieConsent = ({ hasLocalConsentCookie }) => {
         </div>
         <div className='flex items-center'>
           <button
-            className='button mr-2 inline-flex items-center rounded-full border border-green-100 bg-transparent px-4 py-4 text-green-100 hover:bg-green-300 hover:text-green-500 focus:bg-green-200 focus:outline-hidden focus:ring-2 focus:ring-white active:bg-cl-black active:text-green-100'
+            className='button active:bg-cl-black mr-2 inline-flex items-center rounded-full border border-green-100 bg-transparent px-4 py-4 text-green-100 hover:bg-green-300 hover:text-green-500 focus:bg-green-200 focus:ring-2 focus:ring-white focus:outline-hidden active:text-green-100'
             onClick={() => denyCookie()}
           >
             Weiger
           </button>
           <button
-            className='button ml-2 inline-flex items-center rounded-full border border-green-500 bg-green-100 px-4 py-4 text-green-500 hover:border-green-100 hover:bg-green-300 focus:bg-green-200 focus:outline-hidden focus:ring-2 focus:ring-white active:bg-green-400 active:text-green-500'
+            className='button ml-2 inline-flex items-center rounded-full border border-green-500 bg-green-100 px-4 py-4 text-green-500 hover:border-green-100 hover:bg-green-300 focus:bg-green-200 focus:ring-2 focus:ring-white focus:outline-hidden active:bg-green-400 active:text-green-500'
             onClick={() => {
               acceptCookie();
             }}
