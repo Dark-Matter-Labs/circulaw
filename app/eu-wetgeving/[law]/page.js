@@ -1,5 +1,7 @@
 import { Suspense } from 'react';
 
+import { notFound } from 'next/navigation';
+
 import EULawHeader from '@/components/eu-law/eu-law-header';
 import TabContent from '@/components/eu-law/tab-content';
 import {
@@ -61,6 +63,10 @@ export default async function EULawPage({ params, searchParams }) {
     qParams: params,
     tags: ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab'],
   });
+
+  if (!summaryData) {
+    notFound();
+  }
   const initialTab = searchParams.tab;
 
   return (

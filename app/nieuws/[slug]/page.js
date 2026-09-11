@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+
 import Header from '@/components/headers';
 import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
 import { NEWS_DETAIL_PAGE_QUERY, NEWS_METADATA_QUERY, NEWS_SLUGS_QUERY } from '@/lib/queries';
@@ -45,6 +47,10 @@ export default async function NewsDetailPage({ params }) {
     qParams: params,
     tags: ['newsItem'],
   });
+
+  if (!newsPageContent) {
+    notFound();
+  }
   return (
     <>
       <Header
