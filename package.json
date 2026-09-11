@@ -18,9 +18,9 @@
     "build:prod": "env-cmd -e production next build",
     "start": "next start",
     "clean": "prettier --write \"(pages|components|studio|lib|app)/**/*.+(js|jsx|json|css|md)\" --config ./prettier.config.js",
-    "lint": "next lint",
+    "lint": "eslint .",
     "prepare": "husky",
-    "pre-commit": "next lint --fix"
+    "pre-commit": "eslint --fix ."
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.20",
@@ -37,8 +37,8 @@
     "algoliasearch": "^4.27.0",
     "axios": "^1.20.0",
     "cookies-next": "^4.3.0",
-    "next": "15.5.25",
-    "next-sanity": "^9.12.3",
+    "next": "16.3.4",
+    "next-sanity": "^13.3.4",
     "next-sanity-image": "^6.2.0",
     "next-share": "0.27.0",
     "next-sitemap": "^4.2.3",
@@ -54,18 +54,21 @@
     "styled-components": "^6.5.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "autoprefixer": "^10.5.6",
     "concurrently": "^7.6.0",
     "env-cmd": "^10.1.0",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "^15.5.25",
-    "eslint-config-prettier": "^9.1.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.4",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.12.0",
     "husky": "^9.1.7",
     "postcss": "^8.5.28",
     "prettier": "^3.9.6",
     "prettier-plugin-tailwindcss": "^0.7.4",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.3"
   },
   "resolutions": {
     "caniuse-lite": "^1.0.30001810",

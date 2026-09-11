@@ -6,7 +6,8 @@ import { THEME_METADATA_QUERY, THEME_PATHS_QUERY, THEME_QUERY } from '@/lib/quer
 import { sanityFetch } from '@/lib/sanity';
 
 // metadata
-export async function generateMetadata({ params }, parent) {
+export async function generateMetadata(props, parent) {
+  const params = await props.params;
   // read route params
   const thema = params.thema;
   // fetch data
@@ -45,7 +46,8 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-export default async function ThemePage({ params }) {
+export default async function ThemePage(props) {
+  const params = await props.params;
   const themeData = await sanityFetch({
     query: THEME_QUERY,
     qParams: params,

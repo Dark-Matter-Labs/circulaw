@@ -19,7 +19,11 @@ export async function POST(req) {
     }
 
     // All `client.fetch` calls with `{next: {tags: [_type]}}` will be revalidated
-    revalidateTag(body._type);
+    // Next 16 requires an explicit cacheLife profile. 'max' gives
+    // stale-while-revalidate, which suits CMS publishes: readers keep seeing the
+    // previous content until the new fetch lands. updateTag() would be the
+    // read-your-writes alternative, but it is Server Actions only.
+    revalidateTag(body._type, 'max');
     console.log(`Revalidated ${body._type}`);
 
     return NextResponse.json({

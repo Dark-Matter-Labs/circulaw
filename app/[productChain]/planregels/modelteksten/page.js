@@ -26,7 +26,8 @@ const MODELTEXT_QUERY = `
   } 
 `;
 
-export default async function ModelTextPage({ params }) {
+export default async function ModelTextPage(props) {
+  const params = await props.params;
   const pillars = await sanityFetch({ query: PILLARS_QUERY, tags: ['pillar'] });
   const modelTexts = await sanityFetch({ query: MODELTEXT_QUERY, tags: ['modelText'] });
   if (params.productChain === 'bouw') {

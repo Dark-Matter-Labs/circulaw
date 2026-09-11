@@ -2,7 +2,8 @@ import ThemeLevelSearch from '@/components/theme-page/theme-level-search';
 import { FUll_THEME_PATHS_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 
-export async function generateMetadata({ params }, parent) {
+export async function generateMetadata(props, parent) {
+  const params = await props.params;
   // read route params
   const thema = params.thema;
   // fetch data
@@ -44,7 +45,8 @@ export const dynamicParams = false;
 
 // export const dynamic = 'force-dynamic';
 
-export default async function InstrumentenPage({ params }) {
+export default async function InstrumentenPage(props) {
+  const params = await props.params;
   const { productChain, thema } = params;
 
   const pageOptions = [

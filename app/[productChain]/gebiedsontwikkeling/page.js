@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation';
 import Header from '@/components/headers';
 import AreaPlanningLayout from '@/components/layouts/area-planning';
 
-export default function AreaPlanning({ params }) {
+export default async function AreaPlanning(props) {
+  const params = await props.params;
   if (params.productChain === 'bouw') {
     return (
       <>

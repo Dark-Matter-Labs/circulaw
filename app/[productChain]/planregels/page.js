@@ -6,7 +6,8 @@ import ScrollyTellingAnimation from '@/components/scrolly/scrolly-telling-animat
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconArrowRight, IconChevronDown } from '@tabler/icons-react';
 
-export default function ScrollyTellingPage({ params }) {
+export default async function ScrollyTellingPage(props) {
+  const params = await props.params;
   if (params.productChain === 'bouw') {
     return (
       <>

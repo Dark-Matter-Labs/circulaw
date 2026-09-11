@@ -5,7 +5,8 @@ import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
 import { NEWS_DETAIL_PAGE_QUERY, NEWS_METADATA_QUERY, NEWS_SLUGS_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 
-export async function generateMetadata({ params }, parent) {
+export async function generateMetadata(props, parent) {
+  const params = await props.params;
   // read route params
   const slug = params.slug;
   // fetch data
@@ -41,7 +42,8 @@ export async function generateStaticParams() {
 }
 export const dynamicParams = false;
 
-export default async function NewsDetailPage({ params }) {
+export default async function NewsDetailPage(props) {
+  const params = await props.params;
   const newsPageContent = await sanityFetch({
     query: NEWS_DETAIL_PAGE_QUERY,
     qParams: params,
