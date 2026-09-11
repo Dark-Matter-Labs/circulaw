@@ -1,6 +1,10 @@
 /* eslint-disable */
 import { ImageResponse } from 'next/og';
 
+// Must stay on the edge runtime: next/og resolves the bundled logo via
+// import.meta.url, which webpack rewrites to a relative path that Node's
+// fetch() cannot parse. This route backs every page's OG image
+// (utils/global-meta.js), so a regression here breaks all social previews.
 export const runtime = 'edge';
 
 const image = fetch(new URL('@/public/circulaw_logotype_home2.png', import.meta.url)).then((res) =>

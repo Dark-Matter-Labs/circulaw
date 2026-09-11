@@ -2,13 +2,11 @@ import { parseBody } from 'next-sanity/webhook';
 import { revalidateTag } from 'next/cache';
 import { NextResponse } from 'next/server';
 
-export const runtime = 'edge';
-
 export async function POST(req) {
   try {
     const { isValidSignature, body } = await parseBody(
       req,
-      process.env.NEXT_PUBLIC_SANITY_REVALIDATE_SECRET,
+      process.env.SANITY_REVALIDATE_SECRET ?? process.env.NEXT_PUBLIC_SANITY_REVALIDATE_SECRET,
     );
 
     if (!isValidSignature) {
