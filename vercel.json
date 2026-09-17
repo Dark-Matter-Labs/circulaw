@@ -62,6 +62,11 @@
             "source": "/over/zorgplicht-circulaire-transitie",
             "destination": "/over/waarom-circulaw",
             "permanent": true
+        },
+        {
+            "source": "/nieuws/dwingende-mki-in-de-gww",
+            "destination": "/nieuws/verplichte-mki-in-grond-weg-en-waterbouw",
+            "permanent": true
         }
     ]
 }
