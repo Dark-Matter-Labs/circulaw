@@ -40,7 +40,7 @@ export async function generateStaticParams() {
   const newsPages = await sanityFetch({ query: NEWS_SLUGS_QUERY, tags: ['newsItem'] });
   return newsPages.map((newsPage) => ({ slug: newsPage }));
 }
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export default async function NewsDetailPage(props) {
   const params = await props.params;
