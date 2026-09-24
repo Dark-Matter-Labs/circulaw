@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import TitleDecorator from '@/components/title-decorator';
-import { urlFor } from '@/lib/sanity';
+import { urlFor } from '@/lib/sanity-image';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconChevronDown } from '@tabler/icons-react';
 

@@ -3,7 +3,7 @@ import { Highlight } from 'react-instantsearch';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { urlFor } from '@/lib/sanity';
+import { urlFor } from '@/lib/sanity-image';
 
 export default function EUHit({ hit }) {
   if (hit.title === 'EU Europe Tab') {
