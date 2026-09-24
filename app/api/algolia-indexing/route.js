@@ -21,6 +21,7 @@ const QUERY = `
     "content": pt::text(content),
     "slug": slug.current,
     "transitionAgenda":transitionAgenda->pcName,
+    "productChainSlug": transitionAgenda->slug.current,
     "thema": thema->slug.current,
     "themaName": thema->themaName,
     extraContent,
