@@ -1,5 +1,7 @@
+import { parseBody } from 'next-sanity/webhook';
 import { NextResponse } from 'next/server';
 
+import { readSecret } from '@/lib/route-auth';
 import { client } from '@/lib/sanity';
 import algoliasearch from 'algoliasearch';
 import indexer from 'sanity-algolia';
@@ -119,8 +121,29 @@ const EU_LAW_LOCAL_TAB_PROJECTION = `{
 // clTab
 // localTab
 
+// Sanity publish webhook. Its payload drives writes and deletes on the
+// production indexes, so it must carry a valid Sanity signature.
 export async function POST(req) {
+  const secret = readSecret('SANITY_ALGOLIA_WEBHOOK_SECRET');
+  if (!secret) {
+    return NextResponse.json({ message: 'Webhook is not configured' }, { status: 500 });
+  }
+
   try {
+    // parseBody consumes the request body, so use its parsed `body` below.
+    const { isValidSignature, body } = await parseBody(req, secret);
+
+    if (isValidSignature !== true) {
+      return NextResponse.json({ message: 'Invalid signature' }, { status: 401 });
+    }
+
+    if (typeof body?.ids !== 'object' || body.ids === null) {
+      return NextResponse.json(
+        { message: 'Expected an `ids` object in the payload' },
+        { status: 400 },
+      );
+    }
+
     const sanityAgolia = indexer(
       {
         instrument: {
@@ -261,12 +284,11 @@ export async function POST(req) {
       },
     );
 
-    const body = await req.json();
-    const webhook = await sanityAgolia.webhookSync(client, body);
+    await sanityAgolia.webhookSync(client, body);
 
-    return webhook.then(() => NextResponse.json({ message: 'success!' }));
+    return NextResponse.json({ message: 'success!' });
   } catch (err) {
-    let error_response = { status: 'error', msg: err };
-    return new Response(JSON.stringify(error_response));
+    console.error('[search webhook] Algolia sync failed', err);
+    return NextResponse.json({ status: 'error', message: 'Algolia sync failed' }, { status: 500 });
   }
 }
