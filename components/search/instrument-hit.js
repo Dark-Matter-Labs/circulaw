@@ -2,6 +2,8 @@ import { Highlight } from 'react-instantsearch';
 import Link from 'next/link';
 import { useMemo } from 'react';
 
+import { instrumentUrlFor } from '@/lib/instrument-url';
+
 import InstrumentMetadataTag from '../instrument/instrumt-metadata-tag';
 import Badge from '../shared/new-badge';
 
@@ -27,14 +29,17 @@ export const InstrumentHit = ({ hit }) => {
     return hit?.rLadder?.join(' - ') || '';
   }, [hit?.rLadder]);
 
-  const instrumentUrl = `/${hit?.transitionAgenda?.toLowerCase()}/${hit?.thema?.toLowerCase()}/instrumenten/${hit.slug}`;
+  const instrumentUrl = instrumentUrlFor(hit);
+  // Without a product chain or theme there is no page to link to; render the
+  // card without a link instead of pointing at /undefined/...
+  const CardLink = instrumentUrl ? Link : 'div';
 
   return (
     <article className='group w-full sm:w-[760px] rounded-cl p-4 mb-10 sm:mb-0 bg-green-100 sm:bg-transparent transition-all duration-100 hover:shadow-card'>
-      <Link href={instrumentUrl}>
+      <CardLink href={instrumentUrl ?? undefined}>
         <div className='block'>
           <div className='-ml-1 flex items-center justify-start gap-x-1 flex-wrap'>
-            <Badge variant='black'>{hit.thema}</Badge>
+            <Badge variant='black'>{hit.themaName ?? hit.thema}</Badge>
             {categoryBadges}
           </div>
           
@@ -138,7 +143,7 @@ export const InstrumentHit = ({ hit }) => {
             </div>
           </div>
         </div>
-      </Link>
+      </CardLink>
     </article>
   );
 };
