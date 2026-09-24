@@ -46,7 +46,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export default async function InstrumentPage(props) {
   const params = await props.params;

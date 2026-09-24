@@ -49,7 +49,7 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export default async function Page(props) {
   const params = await props.params;
