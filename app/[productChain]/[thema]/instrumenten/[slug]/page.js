@@ -6,12 +6,10 @@ import { sanityFetch } from '@/lib/sanity';
 
 export async function generateMetadata(props, parent) {
   const params = await props.params;
-  // read route params
-  const slug = params.slug;
   // fetch data
   const instrumentMetaData = await sanityFetch({
     query: INSTRUMENT_META_DATA,
-    qParams: { slug },
+    qParams: params,
     tags: ['instrument'],
   });
   // optionally access and extend (rather than replace) parent metadata
