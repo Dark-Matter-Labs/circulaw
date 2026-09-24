@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { urlFor } from '@/lib/sanity';
+import { urlFor } from '@/lib/sanity-image';
 
 import Badge from '../shared/new-badge';
 import InstrumentMetadataTag from './instrumt-metadata-tag';

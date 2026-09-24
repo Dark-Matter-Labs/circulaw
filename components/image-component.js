@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { urlFor } from '@/lib/sanity';
+import { urlFor } from '@/lib/sanity-image';
 import { getImageDimensions } from '@sanity/asset-utils';
 
 export default function ImageComponent({ image, caption }) {

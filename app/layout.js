@@ -1,6 +1,8 @@
 import { Plus_Jakarta_Sans } from 'next/font/google';
+import { draftMode } from 'next/headers';
 import Script from 'next/script';
 
+import DraftModeBanner from '@/components/draft-mode-banner';
 import Layout from '@/components/layouts/layout';
 import { NAV_QUERY, PARTNERS_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
@@ -39,6 +41,7 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
+  const { isEnabled: isDraftMode } = await draftMode();
   const partnerLogos = await sanityFetch({ query: PARTNERS_QUERY, tags: ['partners'] });
   const navData = await sanityFetch({
     query: NAV_QUERY,
@@ -47,10 +50,14 @@ export default async function RootLayout({ children }) {
   return (
     <html lang='nl' className={plus_Jakarta_Sans.variable}>
       <body className='text-cl-black'>
-        <Script
-          src='https://scripts.simpleanalyticscdn.com/latest.js'
-          strategy='afterInteractive'
-        />
+        {isDraftMode && <DraftModeBanner />}
+        {/* Editors previewing drafts are not site visitors. */}
+        {!isDraftMode && (
+          <Script
+            src='https://scripts.simpleanalyticscdn.com/latest.js'
+            strategy='afterInteractive'
+          />
+        )}
         <Layout navData={navData} partnerLogos={partnerLogos}>
           {children}
         </Layout>

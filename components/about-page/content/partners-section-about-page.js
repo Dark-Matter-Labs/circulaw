@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { urlFor } from '@/lib/sanity';
+import { urlFor } from '@/lib/sanity-image';
 
 export default function ParnerSectionAboutPage({ partners, partnerType }) {
   return (

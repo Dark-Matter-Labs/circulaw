@@ -1,70 +1,50 @@
 import { Iframe } from 'sanity-plugin-iframe-pane';
 
-// this function will not work on individual branches
-function getPreviewUrl(doc) {
-  if (window.location.origin === 'http://localhost:3333') {
-    return doc?.slug?.current
-      ? `http://localhost:3000/api/preview?slug=${encodeURIComponent(doc.slug.current)}`
-      : 'http://localhost:3000/api/preview';
-  } else if (window.location.origin === 'https://circulaw-staging-studio.vercel.app') {
-    return doc?.slug?.current
-      ? `https://circulaw-staging.vercel.app/api/preview?slug=${encodeURIComponent(
-          doc.slug.current,
-        )}`
-      : `https://circulaw-staging.vercel.app/api/preview`;
-  } else window.location.origin === 'https://circulaw.sanity.studio';
-  {
-    return doc?.slug?.current
-      ? `https://www.circulaw.nl/api/preview?slug=${encodeURIComponent(doc.slug.current)}`
-      : `https://www.circulaw.nl/api/preview`;
+// Site that renders the preview, per Studio location. The Studio embedded in
+// the site (www.circulaw.nl/studio) is same-origin; the hosted Studio
+// (circulaw.sanity.studio) and local dev point at the matching site.
+function previewOrigin() {
+  switch (window.location.origin) {
+    case 'http://localhost:3333':
+      return 'http://localhost:3000';
+    case 'https://circulaw-staging-studio.vercel.app':
+      return 'https://circulaw-staging.vercel.app';
+    case 'https://www.circulaw.nl':
+    case 'http://localhost:3000':
+      return 'same-origin';
+    default:
+      return 'https://www.circulaw.nl';
   }
 }
 
-export const defaultDocumentNode = (S, { schemaType }) => {
-  switch (schemaType) {
-    case 'instrument':
-      return S.document().views([
-        S.view.form(),
-        S.view
-          .component(Iframe)
-          .options({
-            url: (doc) => getPreviewUrl(doc),
-          })
-          .title('Preview'),
-      ]);
+// The Studio creates a short-lived secret, /api/draft-mode/enable checks it
+// and turns on draft mode, then /api/draft-mode/resolve finds the page for
+// this document and shows it with unpublished changes.
+const previewPane = (S) =>
+  S.view
+    .component(Iframe)
+    .options({
+      url: {
+        origin: previewOrigin(),
+        preview: (doc) =>
+          doc?._id ? `/api/draft-mode/resolve?id=${encodeURIComponent(doc._id)}` : undefined,
+        draftMode: '/api/draft-mode/enable',
+      },
+      reload: { button: true },
+    })
+    .title('Preview');
 
-    case 'aboutPage':
-      return S.document().views([
-        S.view.form(),
-        S.view
-          .component(Iframe)
-          .options({
-            url: (doc) => getPreviewUrl(doc),
-          })
-          .title('Preview'),
-      ]);
-    case 'thema':
-      return S.document().views([
-        S.view.form(),
-        S.view
-          .component(Iframe)
-          .options({
-            url: (doc) => getPreviewUrl(doc),
-          })
-          .title('Preview'),
-      ]);
-    case 'simpleThema':
-      return S.document().views([
-        S.view.form(),
-        S.view
-          .component(Iframe)
-          .options({
-            url: (doc) => getPreviewUrl(doc),
-          })
-          .title('Preview'),
-      ]);
+const PREVIEW_TYPES = new Set([
+  'instrument',
+  'aboutPage',
+  'thema',
+  'simpleThema',
+  'newsItem',
+  'euLaw',
+  'transitionAgenda',
+]);
 
-    default:
-      return S.document().views([S.view.form()]);
-  }
-};
+export const defaultDocumentNode = (S, { schemaType }) =>
+  PREVIEW_TYPES.has(schemaType)
+    ? S.document().views([S.view.form(), previewPane(S)])
+    : S.document().views([S.view.form()]);
