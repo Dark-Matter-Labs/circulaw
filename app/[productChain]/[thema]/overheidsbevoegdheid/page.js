@@ -1,6 +1,12 @@
-// import { notFound } from 'next/navigation';
+import { notFound } from 'next/navigation';
+
 import GovLevelLayout from '@/components/layouts/gov-level-layout';
-import { FUll_THEME_PATHS_QUERY, GOV_LEVEL_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
+import {
+  FULL_THEME_IN_PRODUCT_CHAIN_QUERY,
+  FUll_THEME_PATHS_QUERY,
+  GOV_LEVEL_QUERY,
+  THEME_METADATA_QUERY,
+} from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 import placeholderImage from '@/public/gov-level-placeholder-mobile.png';
 
@@ -43,10 +49,19 @@ export async function generateStaticParams() {
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export default async function GovernmentLevelPage(props) {
   const params = await props.params;
+
+  const theme = await sanityFetch({
+    query: FULL_THEME_IN_PRODUCT_CHAIN_QUERY,
+    qParams: { productChain: params.productChain, thema: params.thema },
+    tags: ['thema'],
+  });
+  if (!theme) {
+    notFound();
+  }
   const govLevelContent = await sanityFetch({
     query: GOV_LEVEL_QUERY,
     qParams: params,

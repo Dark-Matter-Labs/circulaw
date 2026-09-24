@@ -1,5 +1,12 @@
+import { notFound } from 'next/navigation';
+
 import ExpertiseLayout from '@/components/layouts/expertise-layout';
-import { CATEGORIE_PAGE_QUERY, FUll_THEME_PATHS_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
+import {
+  CATEGORIE_PAGE_QUERY,
+  FULL_THEME_IN_PRODUCT_CHAIN_QUERY,
+  FUll_THEME_PATHS_QUERY,
+  THEME_METADATA_QUERY,
+} from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 
 export async function generateMetadata(props, parent) {
@@ -38,10 +45,19 @@ export async function generateStaticParams() {
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export default async function CategoriePage(props) {
   const params = await props.params;
+
+  const theme = await sanityFetch({
+    query: FULL_THEME_IN_PRODUCT_CHAIN_QUERY,
+    qParams: { productChain: params.productChain, thema: params.thema },
+    tags: ['thema'],
+  });
+  if (!theme) {
+    notFound();
+  }
   const categorieContent = await sanityFetch({
     query: CATEGORIE_PAGE_QUERY,
     qParams: params,
@@ -65,7 +81,7 @@ export default async function CategoriePage(props) {
       thema={params?.thema}
       transitionAgenda={params?.productChain}
       expertiseData={categorieContent}
-      title={`${categorieContent[0].themaName} instrumenten per categorie`}
+      title={`${theme.themaName} instrumenten per categorie`}
       pages={pages}
     />
   );

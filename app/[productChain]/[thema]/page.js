@@ -53,7 +53,7 @@ export default async function ThemePage(props) {
     qParams: params,
     tags: ['thema', 'simpleThema', 'instrument'],
   });
-  if (!themeData) {
+  if (!themeData?.thema || themeData.thema.transitionAgenda !== params.productChain) {
     notFound();
   }
 
