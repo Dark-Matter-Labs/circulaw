@@ -1,3 +1,4 @@
+import { hasValidBearerToken, readSecret } from '@/lib/route-auth';
 import { client } from '@/lib/sanity';
 import algoliasearch from 'algoliasearch';
 
@@ -100,17 +101,27 @@ linkUrl,
 }
 `;
 
+// Full reindex of the production Algolia indexes. Requires
+// `Authorization: Bearer <ALGOLIA_REINDEX_SECRET>`; see docs/algolia-reindex.md.
 // TODO: check to see if client.fetch should be sanityFetch
-export async function GET() {
-  if (process.env.APP_ENV === 'production') {
-    const instruments = await client.fetch(QUERY);
-    const euLaw = await client.fetch(EU_LAW_QUERY);
-    const newsItems = await client.fetch(NEWS_ITEMS_QUERY);
-    const instrumentIndex = agoliaInstance.initIndex('instruments');
-    const euLawIndex = agoliaInstance.initIndex('euLaw');
-    const newsIndex = agoliaInstance.initIndex('newsItems');
+export async function GET(req) {
+  const secret = readSecret('ALGOLIA_REINDEX_SECRET');
+  if (!secret) {
+    return Response.json({ status: 500, body: 'Reindex is not configured' }, { status: 500 });
+  }
+  if (!hasValidBearerToken(req, secret)) {
+    return Response.json({ status: 401, body: 'Unauthorized' }, { status: 401 });
+  }
 
+  if (process.env.APP_ENV === 'production') {
     try {
+      const instruments = await client.fetch(QUERY);
+      const euLaw = await client.fetch(EU_LAW_QUERY);
+      const newsItems = await client.fetch(NEWS_ITEMS_QUERY);
+      const instrumentIndex = agoliaInstance.initIndex('instruments');
+      const euLawIndex = agoliaInstance.initIndex('euLaw');
+      const newsIndex = agoliaInstance.initIndex('newsItems');
+
       console.time(
         `Saving ${instruments.length} instruments 
         and ${euLaw.length} eu laws
@@ -131,11 +142,8 @@ export async function GET() {
         body: 'Success!',
       });
     } catch (error) {
-      console.error(error, 'error');
-      return {
-        status: 500,
-        body: error,
-      };
+      console.error('[algolia-indexing] Reindex failed', error);
+      return Response.json({ status: 500, body: 'Reindex failed' }, { status: 500 });
     }
   } else
     return Response.json({

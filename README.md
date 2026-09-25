@@ -43,6 +43,10 @@ Vercel picks up and builds `main` and `staging` branches automatically, please m
 Navigate to /studio folder and run `sanity deploy` to deploy changes to CMS system. This will only work if you have the needed authentication token.
 
 
+## Algolia search indexing
+
+Search indexes are kept in sync by a Sanity webhook, and can be rebuilt with a manual reindex. Both routes need a secret. See [docs/algolia-reindex.md](docs/algolia-reindex.md).
+
 ## Languages & tools
 
 ### JavaScript

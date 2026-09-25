@@ -19,6 +19,7 @@
     "start": "next start",
     "clean": "prettier --write \"(pages|components|studio|lib|app)/**/*.+(js|jsx|json|css|md)\" --config ./prettier.config.js",
     "lint": "eslint .",
+    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test \"lib/**/*.test.js\"",
     "prepare": "husky",
     "pre-commit": "eslint --fix ."
   },
