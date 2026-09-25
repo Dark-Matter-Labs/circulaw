@@ -18,16 +18,16 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/orderable-document-list": "^2.0.23",
+    "@sanity/orderable-document-list": "^2.0.24",
     "@sanity/table": "^3.1.16",
-    "@sanity/ui": "^4.2.1",
-    "@sanity/vision": "^6.13.1",
+    "@sanity/ui": "^4.2.4",
+    "@sanity/vision": "^6.16.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "react-icons": "^4.7.1",
     "react-is": "^19.3.0",
-    "sanity": "^6.13.1",
-    "sanity-plugin-iframe-pane": "^5.0.35",
+    "sanity": "^6.16.0",
+    "sanity-plugin-iframe-pane": "^5.0.36",
     "styled-components": "^6.5.3"
   },
   "devDependencies": {
