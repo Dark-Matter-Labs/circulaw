@@ -21,6 +21,8 @@ export default {
       type: 'array',
       title: 'Circular Economy Content',
       of: [
+        { type: 'tableBlock' },
+        { type: 'highlightBlock' },
         {
           type: 'block',
           of: [
