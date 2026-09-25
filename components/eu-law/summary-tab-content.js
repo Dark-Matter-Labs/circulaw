@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { urlFor } from '@/lib/sanity-image';
+import { PortableText } from '@portabletext/react';
 import { IconExternalLink } from '@tabler/icons-react';
 
 import ImageComponent from '../image-component';
@@ -109,7 +111,16 @@ export default function SummaryComponent({ lawData }) {
         {lawData.title === 'Critical Raw Materials Act' && (
           <Highlights law='Critical Raw Materials Act' />
         )}
+        {lawData.title === 'Emissions Trading System 2 (ETS2)' && <Highlights law='ETS2' />}
       </div>
+      {/* Extra overview content */}
+      {lawData?.summaryContent && (
+        <div className='global-margin pb-10'>
+          <div className='max-w-3xl'>
+            <PortableText value={lawData.summaryContent} components={portableTextComponents} />
+          </div>
+        </div>
+      )}
       {/* Links */}
       <div className='py-10'>
         <div className='global-margin grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>

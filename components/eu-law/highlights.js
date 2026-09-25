@@ -280,5 +280,29 @@ export default function Highlights({ law }) {
         </div>
       </div>
     );
+  } else if (law === 'ETS2') {
+    return (
+      <div className='global-margin'>
+        <h2 className='heading-3xl-semibold mb-4 text-cl-black'>ETS2 Highlights</h2>
+        <p className='mb-16 max-w-xl'>De belangrijkste cijfers rond ETS2</p>
+        <div className='mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 lgNav:grid-cols-3'>
+          <HighlightCard
+            text='ETS2 wordt volledig operationeel en emissierechten worden geveild'
+            number='2028'
+            circleText='van start'
+          />
+          <HighlightCard
+            text='Social Climate Fund (2026–2032), inclusief nationale cofinanciering'
+            number='€86,7'
+            circleText='miljard'
+          />
+          <HighlightCard
+            text='van de Nederlandse broeikasgasemissies valt naar schatting van PBL onder ETS1 of ETS2'
+            number='75%'
+            circleText='in 2030'
+          />
+        </div>
+      </div>
+    );
   }
 }

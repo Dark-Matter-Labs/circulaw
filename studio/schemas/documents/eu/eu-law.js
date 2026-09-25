@@ -1,5 +1,7 @@
 import { GiEuropeanFlag } from 'react-icons/gi';
 
+import { contentArray } from '../../../utils/portable-text-arrays';
+
 export default {
   name: 'euLaw',
   type: 'document',
@@ -68,6 +70,15 @@ export default {
       type: 'text',
       title: 'Summary Introduction text',
       description: 'this will be displayed on the Summary tab',
+      group: 'summary',
+    },
+    {
+      name: 'summaryContent',
+      type: 'array',
+      title: 'Summary content',
+      description:
+        'Optioneel. Extra inhoud op het Overzicht-tabblad, onder de highlights (koppen, tabellen, tijdlijn).',
+      of: [...contentArray],
       group: 'summary',
     },
     {
