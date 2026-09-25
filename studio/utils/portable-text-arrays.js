@@ -4,6 +4,7 @@ export const contentArray = [
   { type: 'dropDownHighlight' },
   { type: 'pdfBlock' },
   { type: 'highlightBlock' },
+  { type: 'tableBlock' },
   { type: 'imageBlock' },
   { type: 'youtube' },
   {

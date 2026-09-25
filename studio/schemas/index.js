@@ -45,6 +45,7 @@ import dropDownHighlight from './objects/portable-text/drop-down-highlight';
 import highlightBlock from './objects/portable-text/highlight-block';
 import imageBlock from './objects/portable-text/image-object';
 import pdfBlock from './objects/portable-text/pdf-block';
+import tableBlock from './objects/portable-text/table-block';
 import { youtube } from './objects/portable-text/youtube-embed';
 import productChainAmbition from './objects/product-chain-ambition';
 import productChainImpact from './objects/product-chain-impact';
@@ -100,6 +101,7 @@ export const schemaTypes = [
   pdfBlock,
   imageBlock,
   highlightBlock,
+  tableBlock,
   siteConfig,
   dropDown,
   partner,
