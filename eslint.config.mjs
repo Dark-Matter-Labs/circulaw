@@ -8,7 +8,7 @@ const config = [
   // walks the whole tree, so these need excluding explicitly: public/studio is build
   // output, and studio/ has its own ESLint config and dependency tree.
   {
-    ignores: ['.next/**', 'public/studio/**', 'studio/**', 'next-sitemap.config.js'],
+    ignores: ['.next/**', '.claude/**', 'public/studio/**', 'studio/**', 'next-sitemap.config.js'],
   },
   js.configs.recommended,
   ...nextCoreWebVitals,
