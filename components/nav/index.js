@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation';
 
 import HomepageHeader from '@/components/headers/homepage-header';
 import LangSwitch from '@/components/nav/lang-switch';
+import TranslatePanel from '@/components/nav/translate-panel';
 import CirculawLogo from '@/public/circulaw_logotype2.png';
 import logo from '@/public/circulaw_logotype_home2.png';
 import {
@@ -259,7 +260,14 @@ export default function Nav(props) {
   });
 
   const mobileMenuClick = useClick(mobileContext);
-  const mobileMenuDismiss = useDismiss(mobileContext, { outsidePressEvent: 'mousedown' });
+  const [translateOpen, setTranslateOpen] = useState(false);
+  const translatePanelRef = useRef(null);
+
+  // The translate panel sits outside the mobile menu; using it should not close the menu.
+  const mobileMenuDismiss = useDismiss(mobileContext, {
+    outsidePressEvent: 'mousedown',
+    outsidePress: (event) => !translatePanelRef.current?.contains(event.target),
+  });
   const mobileMenuRole = useRole(mobileContext);
 
   const { getReferenceProps: mobileRefProps, getFloatingProps: mobileFloatingProps } =
@@ -530,8 +538,8 @@ export default function Nav(props) {
                                 </span>
                               </Link>
                               <LangSwitch
-                                translateOpen={props.translateOpen}
-                                setTranslateOpen={props.setTranslateOpen}
+                                translateOpen={translateOpen}
+                                setTranslateOpen={setTranslateOpen}
                               />
                             </div>
                           </div>
@@ -1015,15 +1023,15 @@ export default function Nav(props) {
                   <div className='hidden lgNav:block'>
                     <LangSwitch
                       background='dark'
-                      translateOpen={props.translateOpen}
-                      setTranslateOpen={props.setTranslateOpen}
+                      translateOpen={translateOpen}
+                      setTranslateOpen={setTranslateOpen}
                     />
                   </div>
                 ) : (
                   <div className='hidden lgNav:block'>
                     <LangSwitch
-                      translateOpen={props.translateOpen}
-                      setTranslateOpen={props.setTranslateOpen}
+                      translateOpen={translateOpen}
+                      setTranslateOpen={setTranslateOpen}
                     />
                   </div>
                 )}
@@ -1031,6 +1039,11 @@ export default function Nav(props) {
             </div>
           </>
         </nav>
+        <TranslatePanel
+          ref={translatePanelRef}
+          open={translateOpen}
+          onClose={() => setTranslateOpen(false)}
+        />
       </div>
       {pathname === '/' && (
         <div className='relative -mt-36 min-h-[750px] md:min-h-[886px]'>
