@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 
 import Header from '@/components/headers';
 import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
+import NewsArticleStructuredData from '@/components/structured-data/news-article';
 import { NEWS_DETAIL_PAGE_QUERY, NEWS_METADATA_QUERY, NEWS_SLUGS_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 
@@ -63,6 +64,7 @@ export default async function NewsDetailPage(props) {
         newsData={newsPageContent}
       />
       <NewsDetailPageBody data={newsPageContent} />
+      <NewsArticleStructuredData news={newsPageContent} />
     </>
   );
 }

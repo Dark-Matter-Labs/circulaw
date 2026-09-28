@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 
 import EULawHeader from '@/components/eu-law/eu-law-header';
 import SummaryComponent from '@/components/eu-law/summary-tab-content';
+import LegislationStructuredData from '@/components/structured-data/legislation';
 import { EU_LAW_METADATA_QUERY, EU_LAW_PATHS_QUERY, LAW_SUMMARY_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 
@@ -60,6 +61,7 @@ export default async function EULawPage(props) {
 
   return (
     <>
+      <LegislationStructuredData law={summaryData} />
       <EULawHeader summaryData={summaryData} activeTab='overzicht' />
       <SummaryComponent lawData={summaryData} />
     </>

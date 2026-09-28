@@ -4,6 +4,7 @@ import Script from 'next/script';
 
 import DraftModeBanner from '@/components/draft-mode-banner';
 import Layout from '@/components/layouts/layout';
+import SiteStructuredData from '@/components/structured-data/site';
 import { NAV_QUERY, PARTNERS_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 import globalMeta from '@/utils/global-meta';
@@ -50,6 +51,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang='nl' className={plus_Jakarta_Sans.variable}>
       <body className='text-cl-black'>
+        <SiteStructuredData />
         {isDraftMode && <DraftModeBanner />}
         {/* Editors previewing drafts are not site visitors. */}
         {!isDraftMode && (
