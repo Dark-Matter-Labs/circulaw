@@ -45,7 +45,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export const dynamicParams = false;
+// Laws published after the last deploy are rendered on first request (and then
+// cached) instead of 404ing until the next build; unknown slugs still notFound().
+export const dynamicParams = true;
 
 export default async function EULawPage(props) {
   const params = await props.params;

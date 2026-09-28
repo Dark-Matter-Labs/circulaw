@@ -58,7 +58,9 @@ export async function generateStaticParams() {
   return laws.flatMap((law) => EU_LAW_SUBTABS.map((tab) => ({ law, tab: tab.slug })));
 }
 
-export const dynamicParams = false;
+// Laws published after the last deploy are rendered on first request (and then
+// cached) instead of 404ing until the next build; unknown slugs still notFound().
+export const dynamicParams = true;
 
 export default async function EULawTabPage(props) {
   const { law, tab: tabSlug } = await props.params;
