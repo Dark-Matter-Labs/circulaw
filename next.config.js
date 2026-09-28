@@ -31,6 +31,14 @@ const nextConfig = {
         destination: '/eu-wetgeving/:law/:tab',
         permanent: true,
       },
+      // Model texts used to open as ?modeltext= on the overview; each now has its
+      // own page (which the overview still shows as a popup).
+      {
+        source: '/bouw/planregels/modelteksten',
+        has: [{ type: 'query', key: 'modeltext', value: '(?<slug>.+)' }],
+        destination: '/bouw/planregels/modelteksten/:slug',
+        permanent: true,
+      },
     ]
   },
   images: {
