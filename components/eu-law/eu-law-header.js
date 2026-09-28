@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import Header from '../headers';
 import Tabs from './tabs';
 
-export default function EULawHeader({ summaryData, initialTab }) {
+export default function EULawHeader({ summaryData, activeTab }) {
   const headerRef = useRef();
   const tabsRef = useRef();
   const [isSticky, setIsSticky] = useState(false);
@@ -78,7 +78,7 @@ export default function EULawHeader({ summaryData, initialTab }) {
       />
       <Tabs
         summaryData={summaryData}
-        initialTab={initialTab}
+        activeTab={activeTab}
         tabsRef={tabsRef}
         isSticky={isSticky}
         navbarHeight={navbarHeight}

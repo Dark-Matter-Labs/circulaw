@@ -1,5 +1,3 @@
-import { Suspense } from 'react';
-
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -78,9 +76,7 @@ export default async function ModelTextPage(props) {
               </span>
             </Link>
           </div>
-          <Suspense fallback={null}>
-            <PopUp modelTexts={modelTexts} pillars={pillars} />
-          </Suspense>
+          <PopUp modelTexts={modelTexts} pillars={pillars} />
         </div>
       </>
     );

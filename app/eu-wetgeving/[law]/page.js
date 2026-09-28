@@ -1,15 +1,8 @@
-import { Suspense } from 'react';
-
 import { notFound } from 'next/navigation';
 
 import EULawHeader from '@/components/eu-law/eu-law-header';
-import TabContent from '@/components/eu-law/tab-content';
-import {
-  EU_LAW_METADATA_QUERY,
-  EU_LAW_PATHS_QUERY,
-  LAW_SUMMARY_QUERY,
-  LAW_TAB_QUERY,
-} from '@/lib/queries';
+import SummaryComponent from '@/components/eu-law/summary-tab-content';
+import { EU_LAW_METADATA_QUERY, EU_LAW_PATHS_QUERY, LAW_SUMMARY_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 
 export async function generateMetadata(props, parent) {
@@ -54,31 +47,21 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 export default async function EULawPage(props) {
-  const searchParams = await props.searchParams;
   const params = await props.params;
   const summaryData = await sanityFetch({
     query: LAW_SUMMARY_QUERY,
     qParams: params,
     tags: ['euLaw'],
   });
-  const tabData = await sanityFetch({
-    query: LAW_TAB_QUERY,
-    qParams: params,
-    tags: ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab'],
-  });
 
   if (!summaryData) {
     notFound();
   }
-  const initialTab = searchParams.tab;
 
   return (
     <>
-      <EULawHeader summaryData={summaryData} initialTab={initialTab} />
-
-      <Suspense>
-        <TabContent summaryData={summaryData} tabData={tabData} />
-      </Suspense>
+      <EULawHeader summaryData={summaryData} activeTab='overzicht' />
+      <SummaryComponent lawData={summaryData} />
     </>
   );
 }

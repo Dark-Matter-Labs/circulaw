@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import Link from 'next/link';
 
 import AgendaCard from '@/components/news-page/agenda-card';
+import { filterNewsByType, splitNewsForOverview } from '@/lib/news';
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react';
 import { IconChevronDown } from '@tabler/icons-react';
 
@@ -24,29 +25,9 @@ const articleTypes = [
 ];
 export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }) {
   const [articleType, setArticleType] = useState(articleTypes[0]);
-  const [notFeatured, setNotFeatured] = useState();
-
-  useEffect(() => {
-    if (articleType.name === 'Nieuw op de site') {
-      setNotFeatured(
-        nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Nieuw op de site'),
-      );
-    } else if (articleType.name === 'Agenda') {
-      setNotFeatured(
-        nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.isAgendaItem === true),
-      );
-    } else if (articleType.name === 'Artikelen') {
-      setNotFeatured(
-        nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Artikelen'),
-      );
-    } else if (articleType.name === 'Circulair nieuws') {
-      setNotFeatured(
-        nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Circulair nieuws'),
-      );
-    } else {
-      setNotFeatured(nonFeaturedNewsItems?.slice(0, 12));
-    }
-  }, [articleType, nonFeaturedNewsItems]);
+  // Derived during render (not in an effect) so the server HTML contains the items.
+  const { grid, archive } = splitNewsForOverview(nonFeaturedNewsItems);
+  const notFeatured = filterNewsByType(grid, articleType.name);
 
   const options = {
     day: 'numeric',
@@ -102,27 +83,23 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
           </div>
           <div className='py-10'>
             <MasonryGrid>
-              {notFeatured?.map((item, id) => {
-                return (
-                  <>
-                    {item.isAgendaItem === true ? (
-                      <AgendaCard data={item} key={id} />
-                    ) : (
-                      <NewNewsCard data={item} key={id} />
-                    )}
-                  </>
-                );
-              })}
+              {notFeatured.map((item, id) =>
+                item.isAgendaItem === true ? (
+                  <AgendaCard data={item} key={id} />
+                ) : (
+                  <NewNewsCard data={item} key={id} />
+                ),
+              )}
             </MasonryGrid>
           </div>
-          {nonFeaturedNewsItems.length > 12 && (
+          {archive.length > 0 && (
             <div className='mb-10'>
               <div className='w-1/2'>
                 <h3 className='heading-5xl-semibold mt-20 text-green-500'>Archief</h3>
                 <TitleDecorator width='w-1/4' />
               </div>
               <div className='py-10'>
-                {nonFeaturedNewsItems.slice(13, 30)?.map((item, id) => (
+                {archive.map((item, id) => (
                   <div
                     key={id}
                     className='heading-xl-semibold mb-3 flex flex-row items-center text-cl-black'
