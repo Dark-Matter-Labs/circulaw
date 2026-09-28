@@ -3,7 +3,7 @@ import { Highlight } from 'react-instantsearch';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { euLawTabHref } from '@/lib/eu-law-tabs';
+import { euLawTabHref, subtabSlugForType } from '@/lib/eu-law-tabs';
 import { urlFor } from '@/lib/sanity-image';
 
 export default function EUHit({ hit }) {
@@ -11,7 +11,7 @@ export default function EUHit({ hit }) {
     return (
       <>
         <Link
-          href={euLawTabHref(hit.slug, 'verplichtingen-voor-europese-lidstaten')}
+          href={euLawTabHref(hit.slug, subtabSlugForType('euEuropeTab'))}
         >
           <article className='hidden h-full flex-col rounded-cl sm:flex'>
             <div className='h-full rounded-cl'>
@@ -113,7 +113,7 @@ export default function EUHit({ hit }) {
     return (
       <>
         <Link
-          href={euLawTabHref(hit.slug, 'relevantie-voor-regionale-en-lokale-overheden')}
+          href={euLawTabHref(hit.slug, subtabSlugForType('euLocalTab'))}
         >
           <article className='hidden h-full flex-col rounded-cl sm:flex'>
             <div className='h-full rounded-cl'>
@@ -215,7 +215,7 @@ export default function EUHit({ hit }) {
     return (
       <>
         <Link
-          href={euLawTabHref(hit.slug, 'relevantie-voor-de-circulaire-economie')}
+          href={euLawTabHref(hit.slug, subtabSlugForType('euCircularEconomyTab'))}
         >
           <article className='hidden h-full flex-col rounded-cl sm:flex'>
             <div className='h-full rounded-cl'>

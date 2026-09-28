@@ -8,7 +8,7 @@ import ScrollPagesTabContent from './scroll-tab-content';
 // Content of one EU law sub-tab (see lib/eu-law-tabs.js). The Europe and local
 // tabs are lists of titled sections; the circular economy tab is a single text.
 export default function TabContent({ tab, content }) {
-  if (tab.type === 'euCircularEconomyTab') {
+  if (!tab.sections) {
     return (
       <div className='global-margin my-12'>
         <div className='max-w-xl 2xl:max-w-2xl'>
