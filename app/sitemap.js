@@ -1,7 +1,7 @@
 import { SITEMAP_QUERY } from '@/lib/queries';
 import { client } from '@/lib/sanity';
-
-const baseUrl = 'https://www.circulaw.nl';
+import { buildSitemapEntries } from '@/lib/seo';
+import globalMeta from '@/utils/global-meta';
 
 // TODO: update to sanityFetch
 export async function getURLS() {
@@ -19,18 +19,12 @@ export async function getURLS() {
     },
   });
   if (!urls) {
-    throw new Error('could not fetch instruments');
+    throw new Error('could not fetch sitemap URLs');
   }
   return urls;
 }
 
 export default async function sitemap() {
   const urls = await getURLS();
-  const array = [];
-  const URLS = array.concat(urls.instrument, urls.about, urls.eu, urls.pcs, urls.themas, urls.news);
-  return URLS.map((url) => ({
-    url: baseUrl + url.URL,
-    priority: 0.8,
-    changeFrequency: 'daily',
-  }));
+  return buildSitemapEntries(urls, globalMeta.siteUrl);
 }

@@ -28,6 +28,13 @@ const MODELTEXT_QUERY = `
   } 
 `;
 
+export const metadata = {
+  title: 'Modelteksten voor het omgevingsplan - CircuLaw',
+  description:
+    'Modelteksten (planregels) voor het omgevingsplan, ingedeeld in 6 pijlers die aansluiten bij het Convenant Toekomstbestendig Bouwen.',
+  alternates: { canonical: '/bouw/planregels/modelteksten' },
+};
+
 // These pages only ever render for the 'bouw' product chain and notFound() for
 // anything else, so the path set is knowable at build time. Declaring it lets the
 // route prerender instead of being server-rendered on every request.

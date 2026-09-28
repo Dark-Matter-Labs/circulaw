@@ -20,9 +20,8 @@ const plus_Jakarta_Sans = Plus_Jakarta_Sans({
 // these are global and will be on all pages.
 export const metadata = {
   metadataBase: new URL(globalMeta.siteUrl),
-  alternates: {
-    canonical: '/',
-  },
+  // No canonical here: every page that doesn't set its own would inherit it and
+  // tell search engines it is a duplicate of the homepage.
   title: globalMeta.siteName,
   description: globalMeta.description,
   keywords: globalMeta.keywords,
@@ -33,10 +32,11 @@ export const metadata = {
     type: 'website',
   },
 
+  // No nocache: Bing reads it as "only use URL, title and snippet" in Copilot
+  // and chat answers, which hides the content from AI search.
   robots: {
     index: true,
     follow: true,
-    nocache: true,
   },
 };
 
