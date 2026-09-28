@@ -40,11 +40,6 @@ export async function GET() {
     fileUrl: (ref) => sanityFileUrl(ref, config),
   });
   return new Response(body, {
-    headers: {
-      'Content-Type': 'text/plain; charset=utf-8',
-      // Agents fetch it directly; in search results it would compete with the
-      // pages it copies.
-      'X-Robots-Tag': 'noindex',
-    },
+    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
   });
 }
