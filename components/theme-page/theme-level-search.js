@@ -1,6 +1,7 @@
 'use client';
 
-import { Configure, Hits, InstantSearch, RefinementList, SearchBox } from 'react-instantsearch';
+import { Configure, Hits, RefinementList, SearchBox } from 'react-instantsearch';
+import { InstantSearchNext } from 'react-instantsearch-nextjs';
 
 import CustomClearRefinements from '@/components/search/clear-refinements';
 import { InstrumentHit } from '@/components/search/instrument-hit';
@@ -41,7 +42,9 @@ export default function ThemeLevelSearch(props) {
   };
   
   return (
-    <InstantSearch
+    // InstantSearchNext runs the first search on the server, so the instruments
+    // are in the HTML (for crawlers and AI agents) instead of loading in the browser.
+    <InstantSearchNext
       key={`${props?.productChain ?? ''}-${props?.thema ?? ''}`}
       searchClient={searchClient}
       indexName='instruments'
@@ -416,6 +419,6 @@ export default function ThemeLevelSearch(props) {
           </div>
         </NoResultsBoundary>
       </div>
-    </InstantSearch>
+    </InstantSearchNext>
   );
 }

@@ -1,11 +1,7 @@
 import { notFound } from 'next/navigation';
 
 import ThemeLevelSearch from '@/components/theme-page/theme-level-search';
-import {
-  FULL_THEME_IN_PRODUCT_CHAIN_QUERY,
-  FUll_THEME_PATHS_QUERY,
-  THEME_METADATA_QUERY,
-} from '@/lib/queries';
+import { FULL_THEME_IN_PRODUCT_CHAIN_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 
 export async function generateMetadata(props, parent) {
@@ -39,15 +35,9 @@ export async function generateMetadata(props, parent) {
   }
 }
 
-export async function generateStaticParams() {
-  const themas = await sanityFetch({
-    query: FUll_THEME_PATHS_QUERY,
-    tags: ['thema', 'simpleThema'],
-  });
-  return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
-}
-
-export const dynamicParams = true;
+// The instrument list is searched on the server (InstantSearchNext reads request
+// headers), so this page renders per request rather than at build time.
+export const dynamic = 'force-dynamic';
 
 export default async function InstrumentenPage(props) {
   const params = await props.params;
