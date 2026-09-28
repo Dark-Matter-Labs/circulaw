@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 
 import EULawHeader from '@/components/eu-law/eu-law-header';
 import TabContent from '@/components/eu-law/tab-content';
+import EuLawTabStructuredData from '@/components/structured-data/eu-law-tab';
 import { EU_LAW_SUBTABS, euLawTabHref, findEuLawSubtab } from '@/lib/eu-law-tabs';
 import {
   EU_LAW_METADATA_QUERY,
@@ -75,6 +76,12 @@ export default async function EULawTabPage(props) {
 
   return (
     <>
+      <EuLawTabStructuredData
+        law={summaryData}
+        tab={{ slug: tab.slug, name: tab.label }}
+        description={toMetaDescription(tabExcerpt(tabDoc, tab))}
+        dateModified={tabDoc?._updatedAt}
+      />
       <EULawHeader summaryData={summaryData} activeTab={tab.slug} />
       <TabContent tab={tab} content={tabDoc?.[tab.field] ?? []} />
     </>
