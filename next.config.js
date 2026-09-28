@@ -16,6 +16,21 @@ const nextConfig = {
         destination: '/training',
         permanent: true,
       },
+      // EU law tabs used to be ?tab= query views of one page; each now has its own
+      // route. ?tab=overzicht needs no redirect: the law page is the overview.
+      {
+        source: '/eu-wetgeving/:law',
+        has: [
+          {
+            type: 'query',
+            key: 'tab',
+            value:
+              '(?<tab>verplichtingen-voor-europese-lidstaten|relevantie-voor-regionale-en-lokale-overheden|relevantie-voor-de-circulaire-economie)',
+          },
+        ],
+        destination: '/eu-wetgeving/:law/:tab',
+        permanent: true,
+      },
     ]
   },
   images: {

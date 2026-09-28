@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
@@ -15,69 +15,42 @@ import { IconCheck, IconCopy, IconX } from '@tabler/icons-react';
 
 import ModelTextCard from './modeltext-card';
 
-export default function PopUp({ pillars, modelTexts }) {
+// useSearchParams makes everything up to the nearest Suspense boundary render
+// only in the browser. Reading the URL in this empty child keeps that boundary
+// small, so the pillars and model text cards are in the server HTML.
+function SearchParamsSync({ onChange }) {
   const searchParams = useSearchParams();
+  const pillar = searchParams.get('pillar');
+  const modeltext = searchParams.get('modeltext');
+  useEffect(() => {
+    onChange({ pillar, modeltext });
+  }, [pillar, modeltext, onChange]);
+  return null;
+}
+
+export default function PopUp({ pillars, modelTexts }) {
   const router = useRouter();
   const pathname = usePathname();
-
-  const createQueryString = useCallback(
-    (name, value) => {
-      const params = new URLSearchParams(searchParams.toString());
-      if (name === 'pillar') {
-        params.delete('modeltext');
-      }
-      params.set(name, value);
-
-      return params.toString();
-    },
-    [searchParams],
-  );
-
-  const [selectedPillar, setSelectedPillar] = useState();
-  const [filteredModelTexts, setFilteredModelTexts] = useState();
-  const [selectedModelText, setSelectedModelText] = useState(null);
+  const [urlState, setUrlState] = useState({ pillar: null, modeltext: null });
   const [showLinkCopied, setShowLinkCopied] = useState(false);
-  // use effect to set the pillar and filer the modeltexts
-  useEffect(() => {
-    // initialise from search params
-    let modelTextSlug = searchParams.get('modeltext');
-    let pillar = searchParams.get('pillar');
-    if (pillar && !modelTextSlug) {
-      setSelectedModelText(null);
-      setSelectedPillar(pillar);
-      const filtered = modelTexts.filter((t) => t.pillar === pillar);
-      setFilteredModelTexts(filtered);
-    } else if (!pillar && modelTextSlug) {
-      setSelectedPillar(pillars[0].slug);
-      const filtered = modelTexts.filter((t) => t.pillar === pillars[0].slug);
-      setFilteredModelTexts(filtered);
-      setIsOpen(true);
-      setSelectedModelText(modelTexts.filter((t) => t.slug === modelTextSlug)[0]);
-    } else if (pillar && modelTextSlug) {
-      setSelectedPillar(pillar);
-      const filtered = modelTexts.filter((t) => t.pillar === pillar);
-      setFilteredModelTexts(filtered);
-      setIsOpen(true);
-      setSelectedModelText(modelTexts.filter((t) => t.slug === modelTextSlug)[0]);
-    } else if (!pillar) {
-      setSelectedPillar(pillars[0].slug);
-      const filtered = modelTexts.filter((t) => t.pillar === pillars[0].slug);
-      setFilteredModelTexts(filtered);
-      setIsOpen(false);
-    }
-  }, [searchParams, modelTexts, createQueryString, router, pathname, pillars]);
 
-  let [isOpen, setIsOpen] = useState(false);
+  const selectedPillar = urlState.pillar ?? pillars[0]?.slug;
+  const selectedModelText = modelTexts.find((t) => t.slug === urlState.modeltext) ?? null;
+  const isOpen = selectedModelText !== null;
+
+  function navigate(params) {
+    router.push(`${pathname}?${new URLSearchParams(params).toString()}`, { scroll: false });
+  }
 
   function close() {
-    setIsOpen(false);
-    router.push(pathname + '?' + createQueryString('pillar', selectedModelText.pillar), {
-      scroll: false,
-    });
+    navigate({ pillar: selectedModelText.pillar });
   }
 
   return (
     <>
+      <Suspense fallback={null}>
+        <SearchParamsSync onChange={setUrlState} />
+      </Suspense>
       <div className='max-w-[1280px]'>
         <ul
           id='pillars'
@@ -86,11 +59,7 @@ export default function PopUp({ pillars, modelTexts }) {
           {pillars?.map((p) => (
             <li key={p.title}>
               <button
-                onClick={() => {
-                  router.push(pathname + '?' + createQueryString('pillar', p.slug), {
-                    scroll: false,
-                  });
-                }}
+                onClick={() => navigate({ pillar: p.slug })}
                 className={`${
                   selectedPillar === p.slug
                     ? 'p-base-semibold border-b-2 border-b-green-500'
@@ -106,33 +75,39 @@ export default function PopUp({ pillars, modelTexts }) {
         </ul>
         <div>
           {pillars.map((p) => (
-            <div key={p.slug}>
-              {p.slug === selectedPillar && (
-                <>
-                  <h3 className='heading-xl-semibold mb-2 mt-8'>{p.title}</h3>
-                  <p className='p-xs max-w-[700px]'>{p.description}</p>
-                </>
-              )}
+            <div key={p.slug} hidden={p.slug !== selectedPillar}>
+              <h3 className='heading-xl-semibold mb-2 mt-8'>{p.title}</h3>
+              <p className='p-xs max-w-[700px]'>{p.description}</p>
             </div>
           ))}
         </div>
       </div>
       <div className='min-h-screen'>
-        <div className='gap relative mt-14 flex w-full flex-wrap items-center justify-center gap-6 sm:justify-start sm:gap-8'>
-          {filteredModelTexts?.map((text, id) => (
-            <Button
-              className='w-[366px]'
-              key={id}
-              onClick={() => {
-                router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
-                  scroll: false,
-                });
-              }}
-            >
-              <ModelTextCard text={text} />
-            </Button>
-          ))}
-        </div>
+        {/* Every pillar's cards are rendered so crawlers see all model texts; only the selected pillar shows. */}
+        {pillars.map((p) => (
+          <div
+            key={p.slug}
+            hidden={p.slug !== selectedPillar}
+            className='gap relative mt-14 flex w-full flex-wrap items-center justify-center gap-6 sm:justify-start sm:gap-8'
+          >
+            {modelTexts
+              .filter((text) => text.pillar === p.slug)
+              .map((text) => (
+                <Button
+                  className='w-[366px]'
+                  key={text.slug}
+                  onClick={() =>
+                    navigate({
+                      ...(urlState.pillar ? { pillar: urlState.pillar } : {}),
+                      modeltext: text.slug,
+                    })
+                  }
+                >
+                  <ModelTextCard text={text} />
+                </Button>
+              ))}
+          </div>
+        ))}
       </div>
       {selectedModelText && (
         <Dialog

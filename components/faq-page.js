@@ -1,14 +1,14 @@
 'use client';
 
-import React from 'react';
-
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from '@portabletext/react';
-import * as Accordion from '@radix-ui/react-accordion';
 import { IconChevronDown } from '@tabler/icons-react';
 
 import Header from './headers';
 
+// Native <details> keeps every answer in the server HTML, so search engines and
+// AI crawlers can read all of them. The shared name makes it an exclusive
+// accordion: opening one question closes the other.
 export default function FAQPageComponent({ data }) {
   return (
     <>
@@ -16,28 +16,24 @@ export default function FAQPageComponent({ data }) {
       <div className='global-margin py-8'>
         <div className='grid w-full grid-cols-1 justify-start'>
           <div className='max-w-4xl sm:px-16'>
-            <Accordion.Root
-              className='flex flex-col gap-y-5'
-              type='single'
-              defaultValue='item-1'
-              collapsible
-            >
-              {data.FAQPageContent.map((item, i) => (
-                <Accordion.Item
+            <div className='flex flex-col gap-y-5'>
+              {data?.FAQPageContent?.map((item, i) => (
+                <details
                   key={i}
-                  className='border-t border-green-500 pb-12 pt-4'
-                  value={`item-${i + 1}`}
+                  name='faq'
+                  open={i === 0}
+                  className='group border-t border-green-500 pt-4 pb-12'
                 >
-                  <Accordion.Trigger className='heading-xl-semibold sm:heading-3xl-semibold group mr-4 flex w-full justify-between text-green-500'>
+                  <summary className='heading-xl-semibold sm:heading-3xl-semibold mr-4 flex w-full cursor-pointer list-none justify-between text-green-500 [&::-webkit-details-marker]:hidden'>
                     <span className='text-left'>{item.question}</span>{' '}
-                    <IconChevronDown className='h-8! w-8! shrink-0 transition-transform duration-300 ease-in-out group-data-[state=open]:rotate-180' />
-                  </Accordion.Trigger>
-                  <Accordion.Content className='AccordionContent overflow-hidden'>
+                    <IconChevronDown className='h-8! w-8! shrink-0 transition-transform duration-300 ease-in-out group-open:rotate-180' />
+                  </summary>
+                  <div className='FaqAnswer overflow-hidden'>
                     <PortableText value={item.response} components={portableTextComponents} />
-                  </Accordion.Content>
-                </Accordion.Item>
+                  </div>
+                </details>
               ))}
-            </Accordion.Root>
+            </div>
           </div>
         </div>
       </div>

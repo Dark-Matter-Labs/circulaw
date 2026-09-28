@@ -3,6 +3,7 @@ import { Highlight } from 'react-instantsearch';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { euLawTabHref } from '@/lib/eu-law-tabs';
 import { urlFor } from '@/lib/sanity-image';
 
 export default function EUHit({ hit }) {
@@ -10,10 +11,7 @@ export default function EUHit({ hit }) {
     return (
       <>
         <Link
-          href={{
-            pathname: `/eu-wetgeving/${hit.slug}`,
-            query: { tab: 'verplichtingen-voor-europese-lidstaten' },
-          }}
+          href={euLawTabHref(hit.slug, 'verplichtingen-voor-europese-lidstaten')}
         >
           <article className='hidden h-full flex-col rounded-cl sm:flex'>
             <div className='h-full rounded-cl'>
@@ -115,10 +113,7 @@ export default function EUHit({ hit }) {
     return (
       <>
         <Link
-          href={{
-            pathname: `/eu-wetgeving/${hit.slug}`,
-            query: { tab: 'relevantie-voor-regionale-en-lokale-overheden' },
-          }}
+          href={euLawTabHref(hit.slug, 'relevantie-voor-regionale-en-lokale-overheden')}
         >
           <article className='hidden h-full flex-col rounded-cl sm:flex'>
             <div className='h-full rounded-cl'>
@@ -176,54 +171,51 @@ export default function EUHit({ hit }) {
               </div>
             </div>
           </article>
-        </Link>
-        <article className='flex flex-col gap-y-3 sm:hidden'>
-          <div className='relative h-[160px] w-[160px]'>
-            {hit.searchImage ? (
-              <Image
-                src={urlFor(hit.searchImage).url()}
-                alt='eu icon'
-                fill
-                priority={true}
-                className='object-fil'
-                sizes='15vw'
-              />
-            ) : null}
-          </div>
-          <div>
-            <div className='p-2xs-semibold flex h-[52px] w-[164px] items-start justify-center rounded-t-cl bg-green-100/30 px-2 py-3 text-cl-grey/30'>
-              Relevantie voor regionale en lokale overheden{' '}
+          <article className='flex flex-col gap-y-3 sm:hidden'>
+            <div className='relative h-[160px] w-[160px]'>
+              {hit.searchImage ? (
+                <Image
+                  src={urlFor(hit.searchImage).url()}
+                  alt='eu icon'
+                  fill
+                  priority={true}
+                  className='object-fil'
+                  sizes='15vw'
+                />
+              ) : null}
             </div>
-          </div>
-          <h2 className='p-base-semibold'>
-            <Highlight
-              attribute='lawTitle'
-              hit={hit}
-              classNames={{
-                highlighted: 'text-green-400 bg-green-400/20',
-              }}
-            />
-          </h2>
-          <p className='p-xl line-clamp-4'>
-            <Highlight
-              attribute='localContent1'
-              hit={hit}
-              classNames={{
-                highlighted: 'text-green-400 bg-green-400/20',
-              }}
-            />
-          </p>
-        </article>
+            <div>
+              <div className='p-2xs-semibold flex h-[52px] w-[164px] items-start justify-center rounded-t-cl bg-green-100/30 px-2 py-3 text-cl-grey/30'>
+                Relevantie voor regionale en lokale overheden{' '}
+              </div>
+            </div>
+            <h2 className='p-base-semibold'>
+              <Highlight
+                attribute='lawTitle'
+                hit={hit}
+                classNames={{
+                  highlighted: 'text-green-400 bg-green-400/20',
+                }}
+              />
+            </h2>
+            <p className='p-xl line-clamp-4'>
+              <Highlight
+                attribute='localContent1'
+                hit={hit}
+                classNames={{
+                  highlighted: 'text-green-400 bg-green-400/20',
+                }}
+              />
+            </p>
+          </article>
+        </Link>
       </>
     );
   } else if (hit.title === 'Circular economy Tab') {
     return (
       <>
         <Link
-          href={{
-            pathname: `/eu-wetgeving/${hit.slug}`,
-            query: { tab: 'relevantie-voor-de-circulaire-economie' },
-          }}
+          href={euLawTabHref(hit.slug, 'relevantie-voor-de-circulaire-economie')}
         >
           <article className='hidden h-full flex-col rounded-cl sm:flex'>
             <div className='h-full rounded-cl'>
@@ -281,54 +273,51 @@ export default function EUHit({ hit }) {
               </div>
             </div>
           </article>
-        </Link>
-        <article className='flex flex-col gap-y-3 sm:hidden'>
-          <div className='relative h-[160px] w-[160px]'>
-            {hit.searchImage ? (
-              <Image
-                src={urlFor(hit.searchImage).url()}
-                alt='eu icon'
-                fill
-                priority={true}
-                className='object-fil'
-                sizes='15vw'
-              />
-            ) : null}
-          </div>
-          <div>
-            <div className='p-2xs-semibold flex h-[52px] w-[131px] items-start justify-center rounded-t-cl bg-green-100/30 px-2 py-3 text-cl-grey/30'>
-              Relevantie voor de circulaire economie
+          <article className='flex flex-col gap-y-3 sm:hidden'>
+            <div className='relative h-[160px] w-[160px]'>
+              {hit.searchImage ? (
+                <Image
+                  src={urlFor(hit.searchImage).url()}
+                  alt='eu icon'
+                  fill
+                  priority={true}
+                  className='object-fil'
+                  sizes='15vw'
+                />
+              ) : null}
             </div>
-          </div>
-          <h2 className='p-base-semibold'>
-            <Highlight
-              attribute='lawTitle'
-              hit={hit}
-              classNames={{
-                highlighted: 'text-green-400 bg-green-400/20',
-              }}
-            />
-          </h2>
-          <p className='p-xl line-clamp-4'>
-            <Highlight
-              attribute='ceContent'
-              hit={hit}
-              classNames={{
-                highlighted: 'text-green-400 bg-green-400/20',
-              }}
-            />
-          </p>
-        </article>
+            <div>
+              <div className='p-2xs-semibold flex h-[52px] w-[131px] items-start justify-center rounded-t-cl bg-green-100/30 px-2 py-3 text-cl-grey/30'>
+                Relevantie voor de circulaire economie
+              </div>
+            </div>
+            <h2 className='p-base-semibold'>
+              <Highlight
+                attribute='lawTitle'
+                hit={hit}
+                classNames={{
+                  highlighted: 'text-green-400 bg-green-400/20',
+                }}
+              />
+            </h2>
+            <p className='p-xl line-clamp-4'>
+              <Highlight
+                attribute='ceContent'
+                hit={hit}
+                classNames={{
+                  highlighted: 'text-green-400 bg-green-400/20',
+                }}
+              />
+            </p>
+          </article>
+        </Link>
       </>
     );
   } else {
     return (
       <>
         <Link
-          href={{
-            pathname: `/eu-wetgeving/${hit.slug}`,
-            query: { tab: 'overzicht' },
-          }}
+          href={euLawTabHref(hit.slug, 'overzicht')}
         >
           <article className='hidden h-full flex-col rounded-cl sm:flex'>
             <div className='h-full rounded-cl'>
