@@ -4,6 +4,7 @@ import { sanityFetch } from '@/lib/sanity';
 
 export const metadata = {
   title: 'Vraag en antwoord - CircuLaw',
+  alternates: { canonical: '/vraag-en-antwoord' },
 };
 
 export default async function VraagAndAntwoordPage() {

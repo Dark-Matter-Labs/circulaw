@@ -13,6 +13,10 @@ import { sanityFetch } from '@/lib/sanity';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { IconArrowRight, IconInfoSquareRoundedFilled } from '@tabler/icons-react';
 
+export const metadata = {
+  alternates: { canonical: '/' },
+};
+
 export default async function Page() {
   const data = await sanityFetch({
     query: HOME_PAGE_QUERY,

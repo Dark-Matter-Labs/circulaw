@@ -6,6 +6,13 @@ import ScrollyTellingAnimation from '@/components/scrolly/scrolly-telling-animat
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconArrowRight, IconChevronDown } from '@tabler/icons-react';
 
+export const metadata = {
+  title: 'Planregels: circulair bouwen in het omgevingsplan - CircuLaw',
+  description:
+    'Wil je werkelijk impact maken, zet dan een mix van instrumenten in. Voor het stimuleren van circulaire bouw kun je aan de slag met de omgevingsvisie, het omgevingsprogramma en het omgevingsplan.',
+  alternates: { canonical: '/bouw/planregels' },
+};
+
 // These pages only ever render for the 'bouw' product chain and notFound() for
 // anything else, so the path set is knowable at build time. Declaring it lets the
 // route prerender instead of being server-rendered on every request.

@@ -4,6 +4,13 @@ import { notFound } from 'next/navigation';
 import Header from '@/components/headers';
 import AreaPlanningLayout from '@/components/layouts/area-planning';
 
+export const metadata = {
+  title: 'Stimuleer houtbouw in circulaire gebiedsontwikkeling - CircuLaw',
+  description:
+    'In elke fase van gebiedsontwikkeling, van verkenning tot transformatie, kun je specifieke juridische instrumenten toepassen om houtbouw en circulariteit te stimuleren.',
+  alternates: { canonical: '/bouw/gebiedsontwikkeling' },
+};
+
 // These pages only ever render for the 'bouw' product chain and notFound() for
 // anything else, so the path set is knowable at build time. Declaring it lets the
 // route prerender instead of being server-rendered on every request.

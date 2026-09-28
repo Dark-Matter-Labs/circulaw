@@ -4,6 +4,7 @@ import InlineExternalLink from '@/components/shared/inline-external-link';
 
 export const metadata = {
   title: 'Privacyverklaring - CircuLaw',
+  alternates: { canonical: '/privacy-policy' },
 };
 
 export default function Privacy() {

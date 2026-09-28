@@ -4,6 +4,7 @@ import { sanityFetch } from '@/lib/sanity';
 
 export const metadata = {
   title: 'Nieuws - CircuLaw',
+  alternates: { canonical: '/nieuws' },
 };
 
 export default async function NewsOverviewPage() {

@@ -5,6 +5,13 @@ import Header from '@/components/headers';
 import NewButton from '@/components/shared/new-button';
 import { IconArrowRight, IconBooks } from '@tabler/icons-react';
 
+export const metadata = {
+  title: 'E-learning: circulaire houtbouw onder de Omgevingswet - CircuLaw',
+  description:
+    'Hoe veranker je houtbouw in het beleid van jouw overheid? Dat leer je in de gratis e-learning circulaire houtbouw onder de Omgevingswet.',
+  alternates: { canonical: '/training' },
+};
+
 export default function LearningLandingPage() {
   return (
     <div className=''>
