@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 
 import EULawHeader from '@/components/eu-law/eu-law-header';
 import TabContent from '@/components/eu-law/tab-content';
+import LegislationStructuredData from '@/components/structured-data/legislation';
 import {
   EU_LAW_METADATA_QUERY,
   EU_LAW_PATHS_QUERY,
@@ -74,6 +75,7 @@ export default async function EULawPage(props) {
 
   return (
     <>
+      <LegislationStructuredData law={summaryData} />
       <EULawHeader summaryData={summaryData} initialTab={initialTab} />
 
       <Suspense>

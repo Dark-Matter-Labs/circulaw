@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 
 import Instrument from '@/components/instrument';
+import InstrumentStructuredData from '@/components/structured-data/instrument';
 import { INSTRUMENT_META_DATA, INSTRUMENT_PAGE_QUERY, INSTRUMENT_PATHS_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 
@@ -58,5 +59,10 @@ export default async function InstrumentPage(props) {
     notFound();
   }
 
-  return <Instrument data={instrumentContent} />;
+  return (
+    <>
+      <InstrumentStructuredData params={params} />
+      <Instrument data={instrumentContent} />
+    </>
+  );
 }
