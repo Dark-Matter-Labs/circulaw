@@ -38,7 +38,8 @@ export async function GET() {
             justifyItems: 'center',
           }}
         >
-          <img width='674.79' height='357.84' src={imageData} alt='CircuLaw' />
+          {/* Numbers, not strings: satori drops an <img> whose size is a non-integer string. */}
+          <img width={675} height={358} src={imageData} alt='CircuLaw' />
         </div>
       </div>
     ),
