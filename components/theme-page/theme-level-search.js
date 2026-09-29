@@ -9,6 +9,7 @@ import Pagination from '@/components/search/pagination';
 import { IconX } from '@tabler/icons-react';
 import algoliasearch from 'algoliasearch/lite';
 
+import { createCachedFetchRequester } from '@/lib/algolia-cached-requester';
 import { algoliaConfig } from '@/lib/algolia-search-client';
 import Header from '../headers';
 import TooltipJuridischeHoudbaarheidContent from '../instrument/tooltip-juridische-houdbaarheid-content';
@@ -23,7 +24,14 @@ import NoResultsInstruments from '../search/no-results-instrument';
 import CustomStats from '../search/stats';
 import PagePagination from '../shared/pagination';
 
-const searchClient = algoliasearch(algoliaConfig.apiId, algoliaConfig.apiKey);
+const searchClient = algoliasearch(
+  algoliaConfig.apiId,
+  algoliaConfig.apiKey,
+  // The first search runs on the server (InstantSearchNext): reuse its results
+  // for a short time instead of calling Algolia on every page view. Browsers
+  // keep Algolia's own requester.
+  typeof window === 'undefined' ? { requester: createCachedFetchRequester() } : {},
+);
 
 export default function ThemeLevelSearch(props) {
   const transformItems = (items) => {
