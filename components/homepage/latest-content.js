@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Badge from '../shared/new-badge';
 
 export default function LatestContent({ latestContent }) {
+  if (!latestContent?.length) return null;
+
   return (
     <div className='flex overflow-x-hidden'>
       <ul className='mb-10 flex animate-infinite-scroll flex-row gap-x-6 hover:paused'>
