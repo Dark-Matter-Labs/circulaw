@@ -4,6 +4,7 @@ import euCircularEconomyTab from './documents/eu/eu-circular-economy-tab';
 import euEuropeTab from './documents/eu/eu-europe-tab';
 import euLaw from './documents/eu/eu-law';
 import euLocalTab from './documents/eu/eu-local-tab';
+import euOverviewPage from './documents/eu/eu-overview-page';
 import faq from './documents/faq';
 // INSTRUMENTS
 import instrument from './documents/instruments/instrument';
@@ -71,6 +72,7 @@ export const schemaTypes = [
   euCircularEconomyTab,
   euEuropeTab,
   euLocalTab,
+  euOverviewPage,
 
   // MODEL TEXTS
   modelText,
