@@ -33,11 +33,22 @@ const pdfVersion = {
   name: 'pdfVersion',
   fields: [
     {
+      name: 'label',
+      title: 'Label',
+      type: 'string',
+      description: 'For example "Overzicht 2.0".',
+    },
+    {
       name: 'file',
       title: 'PDF',
       type: 'file',
       options: { accept: 'application/pdf' },
-      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'url',
+      title: 'Or a link to the PDF',
+      type: 'string',
+      description: 'Use when the PDF is already on the site, for example /European_green_deal.pdf.',
     },
     {
       name: 'updatedAt',
@@ -46,8 +57,12 @@ const pdfVersion = {
       validation: (Rule) => Rule.required(),
     },
   ],
+  validation: (Rule) =>
+    Rule.custom((value) =>
+      !value || value.file?.asset || value.url ? true : 'Upload a PDF or add a link to one.',
+    ),
   preview: {
-    select: { title: 'updatedAt', subtitle: 'file.asset.originalFilename' },
+    select: { title: 'label', subtitle: 'updatedAt' },
   },
 };
 
@@ -104,6 +119,35 @@ export default {
       type: 'array',
       of: [pdfVersion],
       group: 'intro',
+    },
+    {
+      ...richText,
+      name: 'changesText',
+      title: 'What changed',
+      description: 'Explains the difference between the current and the previous PDF.',
+      group: 'intro',
+    },
+    {
+      name: 'moreInfo',
+      title: 'More information',
+      description: 'Fold-out sections below the PDFs, for example how to read the legend.',
+      type: 'array',
+      group: 'intro',
+      of: [
+        {
+          type: 'object',
+          name: 'euInfoSection',
+          fields: [
+            {
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            { ...richText, name: 'body', title: 'Body' },
+          ],
+        },
+      ],
     },
     {
       name: 'domainsTitle',

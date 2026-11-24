@@ -2,6 +2,7 @@ import { PortableText } from 'next-sanity';
 
 import EULawCard from '@/components/eu-law/eu-law-card';
 import DomainTabs from '@/components/eu-law/overview/domain-tabs';
+import MoreInfo from '@/components/eu-law/overview/more-info';
 import PdfIntro from '@/components/eu-law/overview/pdf-intro';
 import Header from '@/components/headers';
 import FeaturedNewsSection from '@/components/news-page/featured-section';
@@ -48,6 +49,7 @@ export default async function Page() {
       />
       <div className='global-margin'>
         <PdfIntro data={page} />
+        {page?.moreInfo?.length > 0 && <MoreInfo sections={page.moreInfo} />}
         {domains.length > 0 && (
           <section className='mt-16 sm:mt-24' aria-labelledby='domains-title'>
             <div className='p-base mb-8 max-w-2xl'>
