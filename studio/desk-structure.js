@@ -106,6 +106,16 @@ export const Structure = (S, context) =>
         .title('EU wetgeving')
         .icon(GiEuropeanFlag)
         .child(S.documentList().title('EU wetgeving').filter('_type == "euLaw"')),
+      S.listItem()
+        .title('EU Overview Page')
+        .id('euOverviewPage')
+        .icon(GiEuropeanFlag)
+        .child(
+          S.document()
+            .title('EU Overview Page')
+            .schemaType('euOverviewPage')
+            .documentId('euOverviewPage'),
+        ),
       orderableDocumentListDeskItem({
         type: 'pillar',
         S,

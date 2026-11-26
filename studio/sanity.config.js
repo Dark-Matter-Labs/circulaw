@@ -11,6 +11,7 @@ import { schemaTypes } from './schemas';
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 
 const singletonTypes = new Set([
+  'euOverviewPage',
   'siteConfig',
   'partners',
   'navigation',

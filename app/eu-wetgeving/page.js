@@ -1,9 +1,13 @@
-import Image from 'next/image';
+import { PortableText } from 'next-sanity';
 
 import EULawCard from '@/components/eu-law/eu-law-card';
+import DomainTabs from '@/components/eu-law/overview/domain-tabs';
+import MoreInfo from '@/components/eu-law/overview/more-info';
+import PdfIntro from '@/components/eu-law/overview/pdf-intro';
 import Header from '@/components/headers';
-import NewButton from '@/components/shared/new-button';
-import { EU_LAW_OVERVIEW_QUERY } from '@/lib/queries';
+import FeaturedNewsSection from '@/components/news-page/featured-section';
+import { euOverviewPortableTextComponents } from '@/lib/portable-text/pt-components';
+import { EU_LAW_OVERVIEW_QUERY, EU_OVERVIEW_PAGE_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 import globalMeta from '@/utils/global-meta';
 
@@ -24,7 +28,20 @@ export const metadata = {
 };
 
 export default async function Page() {
-  const data = await sanityFetch({ query: EU_LAW_OVERVIEW_QUERY, tags: ['euLaw'] });
+  const [data, page] = await Promise.all([
+    sanityFetch({ query: EU_LAW_OVERVIEW_QUERY, tags: ['euLaw'] }),
+    sanityFetch({ query: EU_OVERVIEW_PAGE_QUERY, tags: ['euOverviewPage', 'newsItem'] }),
+  ]);
+  const domains = page?.domains?.filter((domain) => domain.title) ?? [];
+  const articles = page?.articles?.filter(Boolean) ?? [];
+  // "What changed" is long, so it folds out with the other background sections.
+  const infoSections = [
+    ...(page?.changesText
+      ? [{ _key: 'changes', title: 'Wat is er veranderd?', body: page.changesText }]
+      : []),
+    ...(page?.moreInfo ?? []),
+  ];
+
   return (
     <>
       <Header
@@ -38,43 +55,32 @@ export default async function Page() {
         length={data.length}
       />
       <div className='global-margin'>
-        <div className='mt-10 flex flex-col sm:flex-row'>
-          <div className='p-base mr-8 flex basis-1/2 flex-col justify-start'>
-            <h2 className='heading-2xl-semibold mb-8'>Wat is de Green Deal?</h2>
-            <div className='mb-8'>
-              <p className='mb-2'>
-                De Europese Unie wil in 2050 klimaatneutraal zijn: een ambitie die bekend staat als
-                de &apos;Green Deal&apos;. In het kader van de Green Deal worden continu nieuwe
-                wetten voorgesteld, behandeld en aangenomen, of worden bestaande herzien.
-              </p>
-              <p>
-                Met al deze richtlijnen en verordeningen wil de EU vanuit verschillende
-                perspectieven bijdragen aan klimaatneutraliteit. Hiernaast zie je een overzicht,
-                inclusief de huidige status van elk voorstel en het toepassingsgebied.
-              </p>
+        <PdfIntro data={page} />
+        {infoSections.length > 0 && <MoreInfo sections={infoSections} />}
+        {(domains.length > 0 || page?.domainsIntro) && (
+          <section className='mt-16 sm:mt-24' aria-labelledby='domains-title'>
+            <div className='p-base mb-8 max-w-2xl'>
+              <h2 id='domains-title' className='heading-2xl-semibold mb-4'>
+                {page.domainsTitle ?? 'Methode'}
+              </h2>
+              {page.domainsIntro && (
+                <PortableText
+                  value={page.domainsIntro}
+                  components={euOverviewPortableTextComponents}
+                />
+              )}
             </div>
-            <div className='sm:mt-0 sm:w-2/5'>
-              <NewButton
-                icon='download'
-                variant='secondaryDark'
-                href='/European_green_deal.pdf'
-                newTab={true}
-              >
-                Download PDF
-              </NewButton>
-            </div>
-          </div>
-          <div className='mt-8 h-full w-full basis-1/2 sm:mt-0'>
-            <a href='/European_green_deal.pdf' target='_blank' rel='noreferrer'>
-              <Image
-                src='/green_deal.jpg'
-                alt='Screenshot of the PDF green deal'
-                width={588.5}
-                height={328}
-              />
-            </a>
-          </div>
-        </div>
+            {domains.length > 0 && <DomainTabs domains={domains} />}
+          </section>
+        )}
+        {articles.length > 0 && (
+          <section className='mt-16 sm:mt-24' aria-labelledby='articles-title'>
+            <h2 id='articles-title' className='heading-2xl-semibold mb-8'>
+              {page.articlesTitle ?? 'Analyses en artikelen'}
+            </h2>
+            <FeaturedNewsSection items={articles} />
+          </section>
+        )}
         <div className='p-base mb-4 flex max-w-2xl flex-col'>
           <h2 className='heading-2xl-semibold mb-8 mt-10'>
             Relevante EU-wetgeving voor lokale overheden
