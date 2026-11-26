@@ -116,17 +116,6 @@ function PdfVersions({ data }) {
           )}
         </div>
       )}
-      {data.changesText && (
-        <div className='p-base mt-8 rounded-cl bg-green-100 p-6 sm:p-10'>
-          <h3 className='heading-xl-semibold mb-4 text-green-500'>Wat is er veranderd?</h3>
-          <div className='max-w-3xl'>
-            <PortableText
-              value={data.changesText}
-              components={euOverviewPortableTextComponents}
-            />
-          </div>
-        </div>
-      )}
     </section>
   );
 }

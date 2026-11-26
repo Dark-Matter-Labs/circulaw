@@ -34,6 +34,13 @@ export default async function Page() {
   ]);
   const domains = page?.domains?.filter((domain) => domain.title) ?? [];
   const articles = page?.articles?.filter(Boolean) ?? [];
+  // "What changed" is long, so it folds out with the other background sections.
+  const infoSections = [
+    ...(page?.changesText
+      ? [{ _key: 'changes', title: 'Wat is er veranderd?', body: page.changesText }]
+      : []),
+    ...(page?.moreInfo ?? []),
+  ];
 
   return (
     <>
@@ -49,7 +56,7 @@ export default async function Page() {
       />
       <div className='global-margin'>
         <PdfIntro data={page} />
-        {page?.moreInfo?.length > 0 && <MoreInfo sections={page.moreInfo} />}
+        {infoSections.length > 0 && <MoreInfo sections={infoSections} />}
         {(domains.length > 0 || page?.domainsIntro) && (
           <section className='mt-16 sm:mt-24' aria-labelledby='domains-title'>
             <div className='p-base mb-8 max-w-2xl'>
