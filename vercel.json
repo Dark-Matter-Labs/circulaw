@@ -1,5 +1,10 @@
 {
     "redirects": [
+        {
+            "source": "/green-deal-spreadsheet",
+            "destination": "https://docs.google.com/spreadsheets/d/1hWD2-SngG0fNbuFlRZ5qSniUyEQ0Ku7K-bG7GJANe2s/edit?gid=218723233#gid=218723233",
+            "permanent": false
+        },
         { 
             "source": "/over/Wat-is-CircuLaw", 
             "destination": "/over/wat-is-circulaw", 
