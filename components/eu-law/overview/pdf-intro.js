@@ -142,7 +142,7 @@ export default function PdfIntro({ data }) {
         <div className='mt-8 w-full basis-1/2 sm:sticky sm:top-32 sm:mt-0 sm:self-start'>
           <a href={pdfUrl} target='_blank' rel='noreferrer'>
             <Image
-              src={data?.previewImage?.url ?? '/green_deal.jpg'}
+              src={data?.previewImage?.url ?? '/green_deal_2026.jpg'}
               alt={data?.previewImage?.altText ?? 'Screenshot van de Green Deal PDF'}
               width={data?.previewImage?.metadata?.dimensions?.width ?? 588.5}
               height={data?.previewImage?.metadata?.dimensions?.height ?? 328}
