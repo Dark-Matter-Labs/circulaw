@@ -2,7 +2,7 @@ import { PortableText } from 'next-sanity';
 import Image from 'next/image';
 
 import NewButton from '@/components/shared/new-button';
-import { aboutPageReducedPortableTextComponents } from '@/lib/portable-text/pt-components';
+import { euOverviewPortableTextComponents } from '@/lib/portable-text/pt-components';
 import { IconFileDownload } from '@tabler/icons-react';
 
 import Badge from '../../shared/new-badge';
@@ -122,7 +122,7 @@ function PdfVersions({ data }) {
           <div className='max-w-3xl'>
             <PortableText
               value={data.changesText}
-              components={aboutPageReducedPortableTextComponents}
+              components={euOverviewPortableTextComponents}
             />
           </div>
         </div>
@@ -144,7 +144,7 @@ export default function PdfIntro({ data }) {
           {data?.introText ? (
             <PortableText
               value={data.introText}
-              components={aboutPageReducedPortableTextComponents}
+              components={euOverviewPortableTextComponents}
             />
           ) : (
             <FallbackIntro />

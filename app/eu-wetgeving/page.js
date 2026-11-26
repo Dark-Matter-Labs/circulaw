@@ -6,7 +6,7 @@ import MoreInfo from '@/components/eu-law/overview/more-info';
 import PdfIntro from '@/components/eu-law/overview/pdf-intro';
 import Header from '@/components/headers';
 import FeaturedNewsSection from '@/components/news-page/featured-section';
-import { aboutPageReducedPortableTextComponents } from '@/lib/portable-text/pt-components';
+import { euOverviewPortableTextComponents } from '@/lib/portable-text/pt-components';
 import { EU_LAW_OVERVIEW_QUERY, EU_OVERVIEW_PAGE_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 import globalMeta from '@/utils/global-meta';
@@ -50,7 +50,7 @@ export default async function Page() {
       <div className='global-margin'>
         <PdfIntro data={page} />
         {page?.moreInfo?.length > 0 && <MoreInfo sections={page.moreInfo} />}
-        {domains.length > 0 && (
+        {(domains.length > 0 || page?.domainsIntro) && (
           <section className='mt-16 sm:mt-24' aria-labelledby='domains-title'>
             <div className='p-base mb-8 max-w-2xl'>
               <h2 id='domains-title' className='heading-2xl-semibold mb-4'>
@@ -59,11 +59,11 @@ export default async function Page() {
               {page.domainsIntro && (
                 <PortableText
                   value={page.domainsIntro}
-                  components={aboutPageReducedPortableTextComponents}
+                  components={euOverviewPortableTextComponents}
                 />
               )}
             </div>
-            <DomainTabs domains={domains} />
+            {domains.length > 0 && <DomainTabs domains={domains} />}
           </section>
         )}
         {articles.length > 0 && (

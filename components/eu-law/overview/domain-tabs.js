@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 
 import { PortableText } from 'next-sanity';
 
-import { aboutPageReducedPortableTextComponents } from '@/lib/portable-text/pt-components';
+import { euOverviewPortableTextComponents } from '@/lib/portable-text/pt-components';
 
 export default function DomainTabs({ domains }) {
   const [active, setActive] = useState(0);
@@ -63,7 +63,7 @@ export default function DomainTabs({ domains }) {
         >
           <h3 className='heading-xl-semibold mb-4 text-green-500'>{domain.title}</h3>
           <div className='max-w-3xl'>
-            <PortableText value={domain.body} components={aboutPageReducedPortableTextComponents} />
+            <PortableText value={domain.body} components={euOverviewPortableTextComponents} />
           </div>
         </div>
       ))}
